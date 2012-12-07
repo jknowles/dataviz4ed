@@ -1,0 +1,51 @@
+---
+title       : Data Visualization for Education
+subtitle    : SDP Fellow Workshop January 2013
+author      : Jared Knowles
+job         : Policy Research Advisor, Wisconsin DPI
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : standalone # {standalone, draft}
+---
+
+## Objectives
+
+1. Review data visualization principles
+2. Look at applications in education data
+3. Challenges in an LEA/SEA
+4. Best practices and advice
+5. What tools to use
+
+```{r knitrsetup,echo=FALSE,eval=TRUE,results="hide"}
+library(knitr)
+opts_chunk$set(fig.width=8,fig.height=5.5,message=FALSE,error=FALSE,warning=FALSE,echo=TRUE,dev="svg",out.width="700px",out.height="500px")
+library(eeptools)
+library(ggplot2)
+library(ggthemes)
+```
+
+--- plot
+
+### Example
+
+```{r plot, fig.height=5.5, fig.width=8.5,fig.align="center"}
+qplot(hp,mpg,data=mtcars)+theme_dpi()
+```
+
+--- plot
+
+### Slide 2
+
+
+```{r plot2, fig.height=5.5, fig.width=8.5,fig.align="center"}
+qplot(hp,mpg,data=mtcars)+theme_economist()
+```
+---
+
+### Backmatter
+
+```{r wrapup}
+sessionInfo(locale=FALSE)
+```
