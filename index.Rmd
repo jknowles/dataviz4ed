@@ -4,11 +4,21 @@ subtitle    : SDP Fellow Workshop January 2013
 author      : Jared Knowles
 job         : Policy Research Advisor, Wisconsin DPI
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
-highlighter : highlight.js  # {highlight.js, prettify, highlight}
+highlighter : prettify  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : standalone # {standalone, draft}
 ---
+
+---
+layout: slide2
+---
+{{{ content }}}
+<footer class = 'logo'>
+  <img src = 'img/dpilogo.png'></img>
+</footer>
+
+--- layout:slide2
 
 ## Objectives
 
@@ -20,7 +30,7 @@ mode        : standalone # {standalone, draft}
 
 ```{r knitrsetup,echo=FALSE,eval=TRUE,results="hide"}
 library(knitr)
-opts_chunk$set(fig.width=8,fig.height=5.5,message=FALSE,error=FALSE,warning=FALSE,echo=TRUE,dev="svg",out.width="700px",out.height="500px")
+opts_chunk$set(fig.width=8,fig.height=5.5,message=FALSE,error=FALSE,warning=FALSE,echo=TRUE,dev="svg",comment=NA)
 library(eeptools)
 library(ggplot2)
 library(ggthemes)
@@ -30,22 +40,77 @@ library(ggthemes)
 
 ### Example
 
-```{r plot, fig.height=5.5, fig.width=8.5,fig.align="center"}
+```{r plot, fig.height=5.5, fig.width=8.5,fig.align="center",out.width="700px",out.height="500px"}
 qplot(hp,mpg,data=mtcars)+theme_dpi()
 ```
 
 --- plot
 
-### Slide 2
+### Example
+
+```{r plot1,out.width="300px",out.height="200px",echo=FALSE}
+qplot(hp,mpg,data=mtcars)+theme_dpi()
+qplot(hp,data=mtcars)+theme_dpi()
+qplot(drat,data=mtcars,geom="density")+theme_dpi()
+qplot(factor(cyl),disp,data=mtcars,geom="boxplot")+theme_dpi()
+qplot(factor(vs),mpg,data=mtcars,geom="violin")+theme_dpi()
+qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()
+```
+
+--- &twocol w1:40% w2:60%
+
+## My Header
+
+*** left
+
+- What to do?
+- When the project?
+- Is too big?
+
+*** right
+
+- Don't panic
+- Relax
+- Breathe
+
+--- layout:caption
+
+What does this slide look like?
+
+--- layout:title
+
+Subheading?
+
+--- bg:url(img/badinfographic.png) bg-repeat: no-repeat
+
+### Arbitrary image
+
+--- quote
+
+<p><q> Think like a <span class = 'red'>map</span>. Data density and easy interpretability.</q></p>
+
+---
+
+### Some tips
+
+>- Focus on the content
+>- Use best practices
+>- Understand the limitations
+>- Experiment and iterate!
+
+--- plot
+
+### Themes convey brands
 
 
-```{r plot2, fig.height=5.5, fig.width=8.5,fig.align="center"}
+```{r plot2, fig.height=5.5, fig.width=8.5,fig.align="center",out.width="700px",out.height="500px"}
 qplot(hp,mpg,data=mtcars)+theme_economist()
 ```
+
 ---
 
 ### Backmatter
 
-```{r wrapup}
-sessionInfo(locale=FALSE)
+```{r wrapup,echo=TRUE,eval=TRUE,results="markup"}
+print(sessionInfo(),locale=FALSE)
 ```
