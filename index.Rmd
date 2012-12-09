@@ -10,16 +10,6 @@ widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : standalone # {standalone, draft}
 ---
 
----
-layout: slide2
----
-{{{ content }}}
-<footer class = 'logo'>
-  <img src = 'img/dpilogo.png'></img>
-</footer>
-
---- layout:slide2
-
 ## Objectives
 
 1. Review data visualization principles
@@ -73,14 +63,6 @@ qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()
 - Relax
 - Breathe
 
---- layout:caption
-
-What does this slide look like?
-
---- layout:title
-
-Subheading?
-
 --- bg:url(img/badinfographic.png) bg-repeat: no-repeat
 
 ### Arbitrary image
@@ -103,8 +85,37 @@ Subheading?
 ### Themes convey brands
 
 
-```{r plot2, fig.height=5.5, fig.width=8.5,fig.align="center",out.width="700px",out.height="500px"}
+```{r plot2, fig.height=5.5, fig.width=8.5,fig.align="center",out.width="750px",out.height="480px"}
 qplot(hp,mpg,data=mtcars)+theme_economist()
+```
+
+--- plot
+
+### They Also Communicate
+
+
+```{r plot3, fig.height=5.5, fig.width=8.5,fig.align="center",out.width="750px",out.height="480px"}
+qplot(hp,mpg,data=mtcars)+theme_tufte()
+```
+
+
+--- plot
+
+### They Also Can Confound
+
+
+```{r plot4, fig.height=5.5, fig.width=8.5,fig.align="center",out.width="750px",out.height="480px"}
+qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_excel2003()+scale_color_excel2003()
+```
+
+
+--- plot
+
+### So Choose Wisely
+
+
+```{r plot5, fig.height=5.5, fig.width=8.5,fig.align="center",out.width="750px",out.height="480px"}
+qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_stata()
 ```
 
 ---

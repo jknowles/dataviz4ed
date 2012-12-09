@@ -10,16 +10,6 @@ widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : standalone # {standalone, draft}
 ---
 
----
-layout: slide2
----
-{{{ content }}}
-<footer class = 'logo'>
-  <img src = 'img/dpilogo.png'></img>
-</footer>
-
---- layout:slide2
-
 ## Objectives
 
 1. Review data visualization principles
@@ -29,6 +19,39 @@ layout: slide2
 5. What tools to use
 
 
+```
+## Loading required package: stringr
+```
+
+```
+## Loading required package: ggplot2
+```
+
+```
+## Loading required package: plyr
+```
+
+```
+## Loading required package: proto
+```
+
+```
+## Loading required package: grid
+```
+
+```
+## Loading required package: maps
+```
+
+```
+## Loading required package: mapproj
+```
+
+```
+## eeptools for R version 0.1 Free and Open Software for Education
+## EvaluationDeveloped by Jared E. Knowles 2012for The Wisconsin Department
+## of Public Instruction Distributed without warranty
+```
 
 
 --- plot
@@ -66,14 +89,6 @@ qplot(hp, mpg, data = mtcars) + theme_dpi()
 - Relax
 - Breathe
 
---- layout:caption
-
-What does this slide look like?
-
---- layout:title
-
-Subheading?
-
 --- bg:url(img/badinfographic.png) bg-repeat: no-repeat
 
 ### Arbitrary image
@@ -101,7 +116,48 @@ Subheading?
 qplot(hp, mpg, data = mtcars) + theme_economist()
 ```
 
-<img src="figure/plot2.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="700px" height="500px" />
+<img src="figure/plot2.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="750px" height="480px" />
+
+
+--- plot
+
+### They Also Communicate
+
+
+
+```r
+qplot(hp, mpg, data = mtcars) + theme_tufte()
+```
+
+<img src="figure/plot3.svg" title="plot of chunk plot3" alt="plot of chunk plot3" width="750px" height="480px" />
+
+
+
+--- plot
+
+### They Also Can Confound
+
+
+
+```r
+qplot(hp, mpg, data = mtcars, color = factor(cyl)) + theme_excel2003() + scale_color_excel2003()
+```
+
+<img src="figure/plot4.svg" title="plot of chunk plot4" alt="plot of chunk plot4" width="750px" height="480px" />
+
+
+
+--- plot
+
+### So Choose Wisely
+
+
+
+```r
+qplot(hp, mpg, data = mtcars, color = factor(cyl)) + theme_stata()
+```
+
+<img src="figure/plot5.svg" title="plot of chunk plot5" alt="plot of chunk plot5" width="750px" height="480px" />
 
 
 ---
@@ -122,18 +178,16 @@ attached base packages:
 [8] base     
 
 other attached packages:
- [1] devtools_0.8.0.99    slidifyLibraries_0.1 markdown_0.5.3      
- [4] whisker_0.3-2        ggthemes_1.1.0       knitr_0.9           
- [7] slidify_0.3.3        eeptools_0.1         mapproj_1.1-8.3     
-[10] maps_2.2-6           proto_0.3-9.2        plyr_1.7.1          
-[13] stringr_0.6.1        ggplot2_0.9.2.1     
+ [1] ggthemes_1.1.0  eeptools_0.1    mapproj_1.1-8.3 maps_2.2-6     
+ [5] proto_0.3-9.2   plyr_1.7.1      ggplot2_0.9.2.1 stringr_0.6.1  
+ [9] knitr_0.9       slidify_0.3.3  
 
 loaded via a namespace (and not attached):
  [1] colorspace_1.2-0   dichromat_1.2-4    digest_0.6.0      
  [4] evaluate_0.4.3     formatR_0.7        gtable_0.1.2      
- [7] httr_0.2           labeling_0.1       MASS_7.3-22       
-[10] memoise_0.1        munsell_0.4        parallel_2.15.2   
-[13] RColorBrewer_1.0-5 RCurl_1.95-3       reshape2_1.2.2    
-[16] scales_0.2.3       tools_2.15.2       yaml_2.1.5        
+ [7] labeling_0.1       markdown_0.5.3     MASS_7.3-22       
+[10] memoise_0.1        munsell_0.4        RColorBrewer_1.0-5
+[13] reshape2_1.2.2     scales_0.2.3       tools_2.15.2      
+[16] whisker_0.3-2      yaml_2.1.5        
 ```
 
