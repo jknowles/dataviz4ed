@@ -80,6 +80,19 @@ qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()
 >- Understand the limitations
 >- Experiment and iterate!
 
+---
+
+### Some tips
+
+>- Have a properly chosen format and design 
+>- Use words, numbers and drawing together
+>- Reflect a balance, a proportion, relevant scale
+>- Display an accessible complexity of details
+>- Have a narrative quality, tell a story
+>- Avoid content-free decoration (Tufte's proverbial chartjunk)
+>- Draw in a professional manner with an eye on the technical details
+>- Remember the map
+
 --- plot
 
 ### Themes convey brands
