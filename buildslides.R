@@ -5,7 +5,7 @@
 # need to install it
 
 library(devtools)
-dev_mode()
+dev_mode(path="C:/R/lib/dev")
 
 install_github("devtools", "hadley")
 install_github("slidify", "ramnathv")
