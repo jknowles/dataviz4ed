@@ -133,6 +133,64 @@ qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_stata()
 
 ---
 
+---
+
+### Ugly graphic
+
+<script>
+    function init() {
+
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+
+      draw(ctx);
+    }
+
+    function draw(ctx) {
+
+      var gradient;
+
+      // layer1/Path
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(0.5, 0.0);
+      ctx.lineTo(0.5, 423.0);
+      ctx.stroke();
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(0.0, 423.5);
+      ctx.lineTo(477.0, 423.5);
+      ctx.stroke();
+
+      // layer1/This is silly
+      ctx.font = "36.0px 'Nyala'";
+      ctx.fillText("This gradient is silly", 62.1, 93.3);
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(472.0, 317.0);
+      ctx.lineTo(62.0, 317.0);
+      ctx.lineTo(62.0, 175.0);
+      ctx.lineTo(472.0, 175.0);
+      ctx.lineTo(472.0, 317.0);
+      ctx.closePath();
+      gradient = ctx.createRadialGradient(267.0, 246.0, 0.0, 267.0, 246.0, 153.4);
+      gradient.addColorStop(0.50, "rgb(255, 255, 255)");
+      gradient.addColorStop(0.65, "rgb(255, 169, 171)");
+      gradient.addColorStop(1.00, "rgb(255, 83, 88)");
+      ctx.fillStyle = gradient;
+      ctx.fill();
+      ctx.restore();
+    }
+</script>
+
+<body onload="init()">
+   <canvas id="canvas" width="477" height="424"></canvas>
+</body>
+
+---
+
 ### Backmatter
 
 ```{r wrapup,echo=TRUE,eval=TRUE,results="markup"}

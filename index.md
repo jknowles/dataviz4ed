@@ -19,39 +19,6 @@ mode        : standalone # {standalone, draft}
 5. What tools to use
 
 
-```
-## Loading required package: stringr
-```
-
-```
-## Loading required package: ggplot2
-```
-
-```
-## Loading required package: plyr
-```
-
-```
-## Loading required package: proto
-```
-
-```
-## Loading required package: grid
-```
-
-```
-## Loading required package: maps
-```
-
-```
-## Loading required package: mapproj
-```
-
-```
-## eeptools for R version 0.1 Free and Open Software for Education
-## EvaluationDeveloped by Jared E. Knowles 2012for The Wisconsin Department
-## of Public Instruction Distributed without warranty
-```
 
 
 --- plot
@@ -105,6 +72,19 @@ qplot(hp, mpg, data = mtcars) + theme_dpi()
 >- Use best practices
 >- Understand the limitations
 >- Experiment and iterate!
+
+---
+
+### Some tips
+
+>- Have a properly chosen format and design 
+>- Use words, numbers and drawing together
+>- Reflect a balance, a proportion, relevant scale
+>- Display an accessible complexity of details
+>- Have a narrative quality, tell a story
+>- Avoid content-free decoration (Tufte's proverbial chartjunk)
+>- Draw in a professional manner with an eye on the technical details
+>- Remember the map
 
 --- plot
 
@@ -162,6 +142,64 @@ qplot(hp, mpg, data = mtcars, color = factor(cyl)) + theme_stata()
 
 ---
 
+---
+
+### Ugly graphic
+
+<script>
+    function init() {
+
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+
+      draw(ctx);
+    }
+
+    function draw(ctx) {
+
+      var gradient;
+
+      // layer1/Path
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(0.5, 0.0);
+      ctx.lineTo(0.5, 423.0);
+      ctx.stroke();
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(0.0, 423.5);
+      ctx.lineTo(477.0, 423.5);
+      ctx.stroke();
+
+      // layer1/This is silly
+      ctx.font = "36.0px 'Nyala'";
+      ctx.fillText("This gradient is silly", 62.1, 93.3);
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(472.0, 317.0);
+      ctx.lineTo(62.0, 317.0);
+      ctx.lineTo(62.0, 175.0);
+      ctx.lineTo(472.0, 175.0);
+      ctx.lineTo(472.0, 317.0);
+      ctx.closePath();
+      gradient = ctx.createRadialGradient(267.0, 246.0, 0.0, 267.0, 246.0, 153.4);
+      gradient.addColorStop(0.50, "rgb(255, 255, 255)");
+      gradient.addColorStop(0.65, "rgb(255, 169, 171)");
+      gradient.addColorStop(1.00, "rgb(255, 83, 88)");
+      ctx.fillStyle = gradient;
+      ctx.fill();
+      ctx.restore();
+    }
+</script>
+
+<body onload="init()">
+   <canvas id="canvas" width="477" height="424"></canvas>
+</body>
+
+---
+
 ### Backmatter
 
 
@@ -178,16 +216,18 @@ attached base packages:
 [8] base     
 
 other attached packages:
- [1] ggthemes_1.1.0  eeptools_0.1    mapproj_1.1-8.3 maps_2.2-6     
- [5] proto_0.3-9.2   plyr_1.7.1      ggplot2_0.9.2.1 stringr_0.6.1  
- [9] knitr_0.9       slidify_0.3.3  
+ [1] ggthemes_1.1.0    eeptools_0.1      mapproj_1.1-8.3  
+ [4] maps_2.2-8        proto_0.3-9.2     plyr_1.8         
+ [7] ggplot2_0.9.3     stringr_0.6.2     knitr_0.9        
+[10] slidify_0.3.3     devtools_0.8.0.99
 
 loaded via a namespace (and not attached):
  [1] colorspace_1.2-0   dichromat_1.2-4    digest_0.6.0      
  [4] evaluate_0.4.3     formatR_0.7        gtable_0.1.2      
- [7] labeling_0.1       markdown_0.5.3     MASS_7.3-22       
-[10] memoise_0.1        munsell_0.4        RColorBrewer_1.0-5
-[13] reshape2_1.2.2     scales_0.2.3       tools_2.15.2      
-[16] whisker_0.3-2      yaml_2.1.5        
+ [7] httr_0.2           labeling_0.1       markdown_0.5.3    
+[10] MASS_7.3-22        memoise_0.1        munsell_0.4       
+[13] parallel_2.15.2    RColorBrewer_1.0-5 Rcpp_0.10.1       
+[16] RCurl_1.95-3       reshape2_1.2.2     scales_0.2.3      
+[19] tools_2.15.2       whisker_0.1        yaml_2.1.5        
 ```
 
