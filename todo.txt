@@ -6,3 +6,4 @@ TODO:
 * Discuss the way solutions work, but then fail to scale (focus on scale)
 * Ending exercise on student-level data
 * Use illustrator to draw some graphics
+* Get VizLinks

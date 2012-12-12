@@ -82,6 +82,39 @@ qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()
 
 ---
 
+### Charting Data
+
+>- The type of data we look at determines the way it should be presented
+>- It always starts with the data
+>- Let's review the data types
+>- Categorical
+>- Ordinal
+>- Interval
+>- Continuous
+
+--- plot
+
+### Charting Categorical Data
+
+```{r echo=FALSE}
+library(vcd)
+load('data/smalldata.rda')
+df$proflvl<-as.character(df$proflvl)
+df$proflvl[df$proflvl=="below basic"]<-"minimal"
+df$proflvl<-factor(df$proflvl,levels=c("advanced","proficient",
+                                       "basic","minimal"))
+mosaic(~race+proflvl,data=df,shade=TRUE)
+```
+
+--- plot
+
+### Conditional 2
+```{r echo=FALSE}
+mosaic(~race+female,data=df,shade=TRUE)
+```
+
+---
+
 ### Some tips
 
 >- Have a properly chosen format and design 
