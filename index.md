@@ -75,6 +75,31 @@ qplot(hp, mpg, data = mtcars) + theme_dpi()
 
 ---
 
+### Charting Data
+
+>- The type of data we look at determines the way it should be presented
+>- It always starts with the data
+>- Let's review the data types
+>- Categorical
+>- Ordinal
+>- Interval
+>- Continuous
+
+--- plot
+
+### Charting Categorical Data
+
+
+
+
+--- plot
+
+### Conditional 2
+
+
+
+---
+
 ### Some tips
 
 >- Have a properly chosen format and design 
@@ -142,7 +167,66 @@ qplot(hp, mpg, data = mtcars, color = factor(cyl)) + theme_stata()
 
 ---
 
+### Stacked Bar
+
+<p align="center"><img src="img/d3stackedbar.png" height="490" width="700"></p>
+
+--- 
+
+### Box and Whisker
+
+<p align="center"><img src="img/d3boxwhisker.png" height="490" width="700"></p>
+
 ---
+
+### Bullet Chart
+
+<p align="center"><img src="img/d3bulletchart.png" height="320" width="800"></p>
+
+
+---
+
+### Calendar
+
+<p align="center"><img src="img/d3calendar.png" height="440" width="875"></p>
+
+---
+
+### Lines
+
+<p align="center"><img src="img/d3linemany.png" height="440" width="875"></p>
+
+---
+
+### Parallel Coordinates
+
+<p align="center"><img src="img/d3parallelcoordinates.png" height="440" width="875"></p>
+
+
+### Parallel Sets
+
+<p align="center"><img src="img/d3parallelsets.png" height="440" width="875"></p>
+
+---
+
+### Streamgraph
+
+<p align="center"><img src="img/d3streamgraph.png" height="561" width="661"></p>
+
+---
+
+### Tree Map
+
+<p align="center"><img src="img/d3treemap.png" height="420" width="900"></p>
+
+---
+
+### Word Cloud
+
+<p align="center"><img src="img/d3wordcloud.png" height="420" width="900"></p>
+
+
+--- plot
 
 ### Ugly graphic
 
@@ -218,7 +302,7 @@ attached base packages:
 other attached packages:
  [1] ggthemes_1.1.0    eeptools_0.1      mapproj_1.1-8.3  
  [4] maps_2.2-8        proto_0.3-9.2     plyr_1.8         
- [7] ggplot2_0.9.3     stringr_0.6.2     knitr_0.9        
+ [7] ggplot2_0.9.3     stringr_0.6.2     knitr_0.9.1      
 [10] slidify_0.3.3     devtools_0.8.0.99
 
 loaded via a namespace (and not attached):
@@ -226,8 +310,14 @@ loaded via a namespace (and not attached):
  [4] evaluate_0.4.3     formatR_0.7        gtable_0.1.2      
  [7] httr_0.2           labeling_0.1       markdown_0.5.3    
 [10] MASS_7.3-22        memoise_0.1        munsell_0.4       
-[13] parallel_2.15.2    RColorBrewer_1.0-5 Rcpp_0.10.1       
-[16] RCurl_1.95-3       reshape2_1.2.2     scales_0.2.3      
-[19] tools_2.15.2       whisker_0.1        yaml_2.1.5        
+[13] parallel_2.15.2    RColorBrewer_1.0-5 RCurl_1.95-3      
+[16] reshape2_1.2.2     scales_0.2.3       tools_2.15.2      
+[19] whisker_0.1        yaml_2.1.5        
 ```
 
+
+---
+
+### Categorizing Visualization
+
+<p align="center"><img src="img/periodictablevisualization1.png" height="600" width="900"></p>

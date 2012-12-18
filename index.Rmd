@@ -166,7 +166,67 @@ qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_stata()
 
 ---
 
+### Stacked Bar
+
+<p align="center"><img src="img/d3stackedbar.png" height="550" width="800"></p>
+
+--- 
+
+### Box and Whisker
+
+<p align="center"><img src="img/d3boxwhisker.png" height="490" width="700"></p>
+
 ---
+
+### Bullet Chart
+
+<p align="center"><img src="img/d3bulletchart.png" height="320" width="800"></p>
+
+
+---
+
+### Calendar
+
+<p align="center"><img src="img/d3calendar.png" height="440" width="875"></p>
+
+---
+
+### Lines
+
+<p align="center"><img src="img/d3linemany.png" height="440" width="875"></p>
+
+---
+
+### Parallel Coordinates
+
+<p align="center"><img src="img/d3parallelcoordinates.png" height="440" width="875"></p>
+
+---
+
+### Parallel Sets
+
+<p align="center"><img src="img/d3parallelsets.png" height="440" width="875"></p>
+
+---
+
+### Streamgraph
+
+<p align="center"><img src="img/d3streamgraph.png" height="561" width="661"></p>
+
+---
+
+### Tree Map
+
+<p align="center"><img src="img/d3treemap.png" height="470" width="950"></p>
+
+---
+
+### Word Cloud
+
+<p align="center"><img src="img/d3wordcloud.png" height="420" width="900"></p>
+
+
+--- plot
 
 ### Ugly graphic
 
@@ -229,3 +289,8 @@ qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_stata()
 ```{r wrapup,echo=TRUE,eval=TRUE,results="markup"}
 print(sessionInfo(),locale=FALSE)
 ```
+
+---
+
+
+<p align="center"><img src="img/periodictablevisualization1.png" height="550" width="900"></p>
