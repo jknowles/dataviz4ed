@@ -34,11 +34,59 @@ library(ggthemes)
 qplot(hp,mpg,data=mtcars)+theme_dpi()
 ```
 
+
+--- &twocol w1:20% w2:80%
+
+## Principles
+
+*** left
+- Chart Types and Data Types
+- Dimensionality
+- Scale
+- Complexity
+- Technical details
+- Beyond charts
+
+*** right
+
+```{r plot1,out.width="450px",out.height="300px",echo=FALSE}
+qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()
+```
+
+---
+
+### Data Types
+
+Level of Meas.   Stats
+--------------- -----------------------------------------------
+Nominal           mode, Chi-squared
+Ordinal           median, percentile
+Interval          mean, std. deviation, correlation, ANOVA
+Continuous        geometric mean, harmonic mean, logarithms
+
+
+Aesthetic       Discrete                 Continuous
+----------  ---------------------------  --------------------------------
+Color       Disparate colors             Sequential or divergent colors
+Size        Unique size for each value   mapping to radius of value
+Shape       A shape for each value       **does not make sense**
+
+---
+
+### Ordered vs. Unordered
+
+Aesthetic  |    Ordered                         |  Unordered
+---------- |  --------------------------------  |   -------------------------
+Color      |  Sequential or divergent colors  |    Rainbow
+Size       |  Increasing or decreasing radius |    **does not make sense**
+Shape      |  **does not make sense**         |    A shape for each value
+
+
 --- plot
 
 ### Example
 
-```{r plot1,out.width="300px",out.height="200px",echo=FALSE}
+```{r plot1.1,out.width="300px",out.height="200px",echo=FALSE}
 qplot(hp,mpg,data=mtcars)+theme_dpi()
 qplot(hp,data=mtcars)+theme_dpi()
 qplot(drat,data=mtcars,geom="density")+theme_dpi()
@@ -46,6 +94,7 @@ qplot(factor(cyl),disp,data=mtcars,geom="boxplot")+theme_dpi()
 qplot(factor(vs),mpg,data=mtcars,geom="violin")+theme_dpi()
 qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()
 ```
+
 
 --- &twocol w1:40% w2:60%
 
@@ -289,6 +338,23 @@ qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_stata()
 ```{r wrapup,echo=TRUE,eval=TRUE,results="markup"}
 print(sessionInfo(),locale=FALSE)
 ```
+
+
+--- 
+
+### References
+
+- Tufte, Edward. 1992. [The Visual Display of Quantitative Information.](http://www.amazon.com/The-Visual-Display-Quantitative-Information/dp/0961392142/) Graphics Press. 
+- Unwin, Theus, and Hofmann. 2006. [Graphics of Large Datasets: Visualizing a Million.](http://www.amazon.com/Graphics-Large-Datasets-Visualizing-Statistics/dp/0387329064) Springer. 
+- Wilkinson, Leland. 2005. The Grammar of Graphics. Springer.
+- Ware, Colin. 2012. [Information Visualization: Perception for Design.](http://www.amazon.com/Information-Visualization-Third-Edition-Technologies/dp/0123814642/ref=reg_hu-rd_add_1_dp) 3rd Edition. Morgan Kaufmann. 
+- Cleveland, William. 1994. [The Elements of Graphing Data.](http://www.amazon.com/gp/product/0963488414/) Hobart Press. 
+- Cleveland, William. 1993. [Visualizing Data.](http://www.amazon.com/gp/product/0963488406) Hobart Press.
+- Few, Stephen. 2009. [Now You See It: Simple Visualization Techniques for Quantiative Analysis.](http://www.amazon.com/gp/product/0970601980/) Analytics Press. 
+- Few, Stephen. 2012. [Show Me the Numbers: Designing Tables and Graphs to Enlighten.](http://www.amazon.com/gp/product/0970601972) Analytics Press. 
+- Yau, Nathan. 2011. [Visualize This: The FlowingData Guide to Design, Visualization, and Statistics.](http://www.amazon.com/Visualize-This-FlowingData-Visualization-Statistics/dp/0470944889/) Wiley.
+- Few, Stephen. 2006. [Information Dashboard Design: The Effective Visual Communication of Data.](http://www.amazon.com/Information-Dashboard-Design-Effective-Communication/dp/0596100167) O'Reilly Media
+
 
 ---
 

@@ -33,11 +33,59 @@ qplot(hp, mpg, data = mtcars) + theme_dpi()
 <img src="figure/plot.svg" title="plot of chunk plot" alt="plot of chunk plot" width="700px" height="500px" />
 
 
+
+--- &twocol w1:20% w2:80%
+
+## Principles
+
+*** left
+- Chart Types and Data Types
+- Dimensionality
+- Scale
+- Complexity
+- Technical details
+- Beyond charts
+
+*** right
+
+<img src="figure/plot1.svg" title="plot of chunk plot1" alt="plot of chunk plot1" width="450px" height="300px" />
+
+
+---
+
+### Data Types
+
+Level of Meas.   Stats
+--------------- -----------------------------------------------
+Nominal           mode, Chi-squared
+Ordinal           median, percentile
+Interval          mean, std. deviation, correlation, ANOVA
+Continuous        geometric mean, harmonic mean, logarithms
+
+
+Aesthetic       Discrete                 Continuous
+----------  ---------------------------  --------------------------------
+Color       Disparate colors             Sequential or divergent colors
+Size        Unique size for each value   mapping to radius of value
+Shape       A shape for each value       **does not make sense**
+
+---
+
+### Ordered vs. Unordered
+
+Aesthetic  |    Ordered                         |  Unordered
+---------- |  --------------------------------  |   -------------------------
+Color      |  Sequential or divergent colors  |    Rainbow
+Size       |  Increasing or decreasing radius |    **does not make sense**
+Shape      |  **does not make sense**         |    A shape for each value
+
+
 --- plot
 
 ### Example
 
-<img src="figure/plot11.svg" title="plot of chunk plot1" alt="plot of chunk plot1" width="300px" height="200px" /><img src="figure/plot12.svg" title="plot of chunk plot1" alt="plot of chunk plot1" width="300px" height="200px" /><img src="figure/plot13.svg" title="plot of chunk plot1" alt="plot of chunk plot1" width="300px" height="200px" /><img src="figure/plot14.svg" title="plot of chunk plot1" alt="plot of chunk plot1" width="300px" height="200px" /><img src="figure/plot15.svg" title="plot of chunk plot1" alt="plot of chunk plot1" width="300px" height="200px" /><img src="figure/plot16.svg" title="plot of chunk plot1" alt="plot of chunk plot1" width="300px" height="200px" />
+<img src="figure/plot1.11.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="300px" height="200px" /><img src="figure/plot1.12.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="300px" height="200px" /><img src="figure/plot1.13.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="300px" height="200px" /><img src="figure/plot1.14.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="300px" height="200px" /><img src="figure/plot1.15.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="300px" height="200px" /><img src="figure/plot1.16.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="300px" height="200px" />
+
 
 
 --- &twocol w1:40% w2:60%
@@ -169,7 +217,7 @@ qplot(hp, mpg, data = mtcars, color = factor(cyl)) + theme_stata()
 
 ### Stacked Bar
 
-<p align="center"><img src="img/d3stackedbar.png" height="490" width="700"></p>
+<p align="center"><img src="img/d3stackedbar.png" height="550" width="800"></p>
 
 --- 
 
@@ -202,6 +250,7 @@ qplot(hp, mpg, data = mtcars, color = factor(cyl)) + theme_stata()
 
 <p align="center"><img src="img/d3parallelcoordinates.png" height="440" width="875"></p>
 
+---
 
 ### Parallel Sets
 
@@ -217,7 +266,7 @@ qplot(hp, mpg, data = mtcars, color = factor(cyl)) + theme_stata()
 
 ### Tree Map
 
-<p align="center"><img src="img/d3treemap.png" height="420" width="900"></p>
+<p align="center"><img src="img/d3treemap.png" height="470" width="950"></p>
 
 ---
 
@@ -300,24 +349,39 @@ attached base packages:
 [8] base     
 
 other attached packages:
- [1] ggthemes_1.1.0    eeptools_0.1      mapproj_1.1-8.3  
- [4] maps_2.2-8        proto_0.3-9.2     plyr_1.8         
- [7] ggplot2_0.9.3     stringr_0.6.2     knitr_0.9.1      
-[10] slidify_0.3.3     devtools_0.8.0.99
+ [1] ggthemes_1.1.0  eeptools_0.1    mapproj_1.1-8.3 maps_2.2-8     
+ [5] proto_0.3-9.2   plyr_1.8        ggplot2_0.9.3   stringr_0.6.2  
+ [9] knitr_0.9.1     markdown_0.5.3  slidify_0.3.3   devtools_0.8   
 
 loaded via a namespace (and not attached):
  [1] colorspace_1.2-0   dichromat_1.2-4    digest_0.6.0      
  [4] evaluate_0.4.3     formatR_0.7        gtable_0.1.2      
- [7] httr_0.2           labeling_0.1       markdown_0.5.3    
-[10] MASS_7.3-22        memoise_0.1        munsell_0.4       
-[13] parallel_2.15.2    RColorBrewer_1.0-5 RCurl_1.95-3      
-[16] reshape2_1.2.2     scales_0.2.3       tools_2.15.2      
-[19] whisker_0.1        yaml_2.1.5        
+ [7] httr_0.2           labeling_0.1       MASS_7.3-22       
+[10] memoise_0.1        munsell_0.4        parallel_2.15.2   
+[13] RColorBrewer_1.0-5 RCurl_1.95-3       reshape2_1.2.2    
+[16] scales_0.2.3       tools_2.15.2       whisker_0.1       
+[19] yaml_2.1.5        
 ```
+
+
+
+--- 
+
+### References
+
+- Tufte, Edward. 1992. [The Visual Display of Quantitative Information.](http://www.amazon.com/The-Visual-Display-Quantitative-Information/dp/0961392142/) Graphics Press. 
+- Unwin, Theus, and Hofmann. 2006. [Graphics of Large Datasets: Visualizing a Million.](http://www.amazon.com/Graphics-Large-Datasets-Visualizing-Statistics/dp/0387329064) Springer. 
+- Wilkinson, Leland. 2005. The Grammar of Graphics. Springer.
+- Ware, Colin. 2012. [Information Visualization: Perception for Design.](http://www.amazon.com/Information-Visualization-Third-Edition-Technologies/dp/0123814642/ref=reg_hu-rd_add_1_dp) 3rd Edition. Morgan Kaufmann. 
+- Cleveland, William. 1994. [The Elements of Graphing Data.](http://www.amazon.com/gp/product/0963488414/) Hobart Press. 
+- Cleveland, William. 1993. [Visualizing Data.](http://www.amazon.com/gp/product/0963488406) Hobart Press.
+- Few, Stephen. 2009. [Now You See It: Simple Visualization Techniques for Quantiative Analysis.](http://www.amazon.com/gp/product/0970601980/) Analytics Press. 
+- Few, Stephen. 2012. [Show Me the Numbers: Designing Tables and Graphs to Enlighten.](http://www.amazon.com/gp/product/0970601972) Analytics Press. 
+- Yau, Nathan. 2011. [Visualize This: The FlowingData Guide to Design, Visualization, and Statistics.](http://www.amazon.com/Visualize-This-FlowingData-Visualization-Statistics/dp/0470944889/) Wiley.
+- Few, Stephen. 2006. [Information Dashboard Design: The Effective Visual Communication of Data.](http://www.amazon.com/Information-Dashboard-Design-Effective-Communication/dp/0596100167) O'Reilly Media
 
 
 ---
 
-### Categorizing Visualization
 
-<p align="center"><img src="img/periodictablevisualization1.png" height="600" width="900"></p>
+<p align="center"><img src="img/periodictablevisualization1.png" height="550" width="900"></p>
