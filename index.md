@@ -23,7 +23,7 @@ mode        : standalone # {standalone, draft}
 
 --- plot
 
-### Example
+## Example
 
 
 ```r
@@ -39,6 +39,7 @@ qplot(hp, mpg, data = mtcars) + theme_dpi()
 ## Principles
 
 *** left
+- Elements of a chart
 - Chart Types and Data Types
 - Dimensionality
 - Scale
@@ -53,25 +54,46 @@ qplot(hp, mpg, data = mtcars) + theme_dpi()
 
 ---
 
-### Data Types
+## Chart Elements
 
-Level of Meas.   Stats
---------------- -----------------------------------------------
-Nominal           mode, Chi-squared
-Ordinal           median, percentile
-Interval          mean, std. deviation, correlation, ANOVA
-Continuous        geometric mean, harmonic mean, logarithms
+There are a few things that all charts need. There are sometimes strong cases to deviate from these, but they are good rules of thumb. 
 
-
-Aesthetic       Discrete                 Continuous
-----------  ---------------------------  --------------------------------
-Color       Disparate colors             Sequential or divergent colors
-Size        Unique size for each value   mapping to radius of value
-Shape       A shape for each value       **does not make sense**
+- Axis labels and a chart title
+  * These make the chart self-explanatory
+- A legend
+  * What is the unit in the graphic?
+- A scale
+  * How are units mapped to the visual space
+- Annotations
+  * Author and data source (depending on distribution)
 
 ---
 
-### Ordered vs. Unordered
+## Data Types
+
+
+### Statistics we can use
+
+Level of Meas.  |  Stats
+--------------- |  -----------------------------------------------
+Nominal         |  mode, Chi-squared
+Ordinal         |    median, percentile
+Interval        |    mean, std. deviation, correlation, ANOVA
+Continuous      |    geometric mean, harmonic mean, logarithms
+
+### Aesthetics for Mapping
+
+Aesthetic |      Discrete              |  Continuous
+----------|  ------------------------- | -------------------------------
+Color     |  Disparate colors          |  Sequential or divergent colors
+Size      |  Unique size for each value|   mapping to radius of value
+Shape     |  A shape for each value    |   **does not make sense**
+
+---
+
+## Ordered vs. Unordered
+
+### Mapping Possibilities
 
 Aesthetic  |    Ordered                         |  Unordered
 ---------- |  --------------------------------  |   -------------------------
@@ -82,31 +104,16 @@ Shape      |  **does not make sense**         |    A shape for each value
 
 --- plot
 
-### Example
+## Example
 
 <img src="figure/plot1.11.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="300px" height="200px" /><img src="figure/plot1.12.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="300px" height="200px" /><img src="figure/plot1.13.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="300px" height="200px" /><img src="figure/plot1.14.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="300px" height="200px" /><img src="figure/plot1.15.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="300px" height="200px" /><img src="figure/plot1.16.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="300px" height="200px" />
 
 
 
---- &twocol w1:40% w2:60%
-
-## My Header
-
-*** left
-
-- What to do?
-- When the project?
-- Is too big?
-
-*** right
-
-- Don't panic
-- Relax
-- Breathe
 
 --- bg:url(img/badinfographic.png) bg-repeat: no-repeat
 
-### Arbitrary image
+## Arbitrary image
 
 --- quote
 
@@ -114,7 +121,7 @@ Shape      |  **does not make sense**         |    A shape for each value
 
 ---
 
-### Some tips
+## Some tips
 
 >- Focus on the content
 >- Use best practices
@@ -123,7 +130,7 @@ Shape      |  **does not make sense**         |    A shape for each value
 
 ---
 
-### Charting Data
+## Charting Data
 
 >- The type of data we look at determines the way it should be presented
 >- It always starts with the data
@@ -135,20 +142,21 @@ Shape      |  **does not make sense**         |    A shape for each value
 
 --- plot
 
-### Charting Categorical Data
+## Charting Categorical Data
 
-
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1.svg) 
 
 
 --- plot
 
-### Conditional 2
+## Conditional 2
 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.svg) 
 
 
 ---
 
-### Some tips
+## Some tips
 
 >- Have a properly chosen format and design 
 >- Use words, numbers and drawing together
@@ -161,8 +169,7 @@ Shape      |  **does not make sense**         |    A shape for each value
 
 --- plot
 
-### Themes convey brands
-
+## Themes convey brands
 
 
 ```r
@@ -174,8 +181,7 @@ qplot(hp, mpg, data = mtcars) + theme_economist()
 
 --- plot
 
-### They Also Communicate
-
+## They Also Communicate
 
 
 ```r
@@ -188,8 +194,7 @@ qplot(hp, mpg, data = mtcars) + theme_tufte()
 
 --- plot
 
-### They Also Can Confound
-
+## They Also Can Confound
 
 
 ```r
@@ -199,11 +204,9 @@ qplot(hp, mpg, data = mtcars, color = factor(cyl)) + theme_excel2003() + scale_c
 <img src="figure/plot4.svg" title="plot of chunk plot4" alt="plot of chunk plot4" width="750px" height="480px" />
 
 
-
 --- plot
 
-### So Choose Wisely
-
+## So Choose Wisely
 
 
 ```r
@@ -215,69 +218,87 @@ qplot(hp, mpg, data = mtcars, color = factor(cyl)) + theme_stata()
 
 ---
 
-### Stacked Bar
+## Stacked Bar
 
 <p align="center"><img src="img/d3stackedbar.png" height="550" width="800"></p>
 
 --- 
 
-### Box and Whisker
+## Box and Whisker
 
 <p align="center"><img src="img/d3boxwhisker.png" height="490" width="700"></p>
 
 ---
 
-### Bullet Chart
+## Bullet Chart
 
 <p align="center"><img src="img/d3bulletchart.png" height="320" width="800"></p>
 
-
 ---
 
-### Calendar
+## Calendar
 
 <p align="center"><img src="img/d3calendar.png" height="440" width="875"></p>
 
 ---
 
-### Lines
+## Lines
 
 <p align="center"><img src="img/d3linemany.png" height="440" width="875"></p>
 
 ---
 
-### Parallel Coordinates
+## Parallel Coordinates
 
 <p align="center"><img src="img/d3parallelcoordinates.png" height="440" width="875"></p>
 
 ---
 
-### Parallel Sets
+## Parallel Sets
 
 <p align="center"><img src="img/d3parallelsets.png" height="440" width="875"></p>
 
 ---
 
-### Streamgraph
+## Streamgraph
 
 <p align="center"><img src="img/d3streamgraph.png" height="561" width="661"></p>
 
 ---
 
-### Tree Map
+## Tree Map
 
 <p align="center"><img src="img/d3treemap.png" height="470" width="950"></p>
 
 ---
 
-### Word Cloud
+## Word Cloud
 
 <p align="center"><img src="img/d3wordcloud.png" height="420" width="900"></p>
 
+--- &twocol w1:50% w2:50%
+
+## Graphics Types
+
+*** left
+
+### Raster
+- Files like **jpg** , **png** , **gif**. 
+- Fixed scale, aspect ratio, and size
+- Reasonable file size
+- Viewable in almost any image viewing and editing system, including any modern web browser, PowerPoint, etc.
+
+*** right
+
+### Vector
+- Files like **pdf** and **svg**
+- Infinitely zoomable, adjustable on the fly
+- Larger file size
+- Viewable and usable in fewer systems. SVGs can be used in modern web browsers. PDFs included in other PDF reports. 
 
 --- plot
 
-### Ugly graphic
+## Ugly graphic
 
 <script>
     function init() {
@@ -333,7 +354,7 @@ qplot(hp, mpg, data = mtcars, color = factor(cyl)) + theme_stata()
 
 ---
 
-### Backmatter
+## Backmatter
 
 
 ```r
@@ -349,25 +370,25 @@ attached base packages:
 [8] base     
 
 other attached packages:
- [1] ggthemes_1.1.0  eeptools_0.1    mapproj_1.1-8.3 maps_2.2-8     
- [5] proto_0.3-9.2   plyr_1.8        ggplot2_0.9.3   stringr_0.6.2  
- [9] knitr_0.9.1     markdown_0.5.3  slidify_0.3.3   devtools_0.8   
+ [1] vcd_1.2-13       colorspace_1.2-0 MASS_7.3-22      ggthemes_1.1.0  
+ [5] eeptools_0.1     mapproj_1.1-8.3  maps_2.2-8       proto_0.3-9.2   
+ [9] plyr_1.8         ggplot2_0.9.3    stringr_0.6.2    knitr_0.9       
+[13] markdown_0.5.3   whisker_0.1      slidify_0.3.3    devtools_0.8    
 
 loaded via a namespace (and not attached):
- [1] colorspace_1.2-0   dichromat_1.2-4    digest_0.6.0      
- [4] evaluate_0.4.3     formatR_0.7        gtable_0.1.2      
- [7] httr_0.2           labeling_0.1       MASS_7.3-22       
-[10] memoise_0.1        munsell_0.4        parallel_2.15.2   
-[13] RColorBrewer_1.0-5 RCurl_1.95-3       reshape2_1.2.2    
-[16] scales_0.2.3       tools_2.15.2       whisker_0.1       
-[19] yaml_2.1.5        
+ [1] dichromat_1.2-4    digest_0.6.0       evaluate_0.4.3    
+ [4] formatR_0.7        gtable_0.1.2       httr_0.2          
+ [7] labeling_0.1       memoise_0.1        munsell_0.4       
+[10] parallel_2.15.2    RColorBrewer_1.0-5 RCurl_1.95-3      
+[13] reshape2_1.2.2     scales_0.2.3       tools_2.15.2      
+[16] yaml_2.1.5        
 ```
 
 
 
 --- 
 
-### References
+## References
 
 - Tufte, Edward. 1992. [The Visual Display of Quantitative Information.](http://www.amazon.com/The-Visual-Display-Quantitative-Information/dp/0961392142/) Graphics Press. 
 - Unwin, Theus, and Hofmann. 2006. [Graphics of Large Datasets: Visualizing a Million.](http://www.amazon.com/Graphics-Large-Datasets-Visualizing-Statistics/dp/0387329064) Springer. 
@@ -379,7 +400,6 @@ loaded via a namespace (and not attached):
 - Few, Stephen. 2012. [Show Me the Numbers: Designing Tables and Graphs to Enlighten.](http://www.amazon.com/gp/product/0970601972) Analytics Press. 
 - Yau, Nathan. 2011. [Visualize This: The FlowingData Guide to Design, Visualization, and Statistics.](http://www.amazon.com/Visualize-This-FlowingData-Visualization-Statistics/dp/0470944889/) Wiley.
 - Few, Stephen. 2006. [Information Dashboard Design: The Effective Visual Communication of Data.](http://www.amazon.com/Information-Dashboard-Design-Effective-Communication/dp/0596100167) O'Reilly Media
-
 
 ---
 

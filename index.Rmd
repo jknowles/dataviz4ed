@@ -28,7 +28,7 @@ library(ggthemes)
 
 --- plot
 
-### Example
+## Example
 
 ```{r plot, fig.height=5.5, fig.width=8.5,fig.align="center",out.width="700px",out.height="500px"}
 qplot(hp,mpg,data=mtcars)+theme_dpi()
@@ -40,6 +40,7 @@ qplot(hp,mpg,data=mtcars)+theme_dpi()
 ## Principles
 
 *** left
+- Elements of a chart
 - Chart Types and Data Types
 - Dimensionality
 - Scale
@@ -50,30 +51,52 @@ qplot(hp,mpg,data=mtcars)+theme_dpi()
 *** right
 
 ```{r plot1,out.width="450px",out.height="300px",echo=FALSE}
-qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()
+qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()+
+  labs(x="Horsepower",y="Quart. Mile Time",title="Power and Speed")
 ```
 
 ---
 
-### Data Types
+## Chart Elements
 
-Level of Meas.   Stats
---------------- -----------------------------------------------
-Nominal           mode, Chi-squared
-Ordinal           median, percentile
-Interval          mean, std. deviation, correlation, ANOVA
-Continuous        geometric mean, harmonic mean, logarithms
+There are a few things that all charts need. There are sometimes strong cases to deviate from these, but they are good rules of thumb. 
 
-
-Aesthetic       Discrete                 Continuous
-----------  ---------------------------  --------------------------------
-Color       Disparate colors             Sequential or divergent colors
-Size        Unique size for each value   mapping to radius of value
-Shape       A shape for each value       **does not make sense**
+- Axis labels and a chart title
+  * These make the chart self-explanatory
+- A legend
+  * What is the unit in the graphic?
+- A scale
+  * How are units mapped to the visual space
+- Annotations
+  * Author and data source (depending on distribution)
 
 ---
 
-### Ordered vs. Unordered
+## Data Types
+
+
+### Statistics we can use
+
+Level of Meas.  |  Stats
+--------------- |  -----------------------------------------------
+Nominal         |  mode, Chi-squared
+Ordinal         |    median, percentile
+Interval        |    mean, std. deviation, correlation, ANOVA
+Continuous      |    geometric mean, harmonic mean, logarithms
+
+### Aesthetics for Mapping
+
+Aesthetic |      Discrete              |  Continuous
+----------|  ------------------------- | -------------------------------
+Color     |  Disparate colors          |  Sequential or divergent colors
+Size      |  Unique size for each value|   mapping to radius of value
+Shape     |  A shape for each value    |   **does not make sense**
+
+---
+
+## Ordered vs. Unordered
+
+### Mapping Possibilities
 
 Aesthetic  |    Ordered                         |  Unordered
 ---------- |  --------------------------------  |   -------------------------
@@ -84,7 +107,7 @@ Shape      |  **does not make sense**         |    A shape for each value
 
 --- plot
 
-### Example
+## Example
 
 ```{r plot1.1,out.width="300px",out.height="200px",echo=FALSE}
 qplot(hp,mpg,data=mtcars)+theme_dpi()
@@ -96,25 +119,10 @@ qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()
 ```
 
 
---- &twocol w1:40% w2:60%
-
-## My Header
-
-*** left
-
-- What to do?
-- When the project?
-- Is too big?
-
-*** right
-
-- Don't panic
-- Relax
-- Breathe
 
 --- bg:url(img/badinfographic.png) bg-repeat: no-repeat
 
-### Arbitrary image
+## Arbitrary image
 
 --- quote
 
@@ -122,7 +130,7 @@ qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()
 
 ---
 
-### Some tips
+## Some tips
 
 >- Focus on the content
 >- Use best practices
@@ -131,7 +139,7 @@ qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()
 
 ---
 
-### Charting Data
+## Charting Data
 
 >- The type of data we look at determines the way it should be presented
 >- It always starts with the data
@@ -143,7 +151,7 @@ qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()
 
 --- plot
 
-### Charting Categorical Data
+## Charting Categorical Data
 
 ```{r echo=FALSE}
 library(vcd)
@@ -157,14 +165,15 @@ mosaic(~race+proflvl,data=df,shade=TRUE)
 
 --- plot
 
-### Conditional 2
+## Conditional 2
+
 ```{r echo=FALSE}
 mosaic(~race+female,data=df,shade=TRUE)
 ```
 
 ---
 
-### Some tips
+## Some tips
 
 >- Have a properly chosen format and design 
 >- Use words, numbers and drawing together
@@ -177,8 +186,7 @@ mosaic(~race+female,data=df,shade=TRUE)
 
 --- plot
 
-### Themes convey brands
-
+## Themes convey brands
 
 ```{r plot2, fig.height=5.5, fig.width=8.5,fig.align="center",out.width="750px",out.height="480px"}
 qplot(hp,mpg,data=mtcars)+theme_economist()
@@ -186,8 +194,7 @@ qplot(hp,mpg,data=mtcars)+theme_economist()
 
 --- plot
 
-### They Also Communicate
-
+## They Also Communicate
 
 ```{r plot3, fig.height=5.5, fig.width=8.5,fig.align="center",out.width="750px",out.height="480px"}
 qplot(hp,mpg,data=mtcars)+theme_tufte()
@@ -196,18 +203,15 @@ qplot(hp,mpg,data=mtcars)+theme_tufte()
 
 --- plot
 
-### They Also Can Confound
-
+## They Also Can Confound
 
 ```{r plot4, fig.height=5.5, fig.width=8.5,fig.align="center",out.width="750px",out.height="480px"}
 qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_excel2003()+scale_color_excel2003()
 ```
 
-
 --- plot
 
-### So Choose Wisely
-
+## So Choose Wisely
 
 ```{r plot5, fig.height=5.5, fig.width=8.5,fig.align="center",out.width="750px",out.height="480px"}
 qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_stata()
@@ -215,69 +219,87 @@ qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_stata()
 
 ---
 
-### Stacked Bar
+## Stacked Bar
 
 <p align="center"><img src="img/d3stackedbar.png" height="550" width="800"></p>
 
 --- 
 
-### Box and Whisker
+## Box and Whisker
 
 <p align="center"><img src="img/d3boxwhisker.png" height="490" width="700"></p>
 
 ---
 
-### Bullet Chart
+## Bullet Chart
 
 <p align="center"><img src="img/d3bulletchart.png" height="320" width="800"></p>
 
-
 ---
 
-### Calendar
+## Calendar
 
 <p align="center"><img src="img/d3calendar.png" height="440" width="875"></p>
 
 ---
 
-### Lines
+## Lines
 
 <p align="center"><img src="img/d3linemany.png" height="440" width="875"></p>
 
 ---
 
-### Parallel Coordinates
+## Parallel Coordinates
 
 <p align="center"><img src="img/d3parallelcoordinates.png" height="440" width="875"></p>
 
 ---
 
-### Parallel Sets
+## Parallel Sets
 
 <p align="center"><img src="img/d3parallelsets.png" height="440" width="875"></p>
 
 ---
 
-### Streamgraph
+## Streamgraph
 
 <p align="center"><img src="img/d3streamgraph.png" height="561" width="661"></p>
 
 ---
 
-### Tree Map
+## Tree Map
 
 <p align="center"><img src="img/d3treemap.png" height="470" width="950"></p>
 
 ---
 
-### Word Cloud
+## Word Cloud
 
 <p align="center"><img src="img/d3wordcloud.png" height="420" width="900"></p>
 
+--- &twocol w1:50% w2:50%
+
+## Graphics Types
+
+*** left
+
+### Raster
+- Files like **jpg** , **png** , **gif**. 
+- Fixed scale, aspect ratio, and size
+- Reasonable file size
+- Viewable in almost any image viewing and editing system, including any modern web browser, PowerPoint, etc.
+
+*** right
+
+### Vector
+- Files like **pdf** and **svg**
+- Infinitely zoomable, adjustable on the fly
+- Larger file size
+- Viewable and usable in fewer systems. SVGs can be used in modern web browsers. PDFs included in other PDF reports. 
 
 --- plot
 
-### Ugly graphic
+## Ugly graphic
 
 <script>
     function init() {
@@ -333,7 +355,7 @@ qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_stata()
 
 ---
 
-### Backmatter
+## Backmatter
 
 ```{r wrapup,echo=TRUE,eval=TRUE,results="markup"}
 print(sessionInfo(),locale=FALSE)
@@ -342,7 +364,7 @@ print(sessionInfo(),locale=FALSE)
 
 --- 
 
-### References
+## References
 
 - Tufte, Edward. 1992. [The Visual Display of Quantitative Information.](http://www.amazon.com/The-Visual-Display-Quantitative-Information/dp/0961392142/) Graphics Press. 
 - Unwin, Theus, and Hofmann. 2006. [Graphics of Large Datasets: Visualizing a Million.](http://www.amazon.com/Graphics-Large-Datasets-Visualizing-Statistics/dp/0387329064) Springer. 
@@ -354,7 +376,6 @@ print(sessionInfo(),locale=FALSE)
 - Few, Stephen. 2012. [Show Me the Numbers: Designing Tables and Graphs to Enlighten.](http://www.amazon.com/gp/product/0970601972) Analytics Press. 
 - Yau, Nathan. 2011. [Visualize This: The FlowingData Guide to Design, Visualization, and Statistics.](http://www.amazon.com/Visualize-This-FlowingData-Visualization-Statistics/dp/0470944889/) Wiley.
 - Few, Stephen. 2006. [Information Dashboard Design: The Effective Visual Communication of Data.](http://www.amazon.com/Information-Dashboard-Design-Effective-Communication/dp/0596100167) O'Reilly Media
-
 
 ---
 
