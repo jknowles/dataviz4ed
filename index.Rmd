@@ -24,6 +24,7 @@ opts_chunk$set(fig.width=8,fig.height=5.5,message=FALSE,error=FALSE,warning=FALS
 library(eeptools)
 library(ggplot2)
 library(ggthemes)
+source("data/simulate_data.R")
 ```
 
 --- plot
@@ -119,7 +120,6 @@ qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()
 ```
 
 
-
 --- bg:url(img/badinfographic.png) bg-repeat: no-repeat
 
 ## Arbitrary image
@@ -173,6 +173,232 @@ mosaic(~race+female,data=df,shade=TRUE)
 
 ---
 
+## Complexity
+
+How do we display a ton of data--tens or hundreds of thousands of observations?
+
+1. Summarize the data
+  * Display summary statistics visually depicting the central tendency and spread of data
+2. Plot the raw data
+  * Annotate wisely to display the main message
+3. Model the data
+  * Use a statistical model to summarize features of the data
+
+Let's look at some examples of this. 
+
+--- 
+
+## Summarizing Data
+
+- The most simple summaries are measures of central tendency, most easily understood
+- It is important to look at the spread of data too though
+- If time is of interest, we are interested in trends
+
+---
+
+## Plotting Means
+
+```{r plotmeans,echo=FALSE}
+schooldat<-ddply(student_long,.(schid,grade),
+                 summarize,meanR=mean(readSS,na.rm=T),
+                 meanM=mean(mathSS,na.rm=T),sdR=sd(readSS,na.rm=T),
+                 sdM=sd(mathSS,na.rm=T),
+                 count=length(readSS),
+                 perminority=1-(length(race[race=="W"])/count))
+
+qplot(factor(schid),meanR,data=schooldat[schooldat$schid<25 & grade==3,],
+      stat='identity')+theme_dpi()
+
+```
+
+But, what's wrong with this plot?
+
+--- &twocol w1:20% w2:80%
+
+## Mistakes
+
+*** left
+
+>- No sense of scale
+>- Means can be skewed
+>- Simple means are not meaningful
+>- With assessment scores we need to know grade distribution
+>- Let's try to improve this
+
+*** right
+
+```{r plotmeanssmall,echo=FALSE,out.width='300px',out.height='250px'}
+qplot(factor(schid),meanR,data=schooldat[schooldat$schid<25,],
+      stat='identity')+theme_dpi()
+```
+
+---
+
+## Try 2
+
+```{r meanplot2,echo=FALSE}
+schooldat$count<-schooldat$count+rnorm(length(schooldat$count),0,60)
+qplot(factor(schid),meanR,data=schooldat[schooldat$schid<25 & grade==3,],
+      stat='identity',size=count)+theme_dpi()+
+  labs(x="School",y="Mean Reading Score",title="Mean School Reading Score")
+```
+
+--- Another Example
+
+With the same physical space, what additional information are we providing?
+
+```{r meanplot3, echo=FALSE}
+ggplot(schooldat[schooldat$schid<25 & grade==3,],
+       aes(x=factor(schid),ymin=meanR-sdR,ymax=meanR+sdR,
+                     color=perminority))+geom_linerange(aes(alpha=0.7))+
+  geom_point(aes(y=meanR,size=count))+
+  theme_dpi()+labs(x="School",y="Mean Reading Score",title="Mean School Reading Score")
+
+```
+
+How can we do even better?
+
+---
+
+## Annotation
+
+We still aren't sure what the mean scale score means. Let's see a couple more additions that can realy make this useful. 
+
+```{r meanplot4, echo=FALSE}
+ggplot(schooldat[schooldat$schid<25 & grade==3,],
+       aes(x=factor(schid),ymin=meanR-sdR,ymax=meanR+sdR,
+                     color=perminority))+geom_linerange(aes(alpha=0.7))+
+  geom_point(aes(y=meanR,size=count))+
+  theme_dpi()+labs(x="School",y="Mean Reading Score",title="Mean School Reading Score")+geom_hline(yintercept=421,color=I("red"))+
+  geom_hline(yintercept=502,color=I("yellow"))
+
+```
+
+---
+
+## Raw Data
+
+Sometimes, we can get away with showing the raw data, that is, all data points. We may want to do this for a few reasons:
+
+- the "wow" effect, 
+- because it is easier, 
+- or because it looks better aesthetically. 
+
+How could it be done?
+
+---
+
+## 600,000 Observations Too Many
+
+```{r rawdata1,echo=FALSE,dev='png'}
+qplot(readSS,mathSS,data=student_long)+theme_dpi()+
+  labs(x="Reading",y="Math",title="Relationship with Math and Reading")
+```
+
+---
+
+## Spread the Data Out
+
+- Without reducing the data points we need to do three things to be successful
+
+1. Spread the data out
+  * These points overlap each other and make a mess
+2. Reduce the ink
+  * Each point has too much "weight"
+3. Add Reference Points
+  * 600,000 observations in one panel is not meaningful
+  
+---
+
+## What About This
+
+```{r rawdata2,echo=FALSE,dev='png'}
+qplot(readSS,mathSS,data=student_long,alpha=I(0.01))+facet_wrap(~grade)+
+  theme_dpi()+geom_smooth()+
+  labs(x="Reading",y="Math",title="Relationship with Math and Reading")
+```
+
+---
+
+## Even Smaller Multiples
+
+```{r rawdata3,echo=FALSE,dev='png'}
+qplot(readSS,mathSS,data=student_long,alpha=I(0.05))+facet_grid(race~grade)+
+  theme_dpi()+geom_smooth()+
+  labs(x="Reading",y="Math",title="Relationship with Math and Reading")
+```
+
+--- quote
+
+## Modeling the Data
+
+<p><q> All models are <span class = 'red'>wrong</span>. Some models are useful.</q></p>
+
+---
+
+## Regression Trees
+
+Trees are ways to divide up the variation in a dataset and rank the explanatory values. 
+
+```{r echo=FALSE}
+library(partykit)
+mypar<-ctree_control(testtype="Bonferroni",mincriterion=0.99,minsplit=40,
+                     teststat="max",maxdepth=4)
+
+mymod<-ctree(readSS~race+female+disab+sch_fay+dist_fay+attday+schoolscore,
+             data=subset(student_long,grade==4),controls=mypar)
+
+plot(mymod)
+
+```
+
+---
+
+## Smoothers 
+
+```{r echo=FALSE}
+ggplot(student_long[student_long$grade==5,],
+       aes(y=readSS,x=mathSS,color=race))+
+  geom_smooth(size=2)+theme_dpi()+
+  labs(x="Math",y="Read",title="Smoothers of Assessment Score \n By Race")
+
+```
+
+---
+
+## Model Results
+
+<p align="center"><img src="img/machinelearnings.svg" height="490" width="700"></p>
+
+
+--- 
+
+## Model Results II
+
+<p align="center"><img src="img/modeldiag1.svg" height="490" width="700"></p>
+
+
+---
+
+## Model Results III
+
+<p align="center"><img src="img/parttree.svg" height="490" width="700"></p>
+
+
+---
+
+We can combine these features. 
+
+>- Facets with smoother lines for references
+>- Summary plots with raw data in the background
+>- Reference lines and group comparisons
+
+---
+
+<p align="center"><img src="img/g3belowproficientreadingscores.png" height="490" width="700"></p>
+
+
+---
 ## Some tips
 
 >- Have a properly chosen format and design 
@@ -296,6 +522,30 @@ qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_stata()
 - Infinitely zoomable, adjustable on the fly
 - Larger file size
 - Viewable and usable in fewer systems. SVGs can be used in modern web browsers. PDFs included in other PDF reports. 
+
+---
+
+## Beyond Graphics
+
+We have a number of other techniques we can use beyond simple charts. 
+
+- Animations
+- Interactive demos
+- Summary tables
+- Videos
+- Web sites
+
+--- map
+
+## Maps
+
+<p align="center"><img src="img/evenFRLmap.gif" height="600" width="550"></p>
+
+--- animation
+
+## Animations
+
+<p align="center"><img src="img/TESTstuplot.gif" height="550" width="750"></p>
 
 --- plot
 

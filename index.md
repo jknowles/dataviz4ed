@@ -19,6 +19,155 @@ mode        : standalone # {standalone, draft}
 5. What tools to use
 
 
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
+
+```
+## Warning: number of items to replace is not a multiple of replacement
+## length
+```
 
 
 --- plot
@@ -110,7 +259,6 @@ Shape      |  **does not make sense**         |    A shape for each value
 
 
 
-
 --- bg:url(img/badinfographic.png) bg-repeat: no-repeat
 
 ## Arbitrary image
@@ -156,6 +304,181 @@ Shape      |  **does not make sense**         |    A shape for each value
 
 ---
 
+## Complexity
+
+How do we display a ton of data--tens or hundreds of thousands of observations?
+
+1. Summarize the data
+  * Display summary statistics visually depicting the central tendency and spread of data
+2. Plot the raw data
+  * Annotate wisely to display the main message
+3. Model the data
+  * Use a statistical model to summarize features of the data
+
+Let's look at some examples of this. 
+
+--- 
+
+## Summarizing Data
+
+- The most simple summaries are measures of central tendency, most easily understood
+- It is important to look at the spread of data too though
+- If time is of interest, we are interested in trends
+
+---
+
+## Plotting Means
+
+![plot of chunk plotmeans](figure/plotmeans.svg) 
+
+
+But, what's wrong with this plot?
+
+--- &twocol w1:20% w2:80%
+
+## Mistakes
+
+*** left
+
+>- No sense of scale
+>- Means can be skewed
+>- Simple means are not meaningful
+>- With assessment scores we need to know grade distribution
+>- Let's try to improve this
+
+*** right
+
+<img src="figure/plotmeanssmall.svg" title="plot of chunk plotmeanssmall" alt="plot of chunk plotmeanssmall" width="300px" height="250px" />
+
+
+---
+
+## Try 2
+
+![plot of chunk meanplot2](figure/meanplot2.svg) 
+
+
+--- Another Example
+
+With the same physical space, what additional information are we providing?
+
+![plot of chunk meanplot3](figure/meanplot3.svg) 
+
+
+How can we do even better?
+
+---
+
+## Annotation
+
+We still aren't sure what the mean scale score means. Let's see a couple more additions that can realy make this useful. 
+
+![plot of chunk meanplot4](figure/meanplot4.svg) 
+
+
+---
+
+## Raw Data
+
+Sometimes, we can get away with showing the raw data, that is, all data points. We may want to do this for a few reasons:
+
+- the "wow" effect, 
+- because it is easier, 
+- or because it looks better aesthetically. 
+
+How could it be done?
+
+---
+
+## 600,000 Observations Too Many
+
+![plot of chunk rawdata1](figure/rawdata1.png) 
+
+
+---
+
+## Spread the Data Out
+
+- Without reducing the data points we need to do three things to be successful
+
+1. Spread the data out
+  * These points overlap each other and make a mess
+2. Reduce the ink
+  * Each point has too much "weight"
+3. Add Reference Points
+  * 600,000 observations in one panel is not meaningful
+  
+---
+
+## What About This
+
+![plot of chunk rawdata2](figure/rawdata2.png) 
+
+
+---
+
+## Even Smaller Multiples
+
+![plot of chunk rawdata3](figure/rawdata3.png) 
+
+
+--- quote
+
+## Modeling the Data
+
+<p><q> All models are <span class = 'red'>wrong</span>. Some models are useful.</q></p>
+
+---
+
+## Regression Trees
+
+Trees are ways to divide up the variation in a dataset and rank the explanatory values. 
+
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.svg) 
+
+
+---
+
+## Smoothers 
+
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.svg) 
+
+
+---
+
+## Model Results
+
+<p align="center"><img src="img/machinelearnings.svg" height="490" width="700"></p>
+
+
+--- 
+
+## Model Results II
+
+<p align="center"><img src="img/modeldiag1.svg" height="490" width="700"></p>
+
+
+---
+
+## Model Results III
+
+<p align="center"><img src="img/parttree.svg" height="490" width="700"></p>
+
+
+---
+
+We can combine these features. 
+
+>- Facets with smoother lines for references
+>- Summary plots with raw data in the background
+>- Reference lines and group comparisons
+
+---
+
+<p align="center"><img src="img/g3belowproficientreadingscores.png" height="490" width="700"></p>
+
+
+---
 ## Some tips
 
 >- Have a properly chosen format and design 
@@ -296,6 +619,30 @@ qplot(hp, mpg, data = mtcars, color = factor(cyl)) + theme_stata()
 - Larger file size
 - Viewable and usable in fewer systems. SVGs can be used in modern web browsers. PDFs included in other PDF reports. 
 
+---
+
+## Beyond Graphics
+
+We have a number of other techniques we can use beyond simple charts. 
+
+- Animations
+- Interactive demos
+- Summary tables
+- Videos
+- Web sites
+
+--- map
+
+## Maps
+
+<p align="center"><img src="img/evenFRLmap.gif" height="600" width="550"></p>
+
+--- animation
+
+## Animations
+
+<p align="center"><img src="img/TESTstuplot.gif" height="550" width="750"></p>
+
 --- plot
 
 ## Ugly graphic
@@ -366,22 +713,28 @@ R version 2.15.2 (2012-10-26)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 attached base packages:
-[1] grid      stats     graphics  grDevices utils     datasets  methods  
-[8] base     
+ [1] stats4    grid      splines   stats     graphics  grDevices utils    
+ [8] datasets  methods   base     
 
 other attached packages:
- [1] vcd_1.2-13       colorspace_1.2-0 MASS_7.3-22      ggthemes_1.1.0  
- [5] eeptools_0.1     mapproj_1.1-8.3  maps_2.2-8       proto_0.3-9.2   
- [9] plyr_1.8         ggplot2_0.9.3    stringr_0.6.2    knitr_0.9       
-[13] markdown_0.5.3   whisker_0.1      slidify_0.3.3    devtools_0.8    
+ [1] ggthemes_1.1.0    knitr_0.9         markdown_0.5.3   
+ [4] whisker_0.1       slidify_0.3.3     devtools_0.8     
+ [7] eeptools_0.1      mapproj_1.1-8.3   maps_2.2-8       
+[10] proto_0.3-9.2     plyr_1.8          stringr_0.6.2    
+[13] mgcv_1.7-22       Formula_1.1-0     partykit_0.1-4   
+[16] party_1.0-3       vcd_1.2-13        colorspace_1.2-0 
+[19] MASS_7.3-22       strucchange_1.4-7 sandwich_2.2-9   
+[22] zoo_1.7-9         coin_1.0-21       mvtnorm_0.9-9993 
+[25] modeltools_0.2-19 survival_2.37-2   ggplot2_0.9.3    
 
 loaded via a namespace (and not attached):
  [1] dichromat_1.2-4    digest_0.6.0       evaluate_0.4.3    
  [4] formatR_0.7        gtable_0.1.2       httr_0.2          
- [7] labeling_0.1       memoise_0.1        munsell_0.4       
-[10] parallel_2.15.2    RColorBrewer_1.0-5 RCurl_1.95-3      
-[13] reshape2_1.2.2     scales_0.2.3       tools_2.15.2      
-[16] yaml_2.1.5        
+ [7] labeling_0.1       lattice_0.20-10    Matrix_1.0-10     
+[10] memoise_0.1        munsell_0.4        nlme_3.1-106      
+[13] parallel_2.15.2    RColorBrewer_1.0-5 RCurl_1.95-3      
+[16] reshape2_1.2.2     scales_0.2.3       tools_2.15.2      
+[19] yaml_2.1.5        
 ```
 
 
