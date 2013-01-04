@@ -394,9 +394,17 @@ We can combine these features.
 >- Reference lines and group comparisons
 
 ---
+## Student Growth
 
 <p align="center"><img src="img/g3belowproficientreadingscores.png" height="490" width="700"></p>
 
+---
+
+## Why does this work?
+
+>- Annotation
+>- Labeling
+>- Lots of data-ink
 
 ---
 ## Some tips
