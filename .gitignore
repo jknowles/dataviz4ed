@@ -3,4 +3,5 @@
 .RData
 .Rproj
 figure
+data/cache.rda
 

@@ -18,7 +18,7 @@ mode        : standalone # {standalone, draft}
 4. Best practices and advice
 5. What tools to use
 
-```{r knitrsetup,echo=FALSE,eval=TRUE,results="hide"}
+```{r knitrsetup,echo=FALSE,eval=TRUE,results="hide",error=FALSE,message=FALSE,warning=FALSE}
 library(knitr)
 opts_chunk$set(fig.width=8,fig.height=5.5,message=FALSE,error=FALSE,warning=FALSE,echo=TRUE,dev="svg",comment=NA)
 library(eeptools)
@@ -54,6 +54,11 @@ qplot(hp,mpg,data=mtcars)+theme_dpi()
 ```{r plot1,out.width="450px",out.height="300px",echo=FALSE}
 qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()+
   labs(x="Horsepower",y="Quart. Mile Time",title="Power and Speed")
+rm(PROBS,commonnames,grade,i,number_of_years)
+```
+
+```{r,echo=FALSE,results='hide'}
+gc()
 ```
 
 ---
@@ -243,9 +248,11 @@ qplot(factor(schid),meanR,data=schooldat[schooldat$schid<25 & grade==3,],
   labs(x="School",y="Mean Reading Score",title="Mean School Reading Score")
 ```
 
---- Another Example
+--- 
 
-With the same physical space, what additional information are we providing?
+## Another Example
+
+With the same space, what additional information are we providing?
 
 ```{r meanplot3, echo=FALSE}
 ggplot(schooldat[schooldat$schid<25 & grade==3,],
@@ -309,7 +316,6 @@ qplot(readSS,mathSS,data=student_long)+theme_dpi()+
   * 600,000 observations in one panel is not meaningful
   
 ---
-
 ## What About This
 
 ```{r rawdata2,echo=FALSE,dev='png'}
@@ -368,24 +374,18 @@ ggplot(student_long[student_long$grade==5,],
 
 ## Model Results
 
-<p align="center"><img src="img/machinelearnings.svg" height="490" width="700"></p>
+<p align="center"><img src="img/machinelearning.svg" height="490" width="700"></p>
 
 
 --- 
 
 ## Model Results II
 
-<p align="center"><img src="img/modeldiag1.svg" height="490" width="700"></p>
-
-
----
-
-## Model Results III
-
 <p align="center"><img src="img/parttree.svg" height="490" width="700"></p>
 
-
 ---
+
+## Combining Features
 
 We can combine these features. 
 
@@ -396,7 +396,7 @@ We can combine these features.
 ---
 ## Student Growth
 
-<p align="center"><img src="img/g3belowproficientreadingscores.png" height="490" width="700"></p>
+<p align="center"><img src="img/stuplot25.png" height="490" width="700"></p>
 
 ---
 
@@ -422,7 +422,7 @@ We can combine these features.
 
 ## Themes convey brands
 
-```{r plot2, fig.height=5.5, fig.width=8.5,fig.align="center",out.width="750px",out.height="480px"}
+```{r plot2, fig.height=5.5, fig.width=8.5,fig.align="center",out.width="750px",out.height="480px",echo=FALSE}
 qplot(hp,mpg,data=mtcars)+theme_economist()
 ```
 
@@ -440,7 +440,7 @@ qplot(hp,mpg,data=mtcars)+theme_tufte()
 ## They Also Can Confound
 
 ```{r plot4, fig.height=5.5, fig.width=8.5,fig.align="center",out.width="750px",out.height="480px"}
-qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_excel2003()+scale_color_excel2003()
+qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_excel()+scale_color_excel()
 ```
 
 --- plot
@@ -513,7 +513,7 @@ qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_stata()
 
 --- &twocol w1:50% w2:50%
 
-## Graphics Types
+## Graphics Files
 
 *** left
 
@@ -554,6 +554,93 @@ We have a number of other techniques we can use beyond simple charts.
 ## Animations
 
 <p align="center"><img src="img/TESTstuplot.gif" height="550" width="750"></p>
+
+
+---
+
+## Technologies
+
+The technology you choose to do visualizations is largely a question of personal productivity, but with some important caveats:
+
+- In the future, more and more content is going to be delivered in a paperless world, so pick a technology that can leverage web/tablet/phone interfaces
+- Different technologies are useful for different levels of finish and polish; Adobe Illustrator is great for publication quality graphics, R is a great tool for rapidly prototyping different visualizations
+- Chose a technology that best serves your **consumer**, not you are the producer. Charts are a service to the consumer, not to the creator. 
+
+---
+
+## Some Technologies
+
+```{r technologies,echo=FALSE}
+techs<-c("AI","R","Stata/SPSS","D3","Tableau","JavaScript","Processing","Excel","SAS")
+speed  <-c(1,10,5,6,8,4,5,9,4)
+quality<-c(10,8,5,9,7,8,9,2,4)
+web<-c(1,1,0,1,0,1,1,0,0)
+viz<-data.frame(techs=techs,speed=speed,quality=quality,web=web)
+
+qplot(speed,quality,data=viz,geom="point",color=factor(web),size=I(4))+
+  coord_cartesian(x=c(0,11),y=c(0,11))+theme_dpi()+geom_text(aes(label=techs),color="black",vjust=1.4,hjust=1)+theme(axis.text=element_blank(),axis.ticks=element_blank(),legend.position="bottom")+
+  scale_color_manual(values=c("0"="brown","1"="purple"))+
+  labs(title="Speed and Quality Tradeoffs in Viz Tech")
+```
+
+--- &twocol w1:20% w2:80%
+
+## Group Exercise
+
+Visualize some education data. Imagine we have the following dimensions and want to present more of them on a plot like that on the right.
+
+*** left
+
+- Grade
+- Disability Status
+- Type of Disability
+- Language Proficiency
+- School
+- Math Score
+- Reading Curriculum
+- Math Curriculum
+
+*** right
+
+```{r studentexample,echo=FALSE,out.width='300px',out.height='250px'}
+qplot(attday,readSS,
+      data=student_long[student_long$grade==3 & 
+                          student_long$stuid %in% 
+                          sample(student_long$stuid,8000,replace=FALSE),],color=race,alpha=I(0.5))+
+  theme_dpi()+geom_smooth(method='lm',se=FALSE,size=1.1)+
+  labs(title="Attendance and Assessment Scores Grade 3")
+rm(student_long)
+```
+
+
+---
+
+## Backmatter
+
+```{r wrapup,echo=TRUE,eval=TRUE,results="markup"}
+print(sessionInfo(),locale=FALSE)
+```
+
+--- 
+
+## References
+
+- Tufte, Edward. 1992. [The Visual Display of Quantitative Information.](http://www.amazon.com/The-Visual-Display-Quantitative-Information/dp/0961392142/) Graphics Press. 
+- Unwin, Theus, and Hofmann. 2006. [Graphics of Large Datasets: Visualizing a Million.](http://www.amazon.com/Graphics-Large-Datasets-Visualizing-Statistics/dp/0387329064) Springer. 
+- Wilkinson, Leland. 2005. The Grammar of Graphics. Springer.
+- Ware, Colin. 2012. [Information Visualization: Perception for Design.](http://www.amazon.com/Information-Visualization-Third-Edition-Technologies/dp/0123814642/ref=reg_hu-rd_add_1_dp) 3rd Edition. Morgan Kaufmann. 
+- Cleveland, William. 1994. [The Elements of Graphing Data.](http://www.amazon.com/gp/product/0963488414/) Hobart Press. 
+- Cleveland, William. 1993. [Visualizing Data.](http://www.amazon.com/gp/product/0963488406) Hobart Press.
+- Few, Stephen. 2009. [Now You See It: Simple Visualization Techniques for Quantiative Analysis.](http://www.amazon.com/gp/product/0970601980/) Analytics Press. 
+- Few, Stephen. 2012. [Show Me the Numbers: Designing Tables and Graphs to Enlighten.](http://www.amazon.com/gp/product/0970601972) Analytics Press. 
+- Yau, Nathan. 2011. [Visualize This: The FlowingData Guide to Design, Visualization, and Statistics.](http://www.amazon.com/Visualize-This-FlowingData-Visualization-Statistics/dp/0470944889/) Wiley.
+- Few, Stephen. 2006. [Information Dashboard Design: The Effective Visual Communication of Data.](http://www.amazon.com/Information-Dashboard-Design-Effective-Communication/dp/0596100167) O'Reilly Media
+
+---
+
+<p align="center"><img src="img/periodictablevisualization1.png" height="550" width="900"></p>
+
+---
 
 --- plot
 
@@ -610,32 +697,3 @@ We have a number of other techniques we can use beyond simple charts.
 <body onload="init()">
    <canvas id="canvas" width="477" height="424"></canvas>
 </body>
-
----
-
-## Backmatter
-
-```{r wrapup,echo=TRUE,eval=TRUE,results="markup"}
-print(sessionInfo(),locale=FALSE)
-```
-
-
---- 
-
-## References
-
-- Tufte, Edward. 1992. [The Visual Display of Quantitative Information.](http://www.amazon.com/The-Visual-Display-Quantitative-Information/dp/0961392142/) Graphics Press. 
-- Unwin, Theus, and Hofmann. 2006. [Graphics of Large Datasets: Visualizing a Million.](http://www.amazon.com/Graphics-Large-Datasets-Visualizing-Statistics/dp/0387329064) Springer. 
-- Wilkinson, Leland. 2005. The Grammar of Graphics. Springer.
-- Ware, Colin. 2012. [Information Visualization: Perception for Design.](http://www.amazon.com/Information-Visualization-Third-Edition-Technologies/dp/0123814642/ref=reg_hu-rd_add_1_dp) 3rd Edition. Morgan Kaufmann. 
-- Cleveland, William. 1994. [The Elements of Graphing Data.](http://www.amazon.com/gp/product/0963488414/) Hobart Press. 
-- Cleveland, William. 1993. [Visualizing Data.](http://www.amazon.com/gp/product/0963488406) Hobart Press.
-- Few, Stephen. 2009. [Now You See It: Simple Visualization Techniques for Quantiative Analysis.](http://www.amazon.com/gp/product/0970601980/) Analytics Press. 
-- Few, Stephen. 2012. [Show Me the Numbers: Designing Tables and Graphs to Enlighten.](http://www.amazon.com/gp/product/0970601972) Analytics Press. 
-- Yau, Nathan. 2011. [Visualize This: The FlowingData Guide to Design, Visualization, and Statistics.](http://www.amazon.com/Visualize-This-FlowingData-Visualization-Statistics/dp/0470944889/) Wiley.
-- Few, Stephen. 2006. [Information Dashboard Design: The Effective Visual Communication of Data.](http://www.amazon.com/Information-Dashboard-Design-Effective-Communication/dp/0596100167) O'Reilly Media
-
----
-
-
-<p align="center"><img src="img/periodictablevisualization1.png" height="550" width="900"></p>

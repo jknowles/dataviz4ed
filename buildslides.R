@@ -24,4 +24,17 @@ library(ggplot2)
 library(ggthemes)
 #author("dataviz4ed")
 
+
+
 slidify(inputFile="index.Rmd")
+
+
+####################
+# Authoring files
+
+# restore this image to save time
+
+save.image("data/cache.rda",compress="xz")
+
+# 
+load("data/cache.rda")

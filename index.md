@@ -19,155 +19,6 @@ mode        : standalone # {standalone, draft}
 5. What tools to use
 
 
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
-
-```
-## Warning: number of items to replace is not a multiple of replacement
-## length
-```
 
 
 --- plot
@@ -199,6 +50,9 @@ qplot(hp, mpg, data = mtcars) + theme_dpi()
 *** right
 
 <img src="figure/plot1.svg" title="plot of chunk plot1" alt="plot of chunk plot1" width="450px" height="300px" />
+
+
+
 
 
 ---
@@ -292,14 +146,14 @@ Shape      |  **does not make sense**         |    A shape for each value
 
 ## Charting Categorical Data
 
-![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1.svg) 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.svg) 
 
 
 --- plot
 
 ## Conditional 2
 
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.svg) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.svg) 
 
 
 ---
@@ -358,9 +212,11 @@ But, what's wrong with this plot?
 ![plot of chunk meanplot2](figure/meanplot2.svg) 
 
 
---- Another Example
+--- 
 
-With the same physical space, what additional information are we providing?
+## Another Example
+
+With the same space, what additional information are we providing?
 
 ![plot of chunk meanplot3](figure/meanplot3.svg) 
 
@@ -409,7 +265,6 @@ How could it be done?
   * 600,000 observations in one panel is not meaningful
   
 ---
-
 ## What About This
 
 ![plot of chunk rawdata2](figure/rawdata2.png) 
@@ -434,38 +289,32 @@ How could it be done?
 
 Trees are ways to divide up the variation in a dataset and rank the explanatory values. 
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.svg) 
+
 
 
 ---
 
 ## Smoothers 
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.svg) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.svg) 
 
 
 ---
 
 ## Model Results
 
-<p align="center"><img src="img/machinelearnings.svg" height="490" width="700"></p>
+<p align="center"><img src="img/machinelearning.svg" height="490" width="700"></p>
 
 
 --- 
 
 ## Model Results II
 
-<p align="center"><img src="img/modeldiag1.svg" height="490" width="700"></p>
-
-
----
-
-## Model Results III
-
 <p align="center"><img src="img/parttree.svg" height="490" width="700"></p>
 
-
 ---
+
+## Combining Features
 
 We can combine these features. 
 
@@ -474,9 +323,17 @@ We can combine these features.
 >- Reference lines and group comparisons
 
 ---
+## Student Growth
 
-<p align="center"><img src="img/g3belowproficientreadingscores.png" height="490" width="700"></p>
+<p align="center"><img src="img/stuplot25.png" height="490" width="700"></p>
 
+---
+
+## Why does this work?
+
+>- Annotation
+>- Labeling
+>- Lots of data-ink
 
 ---
 ## Some tips
@@ -493,11 +350,6 @@ We can combine these features.
 --- plot
 
 ## Themes convey brands
-
-
-```r
-qplot(hp, mpg, data = mtcars) + theme_economist()
-```
 
 <img src="figure/plot2.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="750px" height="480px" />
 
@@ -521,7 +373,7 @@ qplot(hp, mpg, data = mtcars) + theme_tufte()
 
 
 ```r
-qplot(hp, mpg, data = mtcars, color = factor(cyl)) + theme_excel2003() + scale_color_excel2003()
+qplot(hp, mpg, data = mtcars, color = factor(cyl)) + theme_excel() + scale_color_excel()
 ```
 
 <img src="figure/plot4.svg" title="plot of chunk plot4" alt="plot of chunk plot4" width="750px" height="480px" />
@@ -601,7 +453,7 @@ qplot(hp, mpg, data = mtcars, color = factor(cyl)) + theme_stata()
 
 --- &twocol w1:50% w2:50%
 
-## Graphics Types
+## Graphics Files
 
 *** left
 
@@ -642,6 +494,105 @@ We have a number of other techniques we can use beyond simple charts.
 ## Animations
 
 <p align="center"><img src="img/TESTstuplot.gif" height="550" width="750"></p>
+
+
+---
+
+## Technologies
+
+The technology you choose to do visualizations is largely a question of personal productivity, but with some important caveats:
+
+- In the future, more and more content is going to be delivered in a paperless world, so pick a technology that can leverage web/tablet/phone interfaces
+- Different technologies are useful for different levels of finish and polish; Adobe Illustrator is great for publication quality graphics, R is a great tool for rapidly prototyping different visualizations
+- Chose a technology that best serves your **consumer**, not you are the producer. Charts are a service to the consumer, not to the creator. 
+
+---
+
+## Some Technologies
+
+![plot of chunk technologies](figure/technologies.svg) 
+
+
+--- &twocol w1:20% w2:80%
+
+## Group Exercise
+
+Visualize some education data. Imagine we have the following dimensions and want to present more of them on a plot like that on the right.
+
+*** left
+
+- Grade
+- Disability Status
+- Type of Disability
+- Language Proficiency
+- School
+- Math Score
+- Reading Curriculum
+- Math Curriculum
+
+*** right
+
+<img src="figure/studentexample.svg" title="plot of chunk studentexample" alt="plot of chunk studentexample" width="300px" height="250px" />
+
+
+
+---
+
+## Backmatter
+
+
+```r
+print(sessionInfo(), locale = FALSE)
+```
+
+```
+R version 2.15.2 (2012-10-26)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+attached base packages:
+[1] grid      stats     graphics  grDevices utils     datasets  methods  
+[8] base     
+
+other attached packages:
+ [1] Formula_1.1-0        mvtnorm_0.9-9994     partykit_0.1-4      
+ [4] mgcv_1.7-22          vcd_1.2-13           colorspace_1.2-0    
+ [7] MASS_7.3-22          ggthemes_1.3.1       eeptools_0.1        
+[10] mapproj_1.2-0        maps_2.3-0           proto_0.3-10        
+[13] plyr_1.8             ggplot2_0.9.3        stringr_0.6.2       
+[16] knitr_0.9.1          slidifyLibraries_0.1 markdown_0.5.3      
+[19] whisker_0.3-2        slidify_0.3.3        devtools_0.8        
+
+loaded via a namespace (and not attached):
+ [1] dichromat_1.2-4    digest_0.6.0       evaluate_0.4.3    
+ [4] formatR_0.7        gtable_0.1.2       httr_0.2          
+ [7] labeling_0.1       lattice_0.20-10    Matrix_1.0-10     
+[10] memoise_0.1        munsell_0.4        nlme_3.1-106      
+[13] parallel_2.15.2    RColorBrewer_1.0-5 RCurl_1.95-3      
+[16] reshape2_1.2.2     scales_0.2.3       splines_2.15.2    
+[19] survival_2.37-2    tools_2.15.2       yaml_2.1.5        
+```
+
+
+--- 
+
+## References
+
+- Tufte, Edward. 1992. [The Visual Display of Quantitative Information.](http://www.amazon.com/The-Visual-Display-Quantitative-Information/dp/0961392142/) Graphics Press. 
+- Unwin, Theus, and Hofmann. 2006. [Graphics of Large Datasets: Visualizing a Million.](http://www.amazon.com/Graphics-Large-Datasets-Visualizing-Statistics/dp/0387329064) Springer. 
+- Wilkinson, Leland. 2005. The Grammar of Graphics. Springer.
+- Ware, Colin. 2012. [Information Visualization: Perception for Design.](http://www.amazon.com/Information-Visualization-Third-Edition-Technologies/dp/0123814642/ref=reg_hu-rd_add_1_dp) 3rd Edition. Morgan Kaufmann. 
+- Cleveland, William. 1994. [The Elements of Graphing Data.](http://www.amazon.com/gp/product/0963488414/) Hobart Press. 
+- Cleveland, William. 1993. [Visualizing Data.](http://www.amazon.com/gp/product/0963488406) Hobart Press.
+- Few, Stephen. 2009. [Now You See It: Simple Visualization Techniques for Quantiative Analysis.](http://www.amazon.com/gp/product/0970601980/) Analytics Press. 
+- Few, Stephen. 2012. [Show Me the Numbers: Designing Tables and Graphs to Enlighten.](http://www.amazon.com/gp/product/0970601972) Analytics Press. 
+- Yau, Nathan. 2011. [Visualize This: The FlowingData Guide to Design, Visualization, and Statistics.](http://www.amazon.com/Visualize-This-FlowingData-Visualization-Statistics/dp/0470944889/) Wiley.
+- Few, Stephen. 2006. [Information Dashboard Design: The Effective Visual Communication of Data.](http://www.amazon.com/Information-Dashboard-Design-Effective-Communication/dp/0596100167) O'Reilly Media
+
+---
+
+<p align="center"><img src="img/periodictablevisualization1.png" height="550" width="900"></p>
+
+---
 
 --- plot
 
@@ -698,63 +649,3 @@ We have a number of other techniques we can use beyond simple charts.
 <body onload="init()">
    <canvas id="canvas" width="477" height="424"></canvas>
 </body>
-
----
-
-## Backmatter
-
-
-```r
-print(sessionInfo(), locale = FALSE)
-```
-
-```
-R version 2.15.2 (2012-10-26)
-Platform: x86_64-w64-mingw32/x64 (64-bit)
-
-attached base packages:
- [1] stats4    grid      splines   stats     graphics  grDevices utils    
- [8] datasets  methods   base     
-
-other attached packages:
- [1] ggthemes_1.1.0    knitr_0.9         markdown_0.5.3   
- [4] whisker_0.1       slidify_0.3.3     devtools_0.8     
- [7] eeptools_0.1      mapproj_1.1-8.3   maps_2.2-8       
-[10] proto_0.3-9.2     plyr_1.8          stringr_0.6.2    
-[13] mgcv_1.7-22       Formula_1.1-0     partykit_0.1-4   
-[16] party_1.0-3       vcd_1.2-13        colorspace_1.2-0 
-[19] MASS_7.3-22       strucchange_1.4-7 sandwich_2.2-9   
-[22] zoo_1.7-9         coin_1.0-21       mvtnorm_0.9-9993 
-[25] modeltools_0.2-19 survival_2.37-2   ggplot2_0.9.3    
-
-loaded via a namespace (and not attached):
- [1] dichromat_1.2-4    digest_0.6.0       evaluate_0.4.3    
- [4] formatR_0.7        gtable_0.1.2       httr_0.2          
- [7] labeling_0.1       lattice_0.20-10    Matrix_1.0-10     
-[10] memoise_0.1        munsell_0.4        nlme_3.1-106      
-[13] parallel_2.15.2    RColorBrewer_1.0-5 RCurl_1.95-3      
-[16] reshape2_1.2.2     scales_0.2.3       tools_2.15.2      
-[19] yaml_2.1.5        
-```
-
-
-
---- 
-
-## References
-
-- Tufte, Edward. 1992. [The Visual Display of Quantitative Information.](http://www.amazon.com/The-Visual-Display-Quantitative-Information/dp/0961392142/) Graphics Press. 
-- Unwin, Theus, and Hofmann. 2006. [Graphics of Large Datasets: Visualizing a Million.](http://www.amazon.com/Graphics-Large-Datasets-Visualizing-Statistics/dp/0387329064) Springer. 
-- Wilkinson, Leland. 2005. The Grammar of Graphics. Springer.
-- Ware, Colin. 2012. [Information Visualization: Perception for Design.](http://www.amazon.com/Information-Visualization-Third-Edition-Technologies/dp/0123814642/ref=reg_hu-rd_add_1_dp) 3rd Edition. Morgan Kaufmann. 
-- Cleveland, William. 1994. [The Elements of Graphing Data.](http://www.amazon.com/gp/product/0963488414/) Hobart Press. 
-- Cleveland, William. 1993. [Visualizing Data.](http://www.amazon.com/gp/product/0963488406) Hobart Press.
-- Few, Stephen. 2009. [Now You See It: Simple Visualization Techniques for Quantiative Analysis.](http://www.amazon.com/gp/product/0970601980/) Analytics Press. 
-- Few, Stephen. 2012. [Show Me the Numbers: Designing Tables and Graphs to Enlighten.](http://www.amazon.com/gp/product/0970601972) Analytics Press. 
-- Yau, Nathan. 2011. [Visualize This: The FlowingData Guide to Design, Visualization, and Statistics.](http://www.amazon.com/Visualize-This-FlowingData-Visualization-Statistics/dp/0470944889/) Wiley.
-- Few, Stephen. 2006. [Information Dashboard Design: The Effective Visual Communication of Data.](http://www.amazon.com/Information-Dashboard-Design-Effective-Communication/dp/0596100167) O'Reilly Media
-
----
-
-
-<p align="center"><img src="img/periodictablevisualization1.png" height="550" width="900"></p>
