@@ -12,4 +12,4 @@ TODO:
 
 * Add a presentation section on dimensionality as a key concept
 * Do this to introduce chart types
-
+* 
