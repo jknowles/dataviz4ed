@@ -10,13 +10,64 @@ widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : standalone # {standalone, draft}
 ---
 
+## The Problem of Data Visualization
+
+- Data use is increasing rapidly within the education space
+- Policymakers are under increasing pressure to use data to inform decisions, justify funding, and guide practice
+- **But,** policymakers are often **not** statisticians, researchers, or quants
+- **Data visualization** is a way to bridge this gap
+- Proper data visualization will bring the data to the audience in a way they can understand quickly and use to inform decisions
+
+---
+
+## Follow Along
+
+### http://www.myurl.com/presentation
+
+
+--- &twocol w1:50% w2:50%
+
+## What is dataviz?
+
+***left
+### Dataviz is...
+>- An exploratory tool for understanding datasets
+>- A communication tool for framing decisions and depicting problems
+>- A way to showcase 
+>- A better way to present results of analyses
+
+***right
+### Dataviz is not...
+>- Easy
+>- A replacement for analysis
+>- Infographics
+>- Easy!
+
+
+--- quote
+
+<p><q>Data visualization is a tool for communicating <span class = 'red'>a specific feature</span> of a datset in an approachable and efficient manner</q></p>
+
+--- quote
+
+<p><q>If a picture is worth a thousand words, a good data visualization must always be <span class = 'red'>better than a table.</span></q></p>
+
+---
+
+## Student Growth
+
+<p align="center"><img src="img/stuplot25.png" height="560" width="750"></p>
+
+---
+
 ## Objectives
 
-1. Review data visualization principles
-2. Look at applications in education data
-3. Challenges in an LEA/SEA
+1. Review data visualization principles and chart types
+2. Look at applications in education data from an SEA
+3. Challenges with administrative data and policymaking
 4. Best practices and advice
 5. What tools to use
+6. Activity!
 
 
 
@@ -25,10 +76,7 @@ mode        : standalone # {standalone, draft}
 
 ## Example
 
-
-```r
-qplot(hp, mpg, data = mtcars) + theme_dpi()
-```
+How can we improve this simple scatterplot?
 
 <img src="figure/plot.svg" title="plot of chunk plot" alt="plot of chunk plot" width="700px" height="500px" />
 
@@ -49,7 +97,7 @@ qplot(hp, mpg, data = mtcars) + theme_dpi()
 
 *** right
 
-<img src="figure/plot1.svg" title="plot of chunk plot1" alt="plot of chunk plot1" width="450px" height="300px" />
+<img src="figure/plot1.svg" title="plot of chunk plot1" alt="plot of chunk plot1" width="550px" height="330px" />
 
 
 
@@ -74,315 +122,24 @@ There are a few things that all charts need. There are sometimes strong cases to
 
 ## Dimensions
 
->- Charts and data are made up of dimensions (e.g. a bar chart is *x* and *y*)
->- Additional dimensions can be represented by additional aesthetics or chart elements (e.g. color, size, shape, etc.)
->- Dimensions can also be shown by multiple plots (e.g. a filmstrip)
->- ** Smart use of dimensions allows us to increase the information density of our charts**
+- Charts and data are made up of dimensions (e.g. a bar chart is *x* and *y*)
+- Additional dimensions can be represented by additional aesthetics or chart elements (e.g. color, size, shape, etc.)
+- Dimensions can also be shown by multiple plots (e.g. a filmstrip)
+- **Smart use of dimensions allows us to increase the information density of our charts**
+
+
+<img src="figure/unnamed-chunk-2.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="680px" height="300px" />
+
 
 --- quote
 
 <p><q> How you turn dimensions in the <span class = 'red'>data</span> into visual cues for your audience is everything.</q></p>
 
----
-
-
-## Data Types
-
-- Any given dimension may be measured at different [levels of measure](http://en.wikipedia.org/wiki/Level_of_measurement)
-- Nominal: unordered categories of data (e.g. race)
-- Ordinal: ordered categories of data, relative size and degree of difference between categories is unknown (e.g. Likert scales, proficiency levels perhaps)
-- Interval: ordered categories of data, fixed width, like discrete temperature scales (e.g. grade in school)
-- Continuous (ratio): a measurement scale in a continuous space with a meaningful zero--physical measurements (e.g. scale scores)
-- This classification was derived by Stanley Smith Stevens in the 1940s and 50s
-
-### Statistics we can use
-
-Level of Meas.  |  Stats
---------------- |  -----------------------------------------------
-Nominal         |  mode, Chi-squared
-Ordinal         |    median, percentile
-Interval        |    mean, std. deviation, correlation, ANOVA
-Continuous      |    geometric mean, harmonic mean, logarithms
-
----
-
-## Mappings
-
-### Aesthetics for Mapping
-
-How do we map levels of measurement onto visual features of charts?
-
-Aesthetic |      Discrete              |  Continuous
-----------|  ------------------------- | -------------------------------
-Color     |  Disparate colors          |  Sequential or divergent colors
-Size      |  Unique size for each value|   mapping to radius of value
-Shape     |  A shape for each value    |   **does not make sense**
-
----
-
-## Ordered vs. Unordered
-
-### Some Examples
-
-Aesthetic  |    Ordered                         |  Unordered
----------- |  --------------------------------  |   -------------------------
-Color      |  Sequential or divergent colors  |    Rainbow
-Size       |  Increasing or decreasing radius |    **does not make sense**
-Shape      |  **does not make sense**         |    A shape for each value
-
-
---- plot
-
-## Example
-
-<img src="figure/plot1.11.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="350px" height="225px" /><img src="figure/plot1.12.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="350px" height="225px" /><img src="figure/plot1.13.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="350px" height="225px" /><img src="figure/plot1.14.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="350px" height="225px" /><img src="figure/plot1.15.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="350px" height="225px" /><img src="figure/plot1.16.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="350px" height="225px" />
-
-
 --- quote
 
-<p><q> Think like a <span class = 'red'>map</span>. Data density and easy interpretability.</q></p>
-
-<p align="center"><img src="img/ELLBLBCMap.png" height="500" width="400"></p>
+## Reviewing Chart Types
 
 ---
-
-## Some tips
-
->- Focus on the content
->- Use best practices
->- Understand the limitations
->- Experiment and iterate!
-
---- plot
-
-## Charting Categorical Data
-
-<img src="figure/unnamed-chunk-2.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="750px" height="550px" />
-
-
---- 
-
-## Charting Ordinal Data
-
-<img src="figure/unnamed-chunk-3.svg" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="750px" height="550px" />
-
-
----
-
-## Charting Interval/Continuous Data
-
-
----
-
-## Complexity
-
-How do we display a ton of data--tens or hundreds of thousands of observations--with combinations of data types?
-
-1. **Summarize the data**
-  * Display summary statistics visually depicting the central tendency and spread of data
-2. **Plot the raw data**
-  * Annotate wisely to display the main message
-3. **Model the data**
-  * Use a statistical model to summarize features of the data
-
-Let's look at some examples of this. 
-
---- 
-
-## Summarizing Data
-
-- The most simple summaries are measures of central tendency, most easily understood
-- It is important to look at the spread of data too though
-- If time is of interest, we are interested in trends
-- If space is of interest, we are interested in maps or spatial distributions
-- **Think about context and reference**
-
----
-
-## Plotting Means
-
-Here is a simple plot of mean school reading scores:
-<img src="figure/plotmeans.svg" title="plot of chunk plotmeans" alt="plot of chunk plotmeans" width="750px" height="500px" />
-
-
-But, what's wrong with this plot?
-
---- &twocol w1:20% w2:80%
-
-## Mistakes
-
-*** left
-
->- No sense of scale
->- Means can be skewed
->- Simple means are not meaningful
->- With assessment scores we need to know grade distribution
->- Let's try to improve this
-
-*** right
-
-<img src="figure/plotmeanssmall.svg" title="plot of chunk plotmeanssmall" alt="plot of chunk plotmeanssmall" width="400px" height="325px" />
-
-
----
-
-## An Alternative
-
-<img src="figure/meanplot2.svg" title="plot of chunk meanplot2" alt="plot of chunk meanplot2" width="750px" height="550px" />
-
-
---- 
-
-## Another Example
-
-With the same space, what additional information are we providing?
-
-<img src="figure/meanplot3.svg" title="plot of chunk meanplot3" alt="plot of chunk meanplot3" width="750px" height="550px" />
-
-
-How can we do even better?
-
----
-
-## Annotation
-
-We still aren't sure what the mean scale score means. Let's see a couple more additions that can make this useful. 
-
-<img src="figure/meanplot4.svg" title="plot of chunk meanplot4" alt="plot of chunk meanplot4" width="750px" height="480px" />
-
-
----
-
-## Raw Data
-
-Sometimes, we can get away with showing the raw data, that is, all data points. We may want to do this for a few reasons:
-
-- the "wow" effect, 
-- because it is easier, 
-- or because it looks better aesthetically. 
-
-How could it be done?
-
----
-
-## 600,000 Observations Too Many
-
-<img src="figure/rawdata1.png" title="plot of chunk rawdata1" alt="plot of chunk rawdata1" width="750px" height="550px" />
-
-
----
-
-## Spread the Data Out
-
-- Without reducing the data points we need to do three things to be successful
-
-1. **Spread the data out**
-  * These points overlap each other and make a mess
-2. **Reduce the ink**
-  * Each point has too much "weight"
-3. **Add Reference Points**
-  * 600,000 observations in one panel is not meaningful
-
----
-
-## What About This
-
-<img src="figure/rawdata2.png" title="plot of chunk rawdata2" alt="plot of chunk rawdata2" width="750px" height="550px" />
-
-
----
-
-## Even Smaller Multiples
-
-<img src="figure/rawdata3.png" title="plot of chunk rawdata3" alt="plot of chunk rawdata3" width="750px" height="550px" />
-
-
---- quote
-
-## Modeling the Data
-
-<p><q> All models are <span class = 'red'>wrong</span>. Some models are useful.</q></p>
-
----
-
-## Regression Trees
-
-Trees are ways to divide up the variation in a dataset and rank the explanatory values. 
-
-<img src="figure/unnamed-chunk-4.svg" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="750px" height="550px" />
-
-
----
-
-## Smoothers 
-
-<img src="figure/unnamed-chunk-5.svg" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="800px" height="550px" />
-
-
----
-
-## Model Results
-
-<p align="center"><img src="img/machinelearning.svg" height="490" width="750"></p>
-
-
---- 
-
-## Model Results II
-
-<p align="center"><img src="img/parttree.svg" height="490" width="750"></p>
-
----
-
-## Illustrating a Model
-
-<p align="center"><img src="img/withinstudentplot.png" height="490" width="750"></p>
-
-
----
-
-## Combining Features
-
-We can combine these features. 
-
->- Facets with smoother lines for references
->- Summary plots with raw data in the background
->- Reference lines and group comparisons
-
----
-## Student Growth
-
-<p align="center"><img src="img/stuplot25.png" height="560" width="750"></p>
-
----
-
-## Why does this work?
-
->- Annotation
->- Labeling
->- Lots of data-ink
-
----
-## Some tips
-
->- Have a properly chosen format and design 
->- Use words, numbers and drawing together
->- Reflect a balance, a proportion, relevant scale
->- Display an accessible complexity of details
->- Have a narrative quality, tell a story
->- Avoid content-free decoration (Tufte's proverbial chartjunk)
->- Draw in a professional manner with an eye on the technical details
->- Remember the map
-
---- plot
-
-## Themes
-They can **communicate**, **confound**, **brand**, and **distract**
-
-<img src="figure/plot21.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="350px" height="240px" /><img src="figure/plot22.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="350px" height="240px" /><img src="figure/plot23.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="350px" height="240px" /><img src="figure/plot24.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="350px" height="240px" />
-
-
---- 
 
 ## Stacked Bar
 
@@ -436,6 +193,319 @@ They can **communicate**, **confound**, **brand**, and **distract**
 
 <p align="center"><img src="img/d3wordcloud.png" height="420" width="900"></p>
 
+---
+
+## Data Types
+
+- Any given dimension may be measured at different [levels of measure](http://en.wikipedia.org/wiki/Level_of_measurement) [derived by Stanley Smith Stevens in the 1940s and 50s]
+  * Nominal: unordered categories of data (e.g. race)
+  * Ordinal: ordered categories of data, relative size and degree of difference between categories is unknown (e.g. Likert scales, proficiency levels perhaps)
+  * Interval: ordered categories of data, fixed width, like discrete temperature scales (e.g. grade in school)
+  * Continuous (ratio): a measurement scale in a continuous space with a meaningful zero - physical measurements (e.g. scale scores)
+
+---
+
+## Mapping Levels of Measure to Visual Cues
+
+### Aesthetics for Mapping
+
+How do we map levels of measurement onto visual features of charts?
+
+Aesthetic |      Discrete              |  Continuous
+----------|  ------------------------- | -------------------------------
+Color     |  Disparate colors          |  Sequential or divergent colors
+Size      |  Unique size for each value|   mapping to radius of value
+Shape     |  A shape for each value    |   **does not make sense**
+
+### Ordered vs. Unordered
+
+Aesthetic  |    Ordered                         |  Unordered
+---------- |  --------------------------------  |   -------------------------
+Color      |  Sequential or divergent colors  |    Rainbow
+Size       |  Increasing or decreasing radius |    **does not make sense**
+Shape      |  **does not make sense**         |    A shape for each value
+
+
+--- plot
+
+## Example
+
+<img src="figure/plot1.11.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="325px" height="245px" /><img src="figure/plot1.12.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="325px" height="245px" /><img src="figure/plot1.13.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="325px" height="245px" /><img src="figure/plot1.14.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="325px" height="245px" /><img src="figure/plot1.15.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="325px" height="245px" /><img src="figure/plot1.16.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="325px" height="245px" />
+
+
+--- quote
+
+<p><q> Think like a <span class = 'red'>map</span>. Data density and easy interpretability.</q></p>
+
+--- map
+
+## Maps
+
+<p align="center"><img src="img/evenFRLmap.gif" height="600" width="550"></p>
+
+---
+
+## Some tips
+
+- Focus on the content
+- Use best practices
+- Understand the limitations
+- Experiment and iterate!
+
+--- 
+
+## Examples
+
+
+--- plot
+
+## Charting Categorical Data
+
+<img src="figure/unnamed-chunk-3.svg" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="680px" height="480px" />
+
+
+--- 
+
+## Charting Ordinal Data
+
+<img src="figure/unnamed-chunk-4.svg" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="750px" height="550px" />
+
+
+---
+
+## Charting Interval/Continuous Data
+
+<img src="figure/unnamed-chunk-5.svg" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="750px" height="550px" />
+
+
+---
+
+## Complexity
+
+How do we display a ton of data--tens or hundreds of thousands of observations--with combinations of data types across multiple dimensions?
+
+1. **Summarize the data**
+  * Display summary statistics visually depicting the central tendency and spread of data
+2. **Plot the raw data**
+  * Annotate wisely to display the main message
+3. **Model the data**
+  * Use a statistical model to summarize features of the data
+
+Let's look at some examples of this. 
+
+--- 
+
+## Summarizing Data
+
+- The most simple summaries are measures of central tendency, most easily understood
+- It is important to look at the spread of data too though
+- If time is of interest, we are interested in trends
+- If space is of interest, we are interested in maps or spatial distributions
+- **Think about context and reference**
+- Let's look at an example summarizing student data to schools!
+
+---
+
+## Plotting Means
+
+Here is a simple plot of mean school reading scores:
+
+<img src="figure/plotmeans.svg" title="plot of chunk plotmeans" alt="plot of chunk plotmeans" width="750px" height="500px" />
+
+
+But, what's wrong with this plot?
+
+--- &twocol w1:20% w2:80%
+
+## Mistakes
+
+*** left
+
+>- No sense of scale
+>- Means can be skewed
+>- Simple means are not meaningful
+>- With assessment scores we need to know grade distribution
+>- Let's try to improve this
+
+*** right
+
+<img src="figure/plotmeanssmall.svg" title="plot of chunk plotmeanssmall" alt="plot of chunk plotmeanssmall" width="400px" height="325px" />
+
+
+---
+
+## Adding a Dimension
+
+<img src="figure/meanplot2.svg" title="plot of chunk meanplot2" alt="plot of chunk meanplot2" width="750px" height="550px" />
+
+
+--- 
+
+## Even More Dimensions
+
+<img src="figure/meanplot3.svg" title="plot of chunk meanplot3" alt="plot of chunk meanplot3" width="750px" height="550px" />
+
+
+---
+
+## Annotation
+
+We still aren't sure what the mean scale score means. Let's see a couple more additions that can make this useful. 
+
+<img src="figure/meanplot4.svg" title="plot of chunk meanplot4" alt="plot of chunk meanplot4" width="750px" height="480px" />
+
+
+---
+
+## Raw Data
+
+Sometimes, we can get away with showing the raw data, that is, all data points. We may want to do this for a few reasons:
+
+- the "wow" effect, 
+- because it is easier, 
+- or because it looks better aesthetically. 
+
+How could it be done?
+
+---
+
+## 600,000 Observations Too Many
+
+<img src="figure/rawdata1.png" title="plot of chunk rawdata1" alt="plot of chunk rawdata1" width="750px" height="550px" />
+
+
+---
+
+## Spread the Data Out
+
+- Without reducing the data points we need to do three things to be successful
+
+1. **Spread the data out**
+  * These points overlap each other and make a mess
+2. **Reduce the ink**
+  * Each point has too much "weight"
+3. **Add Reference Points**
+  * 600,000 observations in one panel is not meaningful
+
+>- Edward Tufte and others recommend **small multiples**, a technique of repeating a plot across groups to compare relationships in multiple dimensions 
+
+---
+
+## What About This
+
+<img src="figure/rawdata2.png" title="plot of chunk rawdata2" alt="plot of chunk rawdata2" width="750px" height="550px" />
+
+
+---
+
+## Even Smaller Multiples
+
+<img src="figure/rawdata3.png" title="plot of chunk rawdata3" alt="plot of chunk rawdata3" width="750px" height="550px" />
+
+
+---
+
+## Binning Data
+
+<img src="figure/rawdata4.png" title="plot of chunk rawdata4" alt="plot of chunk rawdata4" width="750px" height="550px" />
+
+
+
+
+--- quote
+
+## Modeling the Data
+
+<p><q> All models are <span class = 'red'>wrong</span>. Some models are useful.</q></p>
+
+---
+
+## Smoothers 
+
+<img src="figure/unnamed-chunk-6.svg" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="800px" height="550px" />
+
+
+---
+
+## Machine Learning
+
+<p align="center"><img src="img/machinelearning.svg" height="490" width="750"></p>
+
+
+--- 
+
+## Regression Trees
+
+<p align="center"><img src="img/parttree.svg" height="490" width="750"></p>
+
+---
+
+## Regression Results
+
+<p align="center"><img src="img/modelbracketlang.svg" height="490" width="800"></p>
+
+---
+
+## Path Diagrams
+
+<p align="center"><img src="img/pathdiagram.png" height="490" width="800"></p>
+
+---
+
+## Illustrating a Model
+
+<p align="center"><img src="img/withinstudentplot.png" height="490" width="750"></p>
+
+---
+
+## Combining Features
+
+We can combine these features. 
+
+>- Facets with smoother lines for references (small multiples + models)
+>- Summary plots with raw data in the background
+>- Reference lines and group comparisons
+
+--- animation
+
+## Animation Example
+
+<p align="center"><img src="https://dl.dropbox.com/u/1811289/TESTstuplot.gif" height="550" width="750"></p>
+
+---
+
+## Why does this work?
+
+>- Annotation
+>- Labeling
+>- Lots of data-ink
+>- Reference points galore
+
+---
+## Some tips
+
+>- Have a properly chosen format and design 
+>- Use words, numbers and drawing together
+>- Reflect a balance, a proportion, relevant scale
+>- Display an accessible complexity of details
+>- Have a narrative quality, tell a story
+>- Avoid content-free decoration (Tufte's proverbial chartjunk)
+>- Draw in a professional manner with an eye on the technical details
+>- Remember the map
+
+--- plot
+
+## Themes
+They can **communicate**, **confound**, **brand**, and **distract**
+
+<img src="figure/plot21.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" /><img src="figure/plot22.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" /><img src="figure/plot23.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" /><img src="figure/plot24.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" />
+
+
+---
+
+## Technical Details
+
+
 --- &twocol w1:50% w2:50%
 
 ## Graphics Files
@@ -458,24 +528,6 @@ They can **communicate**, **confound**, **brand**, and **distract**
 
 ---
 
-## Beyond Graphics
-
-We have a number of other techniques we can use beyond simple charts. 
-
-- Animations
-- Interactive demos
-- Summary tables
-- Videos
-- Web sites
-
---- map
-
-## Maps
-
-<p align="center"><img src="img/evenFRLmap.gif" height="600" width="550"></p>
-
----
-
 ## Technologies
 
 The technology you choose to do visualizations is largely a question of personal productivity, but with some important caveats:
@@ -491,11 +543,30 @@ The technology you choose to do visualizations is largely a question of personal
 <img src="figure/technologies.svg" title="plot of chunk technologies" alt="plot of chunk technologies" width="750px" height="550px" />
 
 
+---
+
+## Programming vs. Illustrating
+
+Keep in mind that depending on the project you may need to programatically make data visualizations, or you may need a highly customized illustrated graphic. 
+
+---
+
+## Beyond Graphics
+
+We have a number of other techniques we can use beyond simple charts. 
+
+- Animations
+- Interactive demos
+- Summary tables
+- Videos
+- Web sites
+
+
 --- &twocol w1:20% w2:80%
 
 ## Group Exercise
 
-Visualize some education data. Imagine we have the following dimensions and want to present more of them on a plot like that on the right.
+Visualize some education data. Imagine we have the following dimensions and want to present more of them on a plot like that on the right. Sketch out your result with your group.
 
 *** left
 
@@ -510,7 +581,15 @@ Visualize some education data. Imagine we have the following dimensions and want
 
 *** right
 
-<img src="figure/studentexample.svg" title="plot of chunk studentexample" alt="plot of chunk studentexample" width="4200px" height="350px" />
+<img src="figure/studentexample.svg" title="plot of chunk studentexample" alt="plot of chunk studentexample" width="420px" height="350px" />
+
+
+---
+
+## Example
+
+<img src="figure/studentexample2.svg" title="plot of chunk studentexample2" alt="plot of chunk studentexample2" width="700px" height="500px" />
+
 
 
 ---
@@ -527,11 +606,35 @@ Visualize some education data. Imagine we have the following dimensions and want
 - Yau, Nathan. 2011. [Visualize This: The FlowingData Guide to Design, Visualization, and Statistics.](http://www.amazon.com/Visualize-This-FlowingData-Visualization-Statistics/dp/0470944889/) Wiley.
 - Few, Stephen. 2006. [Information Dashboard Design: The Effective Visual Communication of Data.](http://www.amazon.com/Information-Dashboard-Design-Effective-Communication/dp/0596100167) O'Reilly Media
 
---- animation
+---
+## Where to Learn Online?
 
-## Animations
+- [Andy Kirk](http://www.visualisingdata.com)
+- [D3](http://d3js.org/)
+- [The Functional Art](http://www.thefunctionalart.com/)
+- [ggplot2](http://www.ggplot2.org)
+- [Robert Kosara](http://eagereyes.org/about)
 
-<p align="center"><img src="img/TESTstuplot.gif" height="550" width="750"></p>
+
+
+--- &twocol w1:50% w2:50%
+
+## Review of Key Concepts
+
+***left
+
+- Dimensionality
+- Aesthetics and Mappings
+- Small multiples
+- Spreading the data out
+- Web vs. print
+
+***right
+
+- Adapt and iterate
+- Modeling the data
+- Themes and style
+- Techniques and software
 
 ---
 
@@ -551,22 +654,23 @@ attached base packages:
 [8] base     
 
 other attached packages:
- [1] Formula_1.1-0        mvtnorm_0.9-9994     partykit_0.1-4      
- [4] mgcv_1.7-22          vcd_1.2-13           colorspace_1.2-0    
- [7] MASS_7.3-22          ggthemes_1.3.1       slidifyLibraries_0.1
-[10] devtools_0.8         eeptools_0.1         mapproj_1.2-0       
+ [1] hexbin_1.26.0        lattice_0.20-13      Formula_1.1-0       
+ [4] mvtnorm_0.9-9994     partykit_0.1-4       mgcv_1.7-22         
+ [7] vcd_1.2-13           colorspace_1.2-0     MASS_7.3-22         
+[10] ggthemes_1.3.1       eeptools_0.1         mapproj_1.2-0       
 [13] maps_2.3-0           proto_0.3-10         plyr_1.8            
-[16] ggplot2_0.9.3        stringr_0.6.2        knitr_0.9.6         
-[19] markdown_0.5.3       whisker_0.3-2        slidify_0.3.3       
+[16] ggplot2_0.9.3        stringr_0.6.2        knitr_1.0.1         
+[19] slidifyLibraries_0.1 markdown_0.5.4       whisker_0.3-2       
+[22] slidify_0.3.3        devtools_0.8.0.99   
 
 loaded via a namespace (and not attached):
  [1] dichromat_1.2-4    digest_0.6.0       evaluate_0.4.3    
  [4] formatR_0.7        gtable_0.1.2       httr_0.2          
- [7] labeling_0.1       lattice_0.20-13    Matrix_1.0-10     
-[10] memoise_0.1        munsell_0.4        nlme_3.1-106      
-[13] parallel_2.15.2    RColorBrewer_1.0-5 RCurl_1.95-3      
-[16] reshape2_1.2.2     scales_0.2.3       splines_2.15.2    
-[19] survival_2.37-2    tools_2.15.2       yaml_2.1.5        
+ [7] labeling_0.1       Matrix_1.0-10      memoise_0.1       
+[10] munsell_0.4        nlme_3.1-106       parallel_2.15.2   
+[13] RColorBrewer_1.0-5 RCurl_1.95-3       reshape2_1.2.2    
+[16] scales_0.2.3       splines_2.15.2     survival_2.37-2   
+[19] tools_2.15.2       yaml_2.1.5        
 ```
 
 ---
@@ -576,7 +680,7 @@ loaded via a namespace (and not attached):
 
 --- plot
 
-## Ugly graphic
+## Ugly All HTML5 Graphic
 
 <script>
     function init() {
