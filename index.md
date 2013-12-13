@@ -78,7 +78,7 @@ mode        : standalone # {standalone, draft}
 
 How can we improve this simple scatterplot?
 
-<img src="figure/plot.svg" title="plot of chunk plot" alt="plot of chunk plot" width="700px" height="500px" />
+<img src="figure/plot.svg" title="plot of chunk plot" alt="plot of chunk plot" width="700px" height="500px" style="display: block; margin: auto;" />
 
 
 
@@ -498,7 +498,7 @@ We can combine these features.
 ## Themes
 They can **communicate**, **confound**, **brand**, and **distract**
 
-<img src="figure/plot21.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" /><img src="figure/plot22.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" /><img src="figure/plot23.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" /><img src="figure/plot24.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" />
+<img src="figure/plot21.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" style="display: block; margin: auto;" /><img src="figure/plot22.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" style="display: block; margin: auto;" /><img src="figure/plot23.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" style="display: block; margin: auto;" /><img src="figure/plot24.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" style="display: block; margin: auto;" />
 
 
 ---
@@ -642,11 +642,11 @@ Visualize some education data. Imagine we have the following dimensions and want
 
 
 ```r
-print(sessionInfo(), locale = FALSE)
+print(sessionInfo(),locale=FALSE)
 ```
 
 ```
-R version 2.15.2 (2012-10-26)
+R version 3.0.2 (2013-09-25)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 attached base packages:
@@ -654,23 +654,25 @@ attached base packages:
 [8] base     
 
 other attached packages:
- [1] hexbin_1.26.0        lattice_0.20-13      Formula_1.1-0       
- [4] mvtnorm_0.9-9994     partykit_0.1-4       mgcv_1.7-22         
- [7] vcd_1.2-13           colorspace_1.2-0     MASS_7.3-22         
-[10] ggthemes_1.3.1       eeptools_0.1         mapproj_1.2-0       
-[13] maps_2.3-0           proto_0.3-10         plyr_1.8            
-[16] ggplot2_0.9.3        stringr_0.6.2        knitr_1.0.1         
-[19] slidifyLibraries_0.1 markdown_0.5.4       whisker_0.3-2       
-[22] slidify_0.3.3        devtools_0.8.0.99   
+ [1] mgcv_1.7-27          nlme_3.1-113         plyr_1.8            
+ [4] vcd_1.3-1            slidify_0.3.3        slidifyLibraries_0.1
+ [7] devtools_1.4.1.99    ggthemes_1.5.1       eeptools_0.3        
+[10] MASS_7.3-29          ggplot2_0.9.3.1      knitr_1.5.15        
+[13] markdown_0.6.4       whisker_0.3-2       
 
 loaded via a namespace (and not attached):
- [1] dichromat_1.2-4    digest_0.6.0       evaluate_0.4.3    
- [4] formatR_0.7        gtable_0.1.2       httr_0.2          
- [7] labeling_0.1       Matrix_1.0-10      memoise_0.1       
-[10] munsell_0.4        nlme_3.1-106       parallel_2.15.2   
-[13] RColorBrewer_1.0-5 RCurl_1.95-3       reshape2_1.2.2    
-[16] scales_0.2.3       splines_2.15.2     survival_2.37-2   
-[19] tools_2.15.2       yaml_2.1.5        
+ [1] abind_1.4-0        arm_1.6-10         car_2.0-19        
+ [4] coda_0.16-1        colorspace_1.2-4   data.table_1.8.10 
+ [7] dichromat_2.0-0    digest_0.6.4       evaluate_0.5.1    
+[10] foreign_0.8-57     formatR_0.10       gtable_0.1.2      
+[13] httr_0.2           labeling_0.2       lattice_0.20-24   
+[16] lme4_1.0-5         maptools_0.8-27    Matrix_1.1-0      
+[19] memisc_0.96-9      memoise_0.1        minqa_1.2.1       
+[22] munsell_0.4.2      nnet_7.3-7         parallel_3.0.2    
+[25] proto_0.3-10       RColorBrewer_1.0-5 RCurl_1.95-4.1    
+[28] reshape2_1.2.2     scales_0.2.3       sp_1.0-14         
+[31] splines_3.0.2      stringr_0.6.2      tools_3.0.2       
+[34] yaml_2.1.7        
 ```
 
 ---

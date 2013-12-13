@@ -27,7 +27,8 @@ library(ggthemes)
 
 
 slidify(inputFile="index.Rmd")
-publish_github("jknowles","dataviz4ed")
+
+#publish_github("jknowles","Jan2013SDPtalk")
 
 ####################
 # Authoring files
