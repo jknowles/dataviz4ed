@@ -7,13 +7,13 @@
 library(devtools)
 dev_mode(path="C:/R/lib/dev")
 
-install_github("devtools", "hadley")
-install_github("slidify", "ramnathv")
-install_github("slidifyLibraries", "ramnathv")
-install_github("knitr", "yihui")
-install_github("whisker", "edwindj")
-install_github("markdown", "rstudio")
-install_github("ggthemes", "jrnold")
+# install_github("devtools", "hadley")
+# install_github("slidify", "ramnathv")
+# install_github("slidifyLibraries", "ramnathv")
+# install_github("knitr", "yihui")
+# install_github("whisker", "edwindj")
+# install_github("markdown", "rstudio")
+# install_github("ggthemes", "jrnold")
 library(slidify)
 library(whisker)
 library(markdown)
@@ -39,3 +39,9 @@ save.image("data/cache.rda",compress="xz")
 
 # 
 load("data/cache.rda")
+
+
+#######################
+# New graphic
+
+slidify(inputFile="EEVAforEducation.Rmd")

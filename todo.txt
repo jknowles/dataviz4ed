@@ -4,12 +4,6 @@ TODO:
 * Embed d3 example?
 * Move d3 images/examples from d3 gallery
 * Discuss the way solutions work, but then fail to scale (focus on scale)
-* Ending exercise on student-level data
 * Use illustrator to draw some graphics
-* Get VizLinks
-* Add headers
-* Organize plot
+* Add section on simulation
 
-* Add a presentation section on dimensionality as a key concept
-* Do this to introduce chart types
-* 

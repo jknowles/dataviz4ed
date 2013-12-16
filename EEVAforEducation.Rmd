@@ -79,9 +79,42 @@ library(ggthemes)
 load("data/cache.rda")
 ```
 
+---
+
+## Determining the Audience
+
+- Making good graphics starts with considering your audience carefully
+- Find the level of complexity you think your audience can understand, and push 
+it
+- Think about the point you want to get across and make sure it is crystal clear
+- Looking **cool** is not enough, focus on conveying meaning
+- Remember, the audience rarely has the understanding of data you have from the 
+dozens of prior graphics you have made from the data
+- Do the work for them!
+
+
+--- &twocol w1:50% w2:50%
+
+## Exploratory vs. Explanatory Graphics
+
+
+***left
+### Exploratory graphics
+>- Display relationships and patterns of interest to analysts
+>- Are incredibly disposable
+>- Emphasize quick iteration and inspection
+>- Are not polished
+
+***right
+### Explanatory graphics
+>- Are crafted around a single clear message
+>- Carefully rendered in high quality formats
+>- Well labeled, self-contained, and self-explanatory
+>- Intended to be accessible to non-experts
+
 --- plot
 
-## Example
+## An Exploratory Plot
 
 How can we improve this simple scatterplot?
 
@@ -92,7 +125,7 @@ qplot(hp,qsec,data=mtcars)+theme_dpi()
 
 --- &twocol w1:20% w2:80%
 
-## Principles
+## Principles for Making it Explanatory
 
 *** left
 - Elements of a chart
@@ -109,10 +142,6 @@ qplot(hp,qsec,data=mtcars)+theme_dpi()
 qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()+
   labs(x="Horsepower",y="Quart. Mile Time",title="Power and Speed")
 rm(PROBS,commonnames,grade,i,number_of_years)
-```
-
-```{r,echo=FALSE,results='hide'}
-gc()
 ```
 
 ---
@@ -140,7 +169,7 @@ There are a few things that all charts need. There are sometimes strong cases to
 - **Smart use of dimensions allows us to increase the information density of our charts**
 
 
-```{r echo=FALSE,out.width='680px',out.height='300px'}
+```{r echo=FALSE,out.width='700px',out.height='300px'}
 qplot(readSS,mathSS,data=df[df$grade<6,])+theme_dpi()+labs(title="Multidimensions")+facet_wrap(~grade,nrow=1)
 ```
 
@@ -260,13 +289,14 @@ qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()
 
 ## Maps
 
-<p align="center"><img src="img/evenFRLmap.gif" height="600" width="550"></p>
+<p align="center"><img src="img/evenFRLmap.gif" height="600" width="550" align="center"></p>
 
 ---
 
 ## Some tips
 
 - Focus on the content
+- Consider your audience
 - Use best practices
 - Understand the limitations
 - Experiment and iterate!
@@ -348,7 +378,9 @@ schooldat<-ddply(student_long,.(schid,grade),
                  perminority=1-(length(race[race=="W"])/count))
 
 qplot(factor(schid),meanR,data=schooldat[schooldat$schid<25 & schooldat$grade==3,],
-      stat='identity')+theme_dpi()+labs(x="School",y="Mean Reading Score",title="Mean School Reading Scores in Grade 3")
+      stat='identity', geom='bar') + 
+  theme_dpi()+labs(x="School",y="Mean Reading Score", 
+                   title="Mean School Reading Scores in Grade 3")
 
 ```
 
@@ -370,7 +402,9 @@ But, what's wrong with this plot?
 
 ```{r plotmeanssmall,echo=FALSE,out.width='400px',out.height='325px'}
 qplot(factor(schid),meanR,data=schooldat[schooldat$schid<25 & schooldat$grade==3,],
-      stat='identity')+theme_dpi()+labs(x="School",y="Mean Reading Score",title="Mean School Reading Scores in Grade 3")
+      stat='identity', geom='bar') + 
+  theme_dpi()+labs(x="School",y="Mean Reading Score", 
+                   title="Mean School Reading Scores in Grade 3")
 ```
 
 ---
@@ -411,6 +445,24 @@ ggplot(schooldat[schooldat$schid<25 & schooldat$grade==3,],
   geom_hline(yintercept=480,color=I("yellow"))
 
 ```
+
+---order
+
+## Order
+
+This still requires too much work for the viewer - if we order the plots we get a 
+*caterpillar plot* that can be more useful!
+
+```{r meanplot5, echo=FALSE,out.width='750px',out.height='480px',dev='svg'}
+ggplot(schooldat[schooldat$schid<25 & schooldat$grade==3,],
+       aes(x=reorder(factor(schid),meanR),ymin=meanR-0.5*sdR,ymax=meanR+0.5*sdR,
+                     color=perminority))+geom_errorbar(alpha=0.7)+
+  geom_point(aes(y=meanR,size=count))+
+  theme_dpi()+labs(x="School",y="Mean Reading Score",title="Mean School Reading Score")+geom_hline(yintercept=421,color=I("red"))+
+  geom_hline(yintercept=480,color=I("yellow"))
+
+```
+
 
 ---
 
@@ -532,6 +584,19 @@ ggplot(student_long[student_long$grade==5,],
 
 ---
 
+## Simulation
+
+- When depicting a statistical model, simulation can be used to help show substantive 
+impact of model features
+- Instead of suggesting a program has a 0.2 standard deviation effect, show the 
+change in student test score that results
+- Especially important if you have interaction or non-linear effects
+- Gelman & Hill 2006 - [Data Analysis Using Regression and Multilevel/Hierarchical 
+Models](http://www.stat.columbia.edu/~gelman/arm/) is a good primer
+
+
+---
+
 ## Combining Features
 
 We can combine these features. 
@@ -554,6 +619,17 @@ We can combine these features.
 >- Labeling
 >- Lots of data-ink
 >- Reference points galore
+
+
+---
+
+## What would make it better?
+
+>- Interactivity - with this much information, allowing the user to go back and 
+forth on their own would be much more useful
+>- Size - most users don't have high resolution displays, but these can be 
+helpful in making things more clear
+>- Adjustments to the modeling process
 
 ---
 ## Some tips
@@ -579,9 +655,14 @@ qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_excel()+scale_color_excel()
 qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_stata()
 ```
 
----
+--- quote
 
 ## Technical Details
+
+
+<p><q>Getting the technical details right is essential to preventing users from 
+being distracted by the production <span class = 'red'>and miss the story.</span></q></p>
+
 
 
 --- &twocol w1:50% w2:50%
@@ -612,7 +693,7 @@ The technology you choose to do visualizations is largely a question of personal
 
 - In the future, more and more content is going to be delivered in a paperless world, so pick a technology that can leverage web/tablet/phone interfaces
 - Different technologies are useful for different levels of finish and polish; Adobe Illustrator is great for publication quality graphics, R is a great tool for rapidly prototyping different visualizations
-- Chose a technology that best serves your **consumer**, not you are the producer. Charts are a service to the consumer, not to the creator. 
+- Chose a technology that best serves your **consumer**, not you are the producer. **Charts are a service to the consumer, not to the creator.**
 
 ---
 
