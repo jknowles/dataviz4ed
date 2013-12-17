@@ -63,11 +63,12 @@ mode        : standalone # {standalone, draft}
 ## Objectives
 
 1. Review data visualization principles and chart types
-2. Look at applications in education data from an SEA
-3. Challenges with administrative data and policymaking
-4. Best practices and advice
-5. What tools to use
-6. Activity!
+2. Techniques for plotting "big data"
+3. Look at applications in education data from an SEA
+4. Your graphs are ugly!
+5. Best practices and advice
+6. What tools to use
+7. Activity!
 
 
 
@@ -547,7 +548,57 @@ forth on their own would be much more useful
 helpful in making things more clear
 >- Adjustments to the modeling process
 
+---quote
+
+## Bad Graphs are Everywhere
+
+<p><q> When you can, <span class = 'red'>avoid</span> making graphs that look 
+like these that follow.</q></p>
+
 ---
+
+## Bad Scales
+
+<p align="center"><img src="img/terriblePopGraph.png" height="550" width="750"></p>
+
+Stephen Emmott - "10 Billion" [http://www.buzzfeed.com/lukelewis/13-graphs-that-suggest-the-planet-might-be-totally-screwed](http://www.buzzfeed.com/lukelewis/13-graphs-that-suggest-the-planet-might-be-totally-screwed)
+
+---
+
+## Unnecessary Dimensions
+
+<p align="center"><img src="img/bad3Dbar2.jpg" height="550" width="750"></p>
+
+
+Source: [http://www.biostat.wisc.edu/~kbroman/topten_worstgraphs/](http://www.biostat.wisc.edu/~kbroman/topten_worstgraphs/)
+
+---
+
+## Too Cluttered
+
+
+<p align="center"><img src="img/binnedFreqBAD2.jpg" height="550" width="750"></p>
+
+
+Source: [http://www.biostat.wisc.edu/~kbroman/topten_worstgraphs/](http://www.biostat.wisc.edu/~kbroman/topten_worstgraphs/)
+
+
+---
+
+## Style over Substance
+
+<p align="center"><img src="img/badinfographic.png" height="550" width="750"></p>
+
+
+---
+
+## Redundant
+
+<p align="center"><img src="img/qqBAD.jpg" height="550" width="750"></p>
+
+
+---
+
 ## Some tips
 
 >- Have a properly chosen format and design 
@@ -726,10 +777,10 @@ attached base packages:
 
 other attached packages:
  [1] mgcv_1.7-27          nlme_3.1-113         plyr_1.8            
- [4] vcd_1.3-1            knitr_1.5.15         slidifyLibraries_0.1
- [7] markdown_0.6.4       whisker_0.3-2        slidify_0.3.3       
-[10] devtools_1.4.1       ggthemes_1.5.1       eeptools_0.3        
-[13] MASS_7.3-29          ggplot2_0.9.3.1     
+ [4] vcd_1.3-1            ggthemes_1.5.1       eeptools_0.3        
+ [7] MASS_7.3-29          ggplot2_0.9.3.1      knitr_1.5.15        
+[10] slidifyLibraries_0.1 markdown_0.6.4       whisker_0.3-2       
+[13] slidify_0.3.3        devtools_1.4.1      
 
 loaded via a namespace (and not attached):
  [1] abind_1.4-0        arm_1.6-10         car_2.0-19        

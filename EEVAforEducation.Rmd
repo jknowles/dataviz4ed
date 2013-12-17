@@ -63,11 +63,12 @@ mode        : standalone # {standalone, draft}
 ## Objectives
 
 1. Review data visualization principles and chart types
-2. Look at applications in education data from an SEA
-3. Challenges with administrative data and policymaking
-4. Best practices and advice
-5. What tools to use
-6. Activity!
+2. Techniques for plotting "big data"
+3. Look at applications in education data from an SEA
+4. Your graphs are ugly!
+5. Best practices and advice
+6. What tools to use
+7. Activity!
 
 ```{r knitrsetup,echo=FALSE,eval=TRUE,results="hide",error=FALSE,message=FALSE,warning=FALSE}
 library(knitr)
@@ -631,7 +632,57 @@ forth on their own would be much more useful
 helpful in making things more clear
 >- Adjustments to the modeling process
 
+---quote
+
+## Bad Graphs are Everywhere
+
+<p><q> When you can, <span class = 'red'>avoid</span> making graphs that look 
+like these that follow.</q></p>
+
 ---
+
+## Bad Scales
+
+<p align="center"><img src="img/terriblePopGraph.png" height="550" width="750"></p>
+
+Stephen Emmott - "10 Billion" [http://www.buzzfeed.com/lukelewis/13-graphs-that-suggest-the-planet-might-be-totally-screwed](http://www.buzzfeed.com/lukelewis/13-graphs-that-suggest-the-planet-might-be-totally-screwed)
+
+---
+
+## Unnecessary Dimensions
+
+<p align="center"><img src="img/bad3Dbar2.jpg" height="550" width="750"></p>
+
+
+Source: [http://www.biostat.wisc.edu/~kbroman/topten_worstgraphs/](http://www.biostat.wisc.edu/~kbroman/topten_worstgraphs/)
+
+---
+
+## Too Cluttered
+
+
+<p align="center"><img src="img/binnedFreqBAD2.jpg" height="550" width="750"></p>
+
+
+Source: [http://www.biostat.wisc.edu/~kbroman/topten_worstgraphs/](http://www.biostat.wisc.edu/~kbroman/topten_worstgraphs/)
+
+
+---
+
+## Style over Substance
+
+<p align="center"><img src="img/badinfographic.png" height="550" width="750"></p>
+
+
+---
+
+## Redundant
+
+<p align="center"><img src="img/qqBAD.jpg" height="550" width="750"></p>
+
+
+---
+
 ## Some tips
 
 >- Have a properly chosen format and design 
