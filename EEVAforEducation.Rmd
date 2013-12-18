@@ -585,6 +585,30 @@ ggplot(student_long[student_long$grade==5,],
 
 ---
 
+## Effect Plot
+
+```{r effplot1, echo=FALSE, out.width='800px'}
+
+library(effects)
+
+mod.cowles <- glm(volunteer ~ sex + neuroticism + extraversion + 
+                    neuroticism * extraversion,
+    data=Cowles, family=binomial)
+
+eff.cowles <- allEffects(mod.cowles, xlevels=list(extraversion=seq(0, 24, 6)),
+    given.values=c(sexmale=0.5))
+
+plot(eff.cowles, 'neuroticism:extraversion', multiline=TRUE,
+    ylab="Prob(Volunteer)")
+
+# 
+# plot(eff.cowles, 'neuroticism:extraversion', 
+#     ylab="Prob(Volunteer)")
+
+```
+
+---
+
 ## Simulation
 
 - When depicting a statistical model, simulation can be used to help show substantive 
@@ -595,6 +619,29 @@ change in student test score that results
 - Gelman & Hill 2006 - [Data Analysis Using Regression and Multilevel/Hierarchical 
 Models](http://www.stat.columbia.edu/~gelman/arm/) is a good primer
 
+---
+
+## Sim Example
+
+```{r modelsims, echo=FALSE}
+
+library(devtools)
+library(datasynthR)
+library(arm)
+dat1 <- genNumeric(1000, 6, rho=0.7)
+dat1 <- as.data.frame(dat1)
+names(dat1) <- c("y", "x1", "x2", "x3", "x4", "x5")
+
+m1 <- glm(y ~ x1 + x2, data=dat1)
+s <- sim(m1, 100)
+
+yhat <- coef(s)
+yhat.s <- yhat[,1] + 2 * yhat[,2] + -3 *yhat[,3]
+
+yhat <- cbind(yhat, yhat.s)
+
+
+```
 
 ---
 

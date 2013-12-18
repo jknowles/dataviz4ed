@@ -501,6 +501,13 @@ How could it be done?
 
 ---
 
+## Effect Plot
+
+<img src="figure/effplot1.svg" title="plot of chunk effplot1" alt="plot of chunk effplot1" width="800px" height="550px" />
+
+
+---
+
 ## Simulation
 
 - When depicting a statistical model, simulation can be used to help show substantive 
@@ -510,6 +517,12 @@ change in student test score that results
 - Especially important if you have interaction or non-linear effects
 - Gelman & Hill 2006 - [Data Analysis Using Regression and Multilevel/Hierarchical 
 Models](http://www.stat.columbia.edu/~gelman/arm/) is a good primer
+
+---
+
+## Sim Example
+
+
 
 
 ---
@@ -776,25 +789,26 @@ attached base packages:
 [8] base     
 
 other attached packages:
- [1] mgcv_1.7-27          nlme_3.1-113         plyr_1.8            
- [4] vcd_1.3-1            ggthemes_1.5.1       eeptools_0.3        
- [7] MASS_7.3-29          ggplot2_0.9.3.1      knitr_1.5.15        
-[10] slidifyLibraries_0.1 markdown_0.6.4       whisker_0.3-2       
-[13] slidify_0.3.3        devtools_1.4.1      
+ [1] arm_1.6-10           lme4_1.0-5           Matrix_1.1-0        
+ [4] datasynthR_0.1       reshape_0.8.4        effects_2.3-0       
+ [7] colorspace_1.2-4     lattice_0.20-24      mgcv_1.7-27         
+[10] nlme_3.1-113         plyr_1.8             vcd_1.3-1           
+[13] ggthemes_1.5.1       eeptools_0.3         MASS_7.3-29         
+[16] ggplot2_0.9.3.1      knitr_1.5.15         slidifyLibraries_0.1
+[19] markdown_0.6.4       whisker_0.3-2        slidify_0.3.3       
+[22] devtools_1.4.1      
 
 loaded via a namespace (and not attached):
- [1] abind_1.4-0        arm_1.6-10         car_2.0-19        
- [4] coda_0.16-1        colorspace_1.2-4   data.table_1.8.10 
- [7] dichromat_2.0-0    digest_0.6.4       evaluate_0.5.1    
-[10] foreign_0.8-57     formatR_0.10       gtable_0.1.2      
-[13] httr_0.2           labeling_0.2       lattice_0.20-24   
-[16] lme4_1.0-5         maptools_0.8-27    Matrix_1.1-0      
-[19] memisc_0.96-9      memoise_0.1        minqa_1.2.1       
-[22] munsell_0.4.2      nnet_7.3-7         parallel_3.0.2    
-[25] proto_0.3-10       RColorBrewer_1.0-5 RCurl_1.95-4.1    
-[28] reshape2_1.2.2     scales_0.2.3       sp_1.0-14         
-[31] splines_3.0.2      stringr_0.6.2      tools_3.0.2       
-[34] yaml_2.1.7        
+ [1] abind_1.4-0        car_2.0-19         coda_0.16-1       
+ [4] data.table_1.8.10  dichromat_2.0-0    digest_0.6.4      
+ [7] evaluate_0.5.1     foreign_0.8-57     formatR_0.10      
+[10] gtable_0.1.2       httr_0.2           labeling_0.2      
+[13] maptools_0.8-27    memisc_0.96-9      memoise_0.1       
+[16] minqa_1.2.1        munsell_0.4.2      nnet_7.3-7        
+[19] parallel_3.0.2     proto_0.3-10       RColorBrewer_1.0-5
+[22] RCurl_1.95-4.1     reshape2_1.2.2     scales_0.2.3      
+[25] sp_1.0-14          splines_3.0.2      stringr_0.6.2     
+[28] tools_3.0.2        yaml_2.1.7        
 ```
 
 ---
