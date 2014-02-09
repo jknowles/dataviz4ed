@@ -45,3 +45,7 @@ load("data/cache.rda")
 # New graphic
 
 slidify(inputFile="EEVAforEducation.Rmd")
+
+
+
+slidify(inputFile="dataviz4ed2014.Rmd")
