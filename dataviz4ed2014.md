@@ -1,8 +1,8 @@
 ---
 title       : Data Visualization for Education
-subtitle    : SDP Fellow Workshop January 2013
+subtitle    : SDP Institute for Leadership in Analytics February 2014
 author      : Jared Knowles
-job         : Policy Research Advisor, Wisconsin DPI
+job         : Research Analyst, Wisconsin DPI
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : prettify  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -389,16 +389,26 @@ How could it be done?
 
 ---
 
-## Spread the Data Out
+## Strategies for Presenting Big Data
 
-- Without reducing the data points we need to do three things to be successful
+- Without reducing the data points we need to do one or more of three things to 
+be successful
 
-1. **Spread the data out**
-  * These points overlap each other and make a mess
+1. Spread the data out
+2. Bin the data into groups
+3. Model the data to add reference
+
+
+---
+
+## Spreading the Data Out
+
+1. **Repeat the plot for subgroups**
+  * Allow the viewer to draw comparisons across small plots
 2. **Reduce the ink**
-  * Each point has too much "weight"
+  * Each point has too much "weight", so make them weigh less
 3. **Add Reference Points**
-  * 600,000 observations in one panel is not meaningful
+  * 600,000 observations in one panel is not meaningful and overwhelms the viewer
 
 >- Edward Tufte and others recommend **small multiples**, a technique of repeating a plot across groups to compare relationships in multiple dimensions 
 
@@ -424,7 +434,6 @@ How could it be done?
 
 
 
-
 --- quote
 
 ## Modeling the Data
@@ -440,12 +449,18 @@ How could it be done?
 
 ---
 
-## Machine Learning
+## Comparing Model Performance
 
-<p align="center"><img src="img/machinelearning.svg" height="490" width="750"></p>
+<p align="center"><img src="img/EWSreview.png" height="490" width="750"></p>
 
 
 --- 
+
+## Aiding in Model Choice
+
+<p align="center"><img src="img/EWSfull.png" height="490" width="750"></p>
+
+---
 
 ## Regression Trees
 
@@ -465,7 +480,7 @@ How could it be done?
 
 ---
 
-## Illustrating a Model
+## Illustrating a Model through Simulation
 
 <p align="center"><img src="img/withinstudentplot.png" height="490" width="750"></p>
 
@@ -504,7 +519,8 @@ We can combine these features.
 >- Have a narrative quality, tell a story
 >- Avoid content-free decoration (Tufte's proverbial chartjunk)
 >- Draw in a professional manner with an eye on the technical details
->- Remember the map
+>- Provide your audience with the context they need and remember they haven't 
+lived in the data like you!
 
 --- plot
 
@@ -654,6 +670,12 @@ with your group.
 
 ---
 
+## For Fun
+
+<p align="center"><img src="img/periodictablevisualization1.png" height="550" width="900"></p>
+
+--- 
+
 ## Backmatter
 
 
@@ -693,9 +715,5 @@ loaded via a namespace (and not attached):
 
 ---
 
-## For Fun
 
-<p align="center"><img src="img/periodictablevisualization1.png" height="550" width="900"></p>
-
---- 
 

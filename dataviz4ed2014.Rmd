@@ -457,16 +457,26 @@ qplot(readSS,mathSS,data=student_long)+theme_dpi()+
 
 ---
 
-## Spread the Data Out
+## Strategies for Presenting Big Data
 
-- Without reducing the data points we need to do three things to be successful
+- Without reducing the data points we need to do one or more of three things to 
+be successful
 
-1. **Spread the data out**
-  * These points overlap each other and make a mess
+1. Spread the data out
+2. Bin the data into groups
+3. Model the data to add reference
+
+
+---
+
+## Spreading the Data Out
+
+1. **Repeat the plot for subgroups**
+  * Allow the viewer to draw comparisons across small plots
 2. **Reduce the ink**
-  * Each point has too much "weight"
+  * Each point has too much "weight", so make them weigh less
 3. **Add Reference Points**
-  * 600,000 observations in one panel is not meaningful
+  * 600,000 observations in one panel is not meaningful and overwhelms the viewer
 
 >- Edward Tufte and others recommend **small multiples**, a technique of repeating a plot across groups to compare relationships in multiple dimensions 
 
@@ -502,7 +512,6 @@ qplot(readSS,mathSS,data=subset(student_long,grade==3),geom='hex')+
 ```
 
 
-
 --- quote
 
 ## Modeling the Data
@@ -523,12 +532,18 @@ ggplot(student_long[student_long$grade==5,],
 
 ---
 
-## Machine Learning
+## Comparing Model Performance
 
-<p align="center"><img src="img/machinelearning.svg" height="490" width="750"></p>
+<p align="center"><img src="img/EWSreview.png" height="490" width="750"></p>
 
 
 --- 
+
+## Aiding in Model Choice
+
+<p align="center"><img src="img/EWSfull.png" height="490" width="750"></p>
+
+---
 
 ## Regression Trees
 
@@ -548,7 +563,7 @@ ggplot(student_long[student_long$grade==5,],
 
 ---
 
-## Illustrating a Model
+## Illustrating a Model through Simulation
 
 <p align="center"><img src="img/withinstudentplot.png" height="490" width="750"></p>
 
@@ -587,7 +602,8 @@ We can combine these features.
 >- Have a narrative quality, tell a story
 >- Avoid content-free decoration (Tufte's proverbial chartjunk)
 >- Draw in a professional manner with an eye on the technical details
->- Remember the map
+>- Provide your audience with the context they need and remember they haven't 
+lived in the data like you!
 
 --- plot
 
@@ -763,6 +779,12 @@ qplot(attday,readSS,
 
 ---
 
+## For Fun
+
+<p align="center"><img src="img/periodictablevisualization1.png" height="550" width="900"></p>
+
+--- 
+
 ## Backmatter
 
 ```{r wrapup,echo=TRUE,eval=TRUE,results="markup"}
@@ -770,9 +792,5 @@ print(sessionInfo(),locale=FALSE)
 ```
 ---
 
-## For Fun
 
-<p align="center"><img src="img/periodictablevisualization1.png" height="550" width="900"></p>
-
---- 
 
