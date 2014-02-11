@@ -59,18 +59,18 @@ always be <span class = 'red'>better than a table.</span></q></p>
 
 ## Student Growth
 
-<p align="center"><img src="img/stuplot25.png" height="560" width="750"></p>
+<p align="center"><img src="img/stuplot25.png"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:750px; max-height:560px"></p>
+
 
 ---
 
 ## Objectives
 
 1. Review data visualization principles
-2. Look at applications in education data from an SEA
-3. Challenges with administrative data and policymaking
-4. Best practices and advice
-5. What tools to use
-6. Activity!
+2. Look at applications in education data
+3. Best practices and advice
+4. Review tools to use
+5. Activity!
 
 
 
@@ -100,7 +100,7 @@ How can we improve this simple scatterplot?
 
 *** right
 
-<img src="figure/plot1.svg" title="plot of chunk plot1" alt="plot of chunk plot1" width="550px" height="330px" />
+<img src="figure/plot1.svg" title="plot of chunk plot1" alt="plot of chunk plot1" width="550px" height="330px" style="display: block; margin: auto;" />
 
 
 
@@ -110,8 +110,7 @@ How can we improve this simple scatterplot?
 
 ## Chart Elements
 
-There are a few things that all charts need. There are sometimes strong cases to 
-deviate from these, but they are good rules of thumb. 
+There are a few things that all charts need [most of the time!]:  
 
 - **Axis labels** and a **title**
   * These make the chart self-explanatory
@@ -121,6 +120,9 @@ deviate from these, but they are good rules of thumb.
   * How are units mapped to the visual space
 - **Annotations**
   * Author and data source (depending on distribution)
+
+> These add up to provide context and meaning to viewers who have not analyzed 
+the dataset themselves.
 
 ---
 
@@ -133,7 +135,7 @@ elements (e.g. color, size, shape, etc.)
 - **Smart use of dimensions allows us to increase the information density of our charts**
 
 
-<img src="figure/unnamed-chunk-2.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="680px" height="300px" />
+<img src="figure/unnamed-chunk-2.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="680px" height="300px" style="display: block; margin: auto;" />
 
 
 --- quote
@@ -177,12 +179,6 @@ cues for your audience is everything.</q></p>
 
 ---
 
-## Parallel Coordinates
-
-<p align="center"><img src="img/d3parallelcoordinates.png" height="440" width="875"></p>
-
----
-
 ## Parallel Sets
 
 <p align="center"><img src="img/d3parallelsets.png" height="440" width="875"></p>
@@ -205,9 +201,9 @@ cues for your audience is everything.</q></p>
 
 - Any given dimension may be measured at different [levels of measure](http://en.wikipedia.org/wiki/Level_of_measurement) [derived by Stanley Smith Stevens in the 1940s and 50s]
   * Nominal: unordered categories of data (e.g. race)
-  * Ordinal: ordered categories of data, relative size and degree of difference between categories is unknown (e.g. Likert scales, proficiency levels perhaps)
-  * Interval: ordered categories of data, fixed width, like discrete temperature scales (e.g. grade in school)
-  * Continuous (ratio): a measurement scale in a continuous space with a meaningful zero - physical measurements (e.g. scale scores)
+  * Ordinal: ordered categories of data, relative size and degree of difference between categories is unknown (e.g. Likert scales, proficiency levels, etc.)
+  * Interval: ordered categories of data, fixed width (e.g. grade level in school, GPA)
+  * Continuous (ratio): a measurement scale in a continuous space with a meaningful zero (e.g. scale scores)
 
 ---
 
@@ -221,22 +217,44 @@ Aesthetic |      Discrete              |  Continuous
 ----------|  ------------------------- | -------------------------------
 Color     |  Disparate colors          |  Sequential or divergent colors
 Size      |  Unique size for each value|   mapping to radius of value
-Shape     |  A shape for each value    |   **does not make sense**
+Shape     |  A shape for each value    |   *does not make sense*
 
 ### Ordered vs. Unordered
 
 Aesthetic  |    Ordered                         |  Unordered
 ---------- |  --------------------------------  |   -------------------------
 Color      |  Sequential or divergent colors  |    Rainbow
-Size       |  Increasing or decreasing radius |    **does not make sense**
-Shape      |  **does not make sense**         |    A shape for each value
+Size       |  Increasing or decreasing radius |    *does not make sense*
+Shape      |  *does not make sense*         |    A shape for each value
 
+---
+
+## Some tips
+
+- Focus on the content and the context
+- Know your audience, understand their limits, then push them!
+- Use best practices, except when they don't help
+- Experiment and iterate!
 
 --- plot
 
-## Example
+## Charting Categorical Data
 
-<img src="figure/plot1.11.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="325px" height="245px" /><img src="figure/plot1.12.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="325px" height="245px" /><img src="figure/plot1.13.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="325px" height="245px" /><img src="figure/plot1.14.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="325px" height="245px" /><img src="figure/plot1.15.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="325px" height="245px" /><img src="figure/plot1.16.svg" title="plot of chunk plot1.1" alt="plot of chunk plot1.1" width="325px" height="245px" />
+<img src="figure/unnamed-chunk-3.svg" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="680px" height="480px" style="display: block; margin: auto;" />
+
+
+--- 
+
+## Charting Ordinal Data
+
+<img src="figure/unnamed-chunk-4.svg" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="750px" height="550px" style="display: block; margin: auto;" />
+
+
+---
+
+## Charting Interval/Continuous Data
+
+<img src="figure/unnamed-chunk-5.svg" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="750px" height="550px" style="display: block; margin: auto;" />
 
 
 --- quote
@@ -247,48 +265,13 @@ Shape      |  **does not make sense**         |    A shape for each value
 
 ## Maps
 
-<p align="center"><img src="img/evenFRLmap.gif" height="600" width="550"></p>
-
----
-
-## Some tips
-
-- Focus on the content
-- Use best practices
-- Understand the limitations
-- Experiment and iterate!
-
---- 
-
-## Examples
-
-
---- plot
-
-## Charting Categorical Data
-
-<img src="figure/unnamed-chunk-3.svg" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="680px" height="480px" />
-
-
---- 
-
-## Charting Ordinal Data
-
-<img src="figure/unnamed-chunk-4.svg" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="750px" height="550px" />
-
-
----
-
-## Charting Interval/Continuous Data
-
-<img src="figure/unnamed-chunk-5.svg" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="750px" height="550px" />
-
+<p align="center"><img src="img/evenFRLmap.gif"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:550px; max-height:600px"></p>
 
 ---
 
 ## Complexity
 
-How do we display a ton of data--tens or hundreds of thousands of observations--with combinations of data types across multiple dimensions?
+How do we display thousands or hundreds of thousands of observations with varying data types across multiple dimensions?
 
 1. **Summarize the data**
   * Display summary statistics visually depicting the central tendency and spread of data
@@ -316,7 +299,7 @@ Let's look at some examples of this.
 
 Here is a simple plot of mean school reading scores:
 
-<img src="figure/plotmeans.svg" title="plot of chunk plotmeans" alt="plot of chunk plotmeans" width="750px" height="500px" />
+<img src="figure/plotmeans.svg" title="plot of chunk plotmeans" alt="plot of chunk plotmeans" width="750px" height="500px" style="display: block; margin: auto;" />
 
 
 But, what's wrong with this plot?
@@ -335,21 +318,21 @@ But, what's wrong with this plot?
 
 *** right
 
-<img src="figure/plotmeanssmall.svg" title="plot of chunk plotmeanssmall" alt="plot of chunk plotmeanssmall" width="400px" height="325px" />
+<img src="figure/plotmeanssmall.svg" title="plot of chunk plotmeanssmall" alt="plot of chunk plotmeanssmall" width="400px" height="325px" style="display: block; margin: auto;" />
 
 
 ---
 
 ## Adding a Dimension
 
-<img src="figure/meanplot2.svg" title="plot of chunk meanplot2" alt="plot of chunk meanplot2" width="750px" height="550px" />
+<img src="figure/meanplot2.svg" title="plot of chunk meanplot2" alt="plot of chunk meanplot2" width="750px" height="550px" style="display: block; margin: auto;" />
 
 
 --- 
 
 ## Even More Dimensions
 
-<img src="figure/meanplot3.svg" title="plot of chunk meanplot3" alt="plot of chunk meanplot3" width="750px" height="550px" />
+<img src="figure/meanplot3.svg" title="plot of chunk meanplot3" alt="plot of chunk meanplot3" width="750px" height="550px" style="display: block; margin: auto;" />
 
 
 ---
@@ -358,14 +341,14 @@ But, what's wrong with this plot?
 
 We still aren't sure what the mean scale score means. Let's see a couple more additions that can make this useful. 
 
-<img src="figure/meanplot4.svg" title="plot of chunk meanplot4" alt="plot of chunk meanplot4" width="750px" height="480px" />
+<img src="figure/meanplot4.svg" title="plot of chunk meanplot4" alt="plot of chunk meanplot4" width="750px" height="480px" style="display: block; margin: auto;" />
 
 
 ---
 
 ## Caterpillar Plots
 
-<img src="figure/catplot1.svg" title="plot of chunk catplot1" alt="plot of chunk catplot1" width="750px" height="480px" />
+<img src="figure/catplot1.svg" title="plot of chunk catplot1" alt="plot of chunk catplot1" width="750px" height="480px" style="display: block; margin: auto;" />
 
 
 ---
@@ -384,7 +367,7 @@ How could it be done?
 
 ## 600,000 Observations Too Many
 
-<img src="figure/rawdata1.png" title="plot of chunk rawdata1" alt="plot of chunk rawdata1" width="750px" height="550px" />
+<img src="figure/rawdata1.png" title="plot of chunk rawdata1" alt="plot of chunk rawdata1" width="750px" height="550px" style="display: block; margin: auto;" />
 
 
 ---
@@ -396,7 +379,7 @@ be successful
 
 1. Spread the data out
 2. Bin the data into groups
-3. Model the data to add reference
+3. Annotate and add references
 
 
 ---
@@ -416,21 +399,21 @@ be successful
 
 ## What About This
 
-<img src="figure/rawdata2.png" title="plot of chunk rawdata2" alt="plot of chunk rawdata2" width="750px" height="550px" />
+<img src="figure/rawdata2.png" title="plot of chunk rawdata2" alt="plot of chunk rawdata2" width="750px" height="550px" style="display: block; margin: auto;" />
 
 
 ---
 
 ## Even Smaller Multiples
 
-<img src="figure/rawdata3.png" title="plot of chunk rawdata3" alt="plot of chunk rawdata3" width="750px" height="550px" />
+<img src="figure/rawdata3.png" title="plot of chunk rawdata3" alt="plot of chunk rawdata3" width="750px" height="550px" style="display: block; margin: auto;" />
 
 
 ---
 
 ## Binning Data
 
-<img src="figure/rawdata4.png" title="plot of chunk rawdata4" alt="plot of chunk rawdata4" width="750px" height="550px" />
+<img src="figure/rawdata4.svg" title="plot of chunk rawdata4" alt="plot of chunk rawdata4" width="750px" height="550px" style="display: block; margin: auto;" />
 
 
 
@@ -444,47 +427,60 @@ be successful
 
 ## Smoothers 
 
-<img src="figure/unnamed-chunk-6.svg" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="800px" height="550px" />
+<img src="figure/unnamed-chunk-6.svg" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="800px" height="550px" style="display: block; margin: auto;" />
 
 
 ---
 
 ## Comparing Model Performance
 
-<p align="center"><img src="img/EWSreview.png" height="490" width="750"></p>
+<p align="center"><img src="img/EWSreview.png" style="display: block; margin:0 auto; height:auto; width:auto; max-width:700px; max-height:750px"></p>
 
 
 --- 
 
 ## Aiding in Model Choice
 
-<p align="center"><img src="img/EWSfull.png" height="490" width="750"></p>
+<p align="center"><img src="img/EWSfull.png" style="display: block; margin:0 auto; height:auto; width:auto; max-width:700px; max-height:750px"></p>
 
 ---
 
 ## Regression Trees
 
-<p align="center"><img src="img/parttree.svg" height="490" width="750"></p>
+<p align="center"><img src="img/parttree.svg"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:700px; max-height:490px"></p>
 
 ---
 
 ## Regression Results
 
-<p align="center"><img src="img/modelbracketlang.svg" height="490" width="800"></p>
+<p align="center"><img src="img/modelbracketlang.svg"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:700px; max-height:490px"></p>
+
+---
+
+## Coefficient Comparisons
+
+<p align="center"><img src="img/modelplot.png"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:700px; max-height:550px"></p>
 
 ---
 
 ## Path Diagrams
 
-<p align="center"><img src="img/pathdiagram.png" height="490" width="800"></p>
+<p align="center"><img src="img/pathdiagram.png"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:700px; max-height:490px"></p>
 
 ---
 
 ## Illustrating a Model through Simulation
 
-<p align="center"><img src="img/withinstudentplot.png" height="490" width="750"></p>
+<p align="center"><img src="img/withinstudentplot.png"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:700px; max-height:490px"></p>
 
 ---
+
+## Simulating Outcomes
+
+<p align="center"><img src="img/ELP_Survival_Curves_DRAFT.png"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:800px; max-height:620px"></p>
+
+---
+
 
 ## Combining Features
 
@@ -498,7 +494,7 @@ We can combine these features.
 
 ## Animation Example
 
-<p align="center"><img src="https://dl.dropbox.com/u/1811289/TESTstuplot.gif" height="550" width="750"></p>
+<p align="center"><img src="https://dl.dropbox.com/u/1811289/TESTstuplot.gif"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:750px; max-height:550px"></p>
 
 ---
 
@@ -527,7 +523,7 @@ lived in the data like you!
 ## Themes
 They can **communicate**, **confound**, **brand**, and **distract**
 
-<img src="figure/plot21.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" style="display: block; margin: auto;" /><img src="figure/plot22.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" style="display: block; margin: auto;" /><img src="figure/plot23.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" style="display: block; margin: auto;" /><img src="figure/plot24.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" style="display: block; margin: auto;" />
+<img src="figure/plot21.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" /><img src="figure/plot22.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" /><img src="figure/plot23.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" /><img src="figure/plot24.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" />
 
 
 ---
@@ -563,13 +559,13 @@ The technology you choose to do visualizations is largely a question of personal
 
 - In the future, more and more content is going to be delivered in a paperless world, so pick a technology that can leverage web/tablet/phone interfaces
 - Different technologies are useful for different levels of finish and polish; Adobe Illustrator is great for publication quality graphics, R is a great tool for rapidly prototyping different visualizations
-- Chose a technology that best serves your **consumer**, not you are the producer. Charts are a service to the consumer, not to the creator. 
+- Chose a technology that best serves your **consumer**, not you the producer. Charts are a service to the consumer, not to the creator. 
 
 ---
 
 ## Some Technologies
 
-<img src="figure/technologies.svg" title="plot of chunk technologies" alt="plot of chunk technologies" width="750px" height="550px" />
+<img src="figure/technologies.svg" title="plot of chunk technologies" alt="plot of chunk technologies" width="750px" height="550px" style="display: block; margin: auto;" />
 
 
 ---
@@ -590,6 +586,7 @@ We have a number of other techniques we can use beyond simple charts.
 - Summary tables
 - Videos
 - Web sites
+- Simulations
 
 
 --- &twocol w1:20% w2:80%
@@ -597,8 +594,8 @@ We have a number of other techniques we can use beyond simple charts.
 ## Group Exercise
 
 Visualize some education data. Imagine we have the following dimensions and want 
-to present more of them on a plot like that on the right. Sketch out your result 
-with your group.
+to present more of them on a plot like that on the right. Think about a story 
+you might want to tell and then sketch out your result with your group.
 
 *** left
 
@@ -613,14 +610,14 @@ with your group.
 
 *** right
 
-<img src="figure/studentexample.svg" title="plot of chunk studentexample" alt="plot of chunk studentexample" width="420px" height="350px" />
+<img src="figure/studentexample.svg" title="plot of chunk studentexample" alt="plot of chunk studentexample" width="420px" height="350px" style="display: block; margin: auto;" />
 
 
 ---
 
 ## Example
 
-<img src="figure/studentexample2.svg" title="plot of chunk studentexample2" alt="plot of chunk studentexample2" width="700px" height="500px" />
+<img src="figure/studentexample2.svg" title="plot of chunk studentexample2" alt="plot of chunk studentexample2" width="700px" height="500px" style="display: block; margin: auto;" />
 
 
 
@@ -633,6 +630,11 @@ with your group.
 - Ware, Colin. 2012. [Information Visualization: Perception for Design.](http://www.amazon.com/Information-Visualization-Third-Edition-Technologies/dp/0123814642/ref=reg_hu-rd_add_1_dp) 3rd Edition. Morgan Kaufmann. 
 - Cleveland, William. 1994. [The Elements of Graphing Data.](http://www.amazon.com/gp/product/0963488414/) Hobart Press. 
 - Cleveland, William. 1993. [Visualizing Data.](http://www.amazon.com/gp/product/0963488406) Hobart Press.
+
+---
+
+## References
+
 - Few, Stephen. 2009. [Now You See It: Simple Visualization Techniques for Quantiative Analysis.](http://www.amazon.com/gp/product/0970601980/) Analytics Press. 
 - Few, Stephen. 2012. [Show Me the Numbers: Designing Tables and Graphs to Enlighten.](http://www.amazon.com/gp/product/0970601972) Analytics Press. 
 - Yau, Nathan. 2011. [Visualize This: The FlowingData Guide to Design, Visualization, and Statistics.](http://www.amazon.com/Visualize-This-FlowingData-Visualization-Statistics/dp/0470944889/) Wiley.
@@ -646,7 +648,7 @@ with your group.
 - [The Functional Art](http://www.thefunctionalart.com/)
 - [ggplot2](http://www.ggplot2.org)
 - [Robert Kosara](http://eagereyes.org/about)
-
+- [Data Stories Podcast](http://datastori.es/)
 
 
 --- &twocol w1:50% w2:50%
@@ -692,25 +694,26 @@ attached base packages:
 [8] base     
 
 other attached packages:
- [1] knitr_1.5.15         slidifyLibraries_0.1 markdown_0.6.4      
- [4] whisker_0.3-2        slidify_0.3.3        devtools_1.4.1      
- [7] mgcv_1.7-28          nlme_3.1-113         lme4_1.0-6          
-[10] Matrix_1.1-2         lattice_0.20-24      ggthemes_1.6.0      
-[13] plyr_1.8             vcd_1.3-1            eeptools_0.3        
-[16] MASS_7.3-29          ggplot2_0.9.3.1     
+ [1] mgcv_1.7-28          nlme_3.1-113         plyr_1.8            
+ [4] vcd_1.3-1            hexbin_1.26.3        lattice_0.20-24     
+ [7] ggthemes_1.5.1       eeptools_0.3         MASS_7.3-29         
+[10] ggplot2_0.9.3.1      knitr_1.5.15         slidifyLibraries_0.1
+[13] markdown_0.6.4       whisker_0.3-2        slidify_0.3.3       
+[16] devtools_1.4.1      
 
 loaded via a namespace (and not attached):
  [1] abind_1.4-0        arm_1.6-10         car_2.0-19        
  [4] coda_0.16-1        colorspace_1.2-4   data.table_1.8.10 
  [7] dichromat_2.0-0    digest_0.6.4       evaluate_0.5.1    
 [10] foreign_0.8-59     formatR_0.10       gtable_0.1.2      
-[13] httr_0.2           labeling_0.2       maptools_0.8-27   
-[16] memisc_0.96-9      memoise_0.1        minqa_1.2.3       
-[19] munsell_0.4.2      nnet_7.3-7         parallel_3.0.2    
-[22] proto_0.3-10       RColorBrewer_1.0-5 Rcpp_0.11.0       
-[25] RCurl_1.95-4.1     reshape2_1.2.2     scales_0.2.3      
-[28] sp_1.0-14          splines_3.0.2      stringr_0.6.2     
-[31] tools_3.0.2        yaml_2.1.10       
+[13] httr_0.2           labeling_0.2       lme4_1.0-6        
+[16] maptools_0.8-27    Matrix_1.1-2       memisc_0.96-9     
+[19] memoise_0.1        minqa_1.2.3        munsell_0.4.2     
+[22] nnet_7.3-7         parallel_3.0.2     proto_0.3-10      
+[25] RColorBrewer_1.0-5 Rcpp_0.11.0        RCurl_1.95-4.1    
+[28] reshape2_1.2.2     scales_0.2.3       sp_1.0-14         
+[31] splines_3.0.2      stringr_0.6.2      tools_3.0.2       
+[34] yaml_2.1.10       
 ```
 
 ---

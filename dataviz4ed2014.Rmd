@@ -59,25 +59,26 @@ always be <span class = 'red'>better than a table.</span></q></p>
 
 ## Student Growth
 
-<p align="center"><img src="img/stuplot25.png" height="560" width="750"></p>
+<p align="center"><img src="img/stuplot25.png"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:750px; max-height:560px"></p>
+
 
 ---
 
 ## Objectives
 
 1. Review data visualization principles
-2. Look at applications in education data from an SEA
-3. Challenges with administrative data and policymaking
-4. Best practices and advice
-5. What tools to use
-6. Activity!
+2. Look at applications in education data
+3. Best practices and advice
+4. Review tools to use
+5. Activity!
 
 ```{r knitrsetup,echo=FALSE,eval=TRUE,results="hide",error=FALSE,message=FALSE,warning=FALSE}
 library(knitr)
-opts_chunk$set(fig.width=8,fig.height=5.5,message=FALSE,error=FALSE,warning=FALSE,echo=TRUE,dev="svg",comment=NA,out.width="750px",out.height="550px")
+opts_chunk$set(fig.width=8,fig.height=5.5,message=FALSE,error=FALSE,warning=FALSE,echo=TRUE,dev="svg",comment=NA,out.width="750px",out.height="550px", fig.align='center')
 library(eeptools)
 library(ggplot2)
 library(ggthemes)
+require('hexbin')
 #source("data/simulate_data.R")
 load("data/cache.rda")
 ```
@@ -122,8 +123,7 @@ gc()
 
 ## Chart Elements
 
-There are a few things that all charts need. There are sometimes strong cases to 
-deviate from these, but they are good rules of thumb. 
+There are a few things that all charts need [most of the time!]:  
 
 - **Axis labels** and a **title**
   * These make the chart self-explanatory
@@ -133,6 +133,9 @@ deviate from these, but they are good rules of thumb.
   * How are units mapped to the visual space
 - **Annotations**
   * Author and data source (depending on distribution)
+
+> These add up to provide context and meaning to viewers who have not analyzed 
+the dataset themselves.
 
 ---
 
@@ -145,7 +148,7 @@ elements (e.g. color, size, shape, etc.)
 - **Smart use of dimensions allows us to increase the information density of our charts**
 
 
-```{r echo=FALSE,out.width='680px',out.height='300px'}
+```{r echo=FALSE,out.width='680px',out.height='300px', fig.align='center'}
 qplot(readSS,mathSS,data=df[df$grade<6,])+theme_dpi()+labs(title="Multidimensions")+facet_wrap(~grade,nrow=1)
 ```
 
@@ -190,12 +193,6 @@ cues for your audience is everything.</q></p>
 
 ---
 
-## Parallel Coordinates
-
-<p align="center"><img src="img/d3parallelcoordinates.png" height="440" width="875"></p>
-
----
-
 ## Parallel Sets
 
 <p align="center"><img src="img/d3parallelsets.png" height="440" width="875"></p>
@@ -218,9 +215,9 @@ cues for your audience is everything.</q></p>
 
 - Any given dimension may be measured at different [levels of measure](http://en.wikipedia.org/wiki/Level_of_measurement) [derived by Stanley Smith Stevens in the 1940s and 50s]
   * Nominal: unordered categories of data (e.g. race)
-  * Ordinal: ordered categories of data, relative size and degree of difference between categories is unknown (e.g. Likert scales, proficiency levels perhaps)
-  * Interval: ordered categories of data, fixed width, like discrete temperature scales (e.g. grade in school)
-  * Continuous (ratio): a measurement scale in a continuous space with a meaningful zero - physical measurements (e.g. scale scores)
+  * Ordinal: ordered categories of data, relative size and degree of difference between categories is unknown (e.g. Likert scales, proficiency levels, etc.)
+  * Interval: ordered categories of data, fixed width (e.g. grade level in school, GPA)
+  * Continuous (ratio): a measurement scale in a continuous space with a meaningful zero (e.g. scale scores)
 
 ---
 
@@ -234,53 +231,24 @@ Aesthetic |      Discrete              |  Continuous
 ----------|  ------------------------- | -------------------------------
 Color     |  Disparate colors          |  Sequential or divergent colors
 Size      |  Unique size for each value|   mapping to radius of value
-Shape     |  A shape for each value    |   **does not make sense**
+Shape     |  A shape for each value    |   *does not make sense*
 
 ### Ordered vs. Unordered
 
 Aesthetic  |    Ordered                         |  Unordered
 ---------- |  --------------------------------  |   -------------------------
 Color      |  Sequential or divergent colors  |    Rainbow
-Size       |  Increasing or decreasing radius |    **does not make sense**
-Shape      |  **does not make sense**         |    A shape for each value
-
-
---- plot
-
-## Example
-
-```{r plot1.1,out.width="325px",out.height="245px",echo=FALSE}
-qplot(hp,mpg,data=mtcars)+theme_dpi()
-qplot(hp,data=mtcars)+theme_dpi()
-qplot(drat,data=mtcars,geom="density")+theme_dpi()
-qplot(factor(cyl),disp,data=mtcars,geom="boxplot")+theme_dpi()
-qplot(factor(vs),mpg,data=mtcars,geom="violin")+theme_dpi()
-qplot(hp,qsec,data=mtcars,geom="point")+theme_dpi()+geom_smooth()
-```
-
---- quote
-
-<p><q> Think like a <span class = 'red'>map</span>. Data density and easy interpretability.</q></p>
-
---- map
-
-## Maps
-
-<p align="center"><img src="img/evenFRLmap.gif" height="600" width="550"></p>
+Size       |  Increasing or decreasing radius |    *does not make sense*
+Shape      |  *does not make sense*         |    A shape for each value
 
 ---
 
 ## Some tips
 
-- Focus on the content
-- Use best practices
-- Understand the limitations
+- Focus on the content and the context
+- Know your audience, understand their limits, then push them!
+- Use best practices, except when they don't help
 - Experiment and iterate!
-
---- 
-
-## Examples
-
 
 --- plot
 
@@ -301,6 +269,10 @@ mosaic(~race+proflvl,data=df,shade=TRUE)
 ## Charting Ordinal Data
 
 ```{r echo=FALSE}
+
+df$proflvl <- factor(as.character(df$proflvl), levels = c("below basic", 
+                                  "basic", "proficient", "advanced"))
+
 qplot(proflvl,data=df,geom='bar')+theme_dpi()
 ```
 
@@ -309,14 +281,25 @@ qplot(proflvl,data=df,geom='bar')+theme_dpi()
 ## Charting Interval/Continuous Data
 
 ```{r echo=FALSE}
+
 qplot(readSS,data=df)+theme_dpi()+labs(title="My Histogram")
 ```
+
+--- quote
+
+<p><q> Think like a <span class = 'red'>map</span>. Data density and easy interpretability.</q></p>
+
+--- map
+
+## Maps
+
+<p align="center"><img src="img/evenFRLmap.gif"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:550px; max-height:600px"></p>
 
 ---
 
 ## Complexity
 
-How do we display a ton of data--tens or hundreds of thousands of observations--with combinations of data types across multiple dimensions?
+How do we display thousands or hundreds of thousands of observations with varying data types across multiple dimensions?
 
 1. **Summarize the data**
   * Display summary statistics visually depicting the central tendency and spread of data
@@ -464,7 +447,7 @@ be successful
 
 1. Spread the data out
 2. Bin the data into groups
-3. Model the data to add reference
+3. Annotate and add references
 
 
 ---
@@ -504,7 +487,7 @@ qplot(readSS,mathSS,data=student_long,alpha=I(0.05))+facet_grid(race~grade)+
 
 ## Binning Data
 
-```{r rawdata4,echo=FALSE,dev='png'}
+```{r rawdata4,echo=FALSE,dev='svg'}
 qplot(readSS,mathSS,data=subset(student_long,grade==3),geom='hex')+
   facet_grid(econ~disab)+
   theme_dpi()+geom_smooth()+
@@ -534,40 +517,53 @@ ggplot(student_long[student_long$grade==5,],
 
 ## Comparing Model Performance
 
-<p align="center"><img src="img/EWSreview.png" height="490" width="750"></p>
+<p align="center"><img src="img/EWSreview.png" style="display: block; margin:0 auto; height:auto; width:auto; max-width:700px; max-height:750px"></p>
 
 
 --- 
 
 ## Aiding in Model Choice
 
-<p align="center"><img src="img/EWSfull.png" height="490" width="750"></p>
+<p align="center"><img src="img/EWSfull.png" style="display: block; margin:0 auto; height:auto; width:auto; max-width:700px; max-height:750px"></p>
 
 ---
 
 ## Regression Trees
 
-<p align="center"><img src="img/parttree.svg" height="490" width="750"></p>
+<p align="center"><img src="img/parttree.svg"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:700px; max-height:490px"></p>
 
 ---
 
 ## Regression Results
 
-<p align="center"><img src="img/modelbracketlang.svg" height="490" width="800"></p>
+<p align="center"><img src="img/modelbracketlang.svg"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:700px; max-height:490px"></p>
+
+---
+
+## Coefficient Comparisons
+
+<p align="center"><img src="img/modelplot.png"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:700px; max-height:550px"></p>
 
 ---
 
 ## Path Diagrams
 
-<p align="center"><img src="img/pathdiagram.png" height="490" width="800"></p>
+<p align="center"><img src="img/pathdiagram.png"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:700px; max-height:490px"></p>
 
 ---
 
 ## Illustrating a Model through Simulation
 
-<p align="center"><img src="img/withinstudentplot.png" height="490" width="750"></p>
+<p align="center"><img src="img/withinstudentplot.png"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:700px; max-height:490px"></p>
 
 ---
+
+## Simulating Outcomes
+
+<p align="center"><img src="img/ELP_Survival_Curves_DRAFT.png"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:800px; max-height:620px"></p>
+
+---
+
 
 ## Combining Features
 
@@ -581,7 +577,7 @@ We can combine these features.
 
 ## Animation Example
 
-<p align="center"><img src="https://dl.dropbox.com/u/1811289/TESTstuplot.gif" height="550" width="750"></p>
+<p align="center"><img src="https://dl.dropbox.com/u/1811289/TESTstuplot.gif"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:750px; max-height:550px"></p>
 
 ---
 
@@ -610,7 +606,7 @@ lived in the data like you!
 ## Themes
 They can **communicate**, **confound**, **brand**, and **distract**
 
-```{r plot2, fig.height=5.5, fig.width=8.5,fig.align="center",out.width="400px",out.height="220px",echo=FALSE}
+```{r plot2, out.width="400px",out.height="220px",echo=FALSE, fig.keep='all', fig.align='default'}
 qplot(hp,mpg,data=mtcars)+theme_economist()
 qplot(hp,mpg,data=mtcars)+theme_tufte()
 qplot(hp,mpg,data=mtcars,color=factor(cyl))+theme_excel()+scale_color_excel()
@@ -650,7 +646,7 @@ The technology you choose to do visualizations is largely a question of personal
 
 - In the future, more and more content is going to be delivered in a paperless world, so pick a technology that can leverage web/tablet/phone interfaces
 - Different technologies are useful for different levels of finish and polish; Adobe Illustrator is great for publication quality graphics, R is a great tool for rapidly prototyping different visualizations
-- Chose a technology that best serves your **consumer**, not you are the producer. Charts are a service to the consumer, not to the creator. 
+- Chose a technology that best serves your **consumer**, not you the producer. Charts are a service to the consumer, not to the creator. 
 
 ---
 
@@ -687,6 +683,7 @@ We have a number of other techniques we can use beyond simple charts.
 - Summary tables
 - Videos
 - Web sites
+- Simulations
 
 
 --- &twocol w1:20% w2:80%
@@ -694,8 +691,8 @@ We have a number of other techniques we can use beyond simple charts.
 ## Group Exercise
 
 Visualize some education data. Imagine we have the following dimensions and want 
-to present more of them on a plot like that on the right. Sketch out your result 
-with your group.
+to present more of them on a plot like that on the right. Think about a story 
+you might want to tell and then sketch out your result with your group.
 
 *** left
 
@@ -742,6 +739,11 @@ qplot(attday,readSS,
 - Ware, Colin. 2012. [Information Visualization: Perception for Design.](http://www.amazon.com/Information-Visualization-Third-Edition-Technologies/dp/0123814642/ref=reg_hu-rd_add_1_dp) 3rd Edition. Morgan Kaufmann. 
 - Cleveland, William. 1994. [The Elements of Graphing Data.](http://www.amazon.com/gp/product/0963488414/) Hobart Press. 
 - Cleveland, William. 1993. [Visualizing Data.](http://www.amazon.com/gp/product/0963488406) Hobart Press.
+
+---
+
+## References
+
 - Few, Stephen. 2009. [Now You See It: Simple Visualization Techniques for Quantiative Analysis.](http://www.amazon.com/gp/product/0970601980/) Analytics Press. 
 - Few, Stephen. 2012. [Show Me the Numbers: Designing Tables and Graphs to Enlighten.](http://www.amazon.com/gp/product/0970601972) Analytics Press. 
 - Yau, Nathan. 2011. [Visualize This: The FlowingData Guide to Design, Visualization, and Statistics.](http://www.amazon.com/Visualize-This-FlowingData-Visualization-Statistics/dp/0470944889/) Wiley.
@@ -755,7 +757,7 @@ qplot(attday,readSS,
 - [The Functional Art](http://www.thefunctionalart.com/)
 - [ggplot2](http://www.ggplot2.org)
 - [Robert Kosara](http://eagereyes.org/about)
-
+- [Data Stories Podcast](http://datastori.es/)
 
 
 --- &twocol w1:50% w2:50%
