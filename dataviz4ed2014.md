@@ -19,12 +19,17 @@ justify funding, and guide practice
 - **Data visualization** is a way to bridge this gap
 - Proper data visualization will bring the data to the audience in a way they can understand quickly and use to inform decisions
 
----
+--- &twocol w1:50% w2:50%
 
 ## Follow Along
 
-### http://www.myurl.com/presentation
+***left
 
+### http://goo.gl/bhSzVJ
+
+***right
+
+<p align="center"><img src="img/knowleslogo.png"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:350px; max-height:196px"></p>
 
 --- &twocol w1:50% w2:50%
 
@@ -669,6 +674,19 @@ you might want to tell and then sketch out your result with your group.
 - Modeling the data
 - Themes and style
 - Techniques and software
+
+---
+
+## Contact Information
+
+- DEWS Homepage: [http://wise.dpi.wi.gov/wisedash_dews](http://wise.dpi.wi.gov/wisedash_dews)
+- E-mail: jared.knowles@dpi.wi.gov / jeknowles@wisc.edu
+- GitHub: [http://www.github.com/jknowles](http://www.github.com/jknowles)
+- Homepage: [www.jaredknowles.com](http://www.jaredknowles.com/)
+- Google+: [https://plus.google.com/+JaredKnowles](https://plus.google.com/+JaredKnowles)
+
+
+<p align="center"><img src="img/knowleslogo.png"  style="display: block; margin:0 auto; height:auto; width:auto; max-width:350px; max-height:196px"></p>
 
 ---
 
