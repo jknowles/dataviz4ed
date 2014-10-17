@@ -4,4 +4,4 @@
 .Rproj
 figure
 data/cache.rda
-
+.cache
