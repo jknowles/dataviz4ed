@@ -1,6 +1,6 @@
 ---
 title       : Data Visualization for Education
-subtitle    : SDP Institute for Leadership in Analytics February 2014
+subtitle    : SDP Institute for Leadership in Analytics July 2014
 author      : Jared Knowles
 job         : Research Analyst, Wisconsin DPI
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
@@ -79,15 +79,13 @@ always be <span class = 'red'>better than a table.</span></q></p>
 
 
 
-
 --- plot
 
 ## Example
 
 How can we improve this simple scatterplot?
 
-<img src="figure/plot.svg" title="plot of chunk plot" alt="plot of chunk plot" width="700px" height="500px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/plot.svg" title="plot of chunk plot" alt="plot of chunk plot" width="700px" height="500px" style="display: block; margin: auto;" />
 
 
 --- &twocol w1:20% w2:80%
@@ -105,9 +103,7 @@ How can we improve this simple scatterplot?
 
 *** right
 
-<img src="figure/plot1.svg" title="plot of chunk plot1" alt="plot of chunk plot1" width="550px" height="330px" style="display: block; margin: auto;" />
-
-
+<img src="assets/fig/plot1.svg" title="plot of chunk plot1" alt="plot of chunk plot1" width="550px" height="330px" style="display: block; margin: auto;" />
 
 
 
@@ -140,8 +136,7 @@ elements (e.g. color, size, shape, etc.)
 - **Smart use of dimensions allows us to increase the information density of our charts**
 
 
-<img src="figure/unnamed-chunk-2.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="680px" height="300px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/unnamed-chunk-2.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="680px" height="300px" style="display: block; margin: auto;" />
 
 --- quote
 
@@ -245,22 +240,19 @@ Shape      |  *does not make sense*         |    A shape for each value
 
 ## Charting Categorical Data
 
-<img src="figure/unnamed-chunk-3.svg" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="680px" height="480px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/unnamed-chunk-3.svg" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="680px" height="480px" style="display: block; margin: auto;" />
 
 --- 
 
 ## Charting Ordinal Data
 
-<img src="figure/unnamed-chunk-4.svg" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="750px" height="550px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/unnamed-chunk-4.svg" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="750px" height="550px" style="display: block; margin: auto;" />
 
 ---
 
 ## Charting Interval/Continuous Data
 
-<img src="figure/unnamed-chunk-5.svg" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="750px" height="550px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/unnamed-chunk-5.svg" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="750px" height="550px" style="display: block; margin: auto;" />
 
 --- quote
 
@@ -304,8 +296,7 @@ Let's look at some examples of this.
 
 Here is a simple plot of mean school reading scores:
 
-<img src="figure/plotmeans.svg" title="plot of chunk plotmeans" alt="plot of chunk plotmeans" width="750px" height="500px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/plotmeans.svg" title="plot of chunk plotmeans" alt="plot of chunk plotmeans" width="750px" height="500px" style="display: block; margin: auto;" />
 
 But, what's wrong with this plot?
 
@@ -323,22 +314,19 @@ But, what's wrong with this plot?
 
 *** right
 
-<img src="figure/plotmeanssmall.svg" title="plot of chunk plotmeanssmall" alt="plot of chunk plotmeanssmall" width="400px" height="325px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/plotmeanssmall.svg" title="plot of chunk plotmeanssmall" alt="plot of chunk plotmeanssmall" width="400px" height="325px" style="display: block; margin: auto;" />
 
 ---
 
 ## Adding a Dimension
 
-<img src="figure/meanplot2.svg" title="plot of chunk meanplot2" alt="plot of chunk meanplot2" width="750px" height="550px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/meanplot2.svg" title="plot of chunk meanplot2" alt="plot of chunk meanplot2" width="750px" height="550px" style="display: block; margin: auto;" />
 
 --- 
 
 ## Even More Dimensions
 
-<img src="figure/meanplot3.svg" title="plot of chunk meanplot3" alt="plot of chunk meanplot3" width="750px" height="550px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/meanplot3.svg" title="plot of chunk meanplot3" alt="plot of chunk meanplot3" width="750px" height="550px" style="display: block; margin: auto;" />
 
 ---
 
@@ -346,15 +334,13 @@ But, what's wrong with this plot?
 
 We still aren't sure what the mean scale score means. Let's see a couple more additions that can make this useful. 
 
-<img src="figure/meanplot4.svg" title="plot of chunk meanplot4" alt="plot of chunk meanplot4" width="750px" height="480px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/meanplot4.svg" title="plot of chunk meanplot4" alt="plot of chunk meanplot4" width="750px" height="480px" style="display: block; margin: auto;" />
 
 ---
 
 ## Caterpillar Plots
 
-<img src="figure/catplot1.svg" title="plot of chunk catplot1" alt="plot of chunk catplot1" width="750px" height="480px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/catplot1.svg" title="plot of chunk catplot1" alt="plot of chunk catplot1" width="750px" height="480px" style="display: block; margin: auto;" />
 
 ---
 
@@ -372,8 +358,7 @@ How could it be done?
 
 ## 600,000 Observations Too Many
 
-<img src="figure/rawdata1.png" title="plot of chunk rawdata1" alt="plot of chunk rawdata1" width="750px" height="550px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/rawdata1.png" title="plot of chunk rawdata1" alt="plot of chunk rawdata1" width="750px" height="550px" style="display: block; margin: auto;" />
 
 ---
 
@@ -404,22 +389,19 @@ be successful
 
 ## What About This
 
-<img src="figure/rawdata2.png" title="plot of chunk rawdata2" alt="plot of chunk rawdata2" width="750px" height="550px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/rawdata2.png" title="plot of chunk rawdata2" alt="plot of chunk rawdata2" width="750px" height="550px" style="display: block; margin: auto;" />
 
 ---
 
 ## Even Smaller Multiples
 
-<img src="figure/rawdata3.png" title="plot of chunk rawdata3" alt="plot of chunk rawdata3" width="750px" height="550px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/rawdata3.png" title="plot of chunk rawdata3" alt="plot of chunk rawdata3" width="750px" height="550px" style="display: block; margin: auto;" />
 
 ---
 
 ## Binning Data
 
-<img src="figure/rawdata4.svg" title="plot of chunk rawdata4" alt="plot of chunk rawdata4" width="750px" height="550px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/rawdata4.svg" title="plot of chunk rawdata4" alt="plot of chunk rawdata4" width="750px" height="550px" style="display: block; margin: auto;" />
 
 
 --- quote
@@ -432,8 +414,7 @@ be successful
 
 ## Smoothers 
 
-<img src="figure/unnamed-chunk-6.svg" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="800px" height="550px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/unnamed-chunk-6.svg" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="800px" height="550px" style="display: block; margin: auto;" />
 
 ---
 
@@ -528,8 +509,7 @@ lived in the data like you!
 ## Themes
 They can **communicate**, **confound**, **brand**, and **distract**
 
-<img src="figure/plot21.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" /><img src="figure/plot22.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" /><img src="figure/plot23.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" /><img src="figure/plot24.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" />
-
+<img src="assets/fig/plot21.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" /><img src="assets/fig/plot22.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" /><img src="assets/fig/plot23.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" /><img src="assets/fig/plot24.svg" title="plot of chunk plot2" alt="plot of chunk plot2" width="400px" height="220px" />
 
 ---
 
@@ -570,8 +550,7 @@ The technology you choose to do visualizations is largely a question of personal
 
 ## Some Technologies
 
-<img src="figure/technologies.svg" title="plot of chunk technologies" alt="plot of chunk technologies" width="750px" height="550px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/technologies.svg" title="plot of chunk technologies" alt="plot of chunk technologies" width="750px" height="550px" style="display: block; margin: auto;" />
 
 ---
 
@@ -615,15 +594,13 @@ you might want to tell and then sketch out your result with your group.
 
 *** right
 
-<img src="figure/studentexample.svg" title="plot of chunk studentexample" alt="plot of chunk studentexample" width="420px" height="350px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/studentexample.svg" title="plot of chunk studentexample" alt="plot of chunk studentexample" width="420px" height="350px" style="display: block; margin: auto;" />
 
 ---
 
 ## Example
 
-<img src="figure/studentexample2.svg" title="plot of chunk studentexample2" alt="plot of chunk studentexample2" width="700px" height="500px" style="display: block; margin: auto;" />
-
+<img src="assets/fig/studentexample2.svg" title="plot of chunk studentexample2" alt="plot of chunk studentexample2" width="700px" height="500px" style="display: block; margin: auto;" />
 
 
 ---
@@ -704,7 +681,7 @@ print(sessionInfo(),locale=FALSE)
 ```
 
 ```
-R version 3.0.2 (2013-09-25)
+R version 3.1.0 (2014-04-10)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 attached base packages:
@@ -712,28 +689,27 @@ attached base packages:
 [8] base     
 
 other attached packages:
- [1] mgcv_1.7-28          nlme_3.1-113         plyr_1.8            
- [4] vcd_1.3-1            hexbin_1.26.3        lattice_0.20-24     
- [7] ggthemes_1.5.1       eeptools_0.3         MASS_7.3-29         
-[10] ggplot2_0.9.3.1      knitr_1.5.15         slidifyLibraries_0.1
-[13] markdown_0.6.4       whisker_0.3-2        slidify_0.3.3       
-[16] devtools_1.4.1      
+ [1] vcd_1.3-1              plyr_1.8.1             mgcv_1.8-1            
+ [4] nlme_3.1-117           hexbin_1.26.3          lattice_0.20-29       
+ [7] ggthemes_1.8.0         eeptools_0.3.1         MASS_7.3-33           
+[10] ggplot2_1.0.0          knitr_1.6.8            slidifyLibraries_0.3.1
+[13] markdown_0.7.1         whisker_0.4            slidify_0.4.5         
+[16] devtools_1.5.0.99     
 
 loaded via a namespace (and not attached):
- [1] abind_1.4-0        arm_1.6-10         car_2.0-19        
- [4] coda_0.16-1        colorspace_1.2-4   data.table_1.8.10 
- [7] dichromat_2.0-0    digest_0.6.4       evaluate_0.5.1    
-[10] foreign_0.8-59     formatR_0.10       gtable_0.1.2      
-[13] httr_0.2           labeling_0.2       lme4_1.0-6        
-[16] maptools_0.8-27    Matrix_1.1-2       memisc_0.96-9     
-[19] memoise_0.1        minqa_1.2.3        munsell_0.4.2     
-[22] nnet_7.3-7         parallel_3.0.2     proto_0.3-10      
-[25] RColorBrewer_1.0-5 Rcpp_0.11.0        RCurl_1.95-4.1    
-[28] reshape2_1.2.2     scales_0.2.3       sp_1.0-14         
-[31] splines_3.0.2      stringr_0.6.2      tools_3.0.2       
-[34] yaml_2.1.10       
+ [1] abind_1.4-0       arm_1.7-03        car_2.0-20       
+ [4] coda_0.16-1       codetools_0.2-8   colorspace_1.2-4 
+ [7] data.table_1.9.2  digest_0.6.4      evaluate_0.5.5   
+[10] foreign_0.8-61    formatR_0.10      gtable_0.1.2     
+[13] httr_0.3          labeling_0.2      lme4_1.1-7       
+[16] maptools_0.8-30   Matrix_1.1-4      memisc_0.96-9    
+[19] memoise_0.2.1     minqa_1.2.3       munsell_0.4.2    
+[22] nloptr_1.0.0      nnet_7.3-8        packrat_0.2.0.133
+[25] parallel_3.1.0    proto_0.3-10      Rcpp_0.11.2      
+[28] RCurl_1.95-4.1    reshape2_1.4      scales_0.2.4     
+[31] sp_1.0-15         splines_3.1.0     stringr_0.6.2    
+[34] tools_3.1.0       yaml_2.1.13      
 ```
-
 ---
 
 

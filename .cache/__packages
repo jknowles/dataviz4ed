@@ -1,0 +1,17 @@
+base
+devtools
+eeptools
+ggplot2
+ggthemes
+hexbin
+knitr
+lattice
+markdown
+MASS
+mgcv
+nlme
+plyr
+slidify
+slidifyLibraries
+vcd
+whisker

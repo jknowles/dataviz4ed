@@ -1,6 +1,6 @@
 ---
 title       : Data Visualization for Education
-subtitle    : SDP Institute for Leadership in Analytics February 2014
+subtitle    : SDP Institute for Leadership in Analytics July 2014
 author      : Jared Knowles
 job         : Research Analyst, Wisconsin DPI
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
