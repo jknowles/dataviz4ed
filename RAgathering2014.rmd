@@ -19,23 +19,23 @@ justify funding, and guide practice
 - **Data visualization** is a way to bridge this gap
 - Proper data visualization will bring the data to the audience in a way they can understand quickly and use to inform decisions
 
---- &twocol w1:50% w2:50%
+--- &twocol
 
 ## What is dataviz?
 
 ***left
 ### Dataviz is...
->- An exploratory tool for understanding datasets
->- A communication tool for framing decisions and depicting problems
->- A way to showcase 
->- A better way to present results of analyses
+- An exploratory tool for understanding datasets
+- A communication tool for framing decisions and depicting problems
+- A way to showcase 
+- A better way to present results of analyses
 
 ***right
 ### Dataviz is not...
->- Easy
->- A replacement for analysis
->- Infographics
->- Easy!
+- Easy
+- A replacement for analysis
+- Infographics
+- Easy!
 
 
 --- quote
@@ -67,7 +67,7 @@ always be <span class = 'red'>better than a table.</span></q></p>
 
 ```{r knitrsetup,echo=FALSE,eval=TRUE,results="hide",error=FALSE,message=FALSE,warning=FALSE}
 library(knitr)
-opts_chunk$set(fig.width=8,fig.height=5.5,message=FALSE,error=FALSE,warning=FALSE,echo=TRUE,dev=c("svg"),comment=NA,out.width="750px",out.height="550px", fig.align='center')
+opts_chunk$set(fig.width=8,fig.height=5.5,message=FALSE,error=FALSE,warning=FALSE,echo=FALSE,dev=c("svg"),comment=FALSE,out.width="750px",out.height="550px", fig.align='center', cache=FALSE)
 library(eeptools)
 library(ggplot2)
 library(ggthemes)
@@ -708,7 +708,7 @@ We have a number of other techniques we can use beyond simple charts.
 - [Data Stories Podcast](http://datastori.es/)
 
 
---- &twocol w1:50% w2:50%
+---&twocol w1:50% w2:50%
 
 ## Review of Key Concepts
 

@@ -19,23 +19,23 @@ justify funding, and guide practice
 - **Data visualization** is a way to bridge this gap
 - Proper data visualization will bring the data to the audience in a way they can understand quickly and use to inform decisions
 
---- &twocol w1:50% w2:50%
+--- &twocol
 
 ## What is dataviz?
 
 ***left
 ### Dataviz is...
->- An exploratory tool for understanding datasets
->- A communication tool for framing decisions and depicting problems
->- A way to showcase 
->- A better way to present results of analyses
+- An exploratory tool for understanding datasets
+- A communication tool for framing decisions and depicting problems
+- A way to showcase 
+- A better way to present results of analyses
 
 ***right
 ### Dataviz is not...
->- Easy
->- A replacement for analysis
->- Infographics
->- Easy!
+- Easy
+- A replacement for analysis
+- Infographics
+- Easy!
 
 
 --- quote
@@ -137,10 +137,7 @@ elements (e.g. color, size, shape, etc.)
 - **Smart use of dimensions allows us to increase the information density of our charts**
 
 
-
-```
-## Error: object of type 'closure' is not subsettable
-```
+<img src="assets/fig/unnamed-chunk-2.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="680px" height="300px" style="display: block; margin: auto;" />
 
 --- quote
 
@@ -305,14 +302,7 @@ Let's look at some examples of this.
 
 Here is a simple plot of mean school reading scores:
 
-
-```
-## Error: object 'student_long' not found
-```
-
-```
-## Error: object 'schooldat' not found
-```
+<img src="assets/fig/plotmeans.png" title="plot of chunk plotmeans" alt="plot of chunk plotmeans" height="500px" />
 
 But, what's wrong with this plot?
 
@@ -330,32 +320,19 @@ But, what's wrong with this plot?
 
 *** right
 
-
-```
-## Error: object 'schooldat' not found
-```
+<img src="assets/fig/plotmeanssmall.png" title="plot of chunk plotmeanssmall" alt="plot of chunk plotmeanssmall" width="400px" height="325px" />
 
 ---
 
 ## Adding a Dimension
 
-
-```
-## Error: object 'schooldat' not found
-```
-
-```
-## Error: object 'schooldat' not found
-```
+![plot of chunk meanplot2](assets/fig/meanplot2.png) 
 
 --- 
 
 ## Even More Dimensions
 
-
-```
-## Error: object 'schooldat' not found
-```
+![plot of chunk meanplot3](assets/fig/meanplot3.svg) 
 
 ---
 
@@ -363,19 +340,13 @@ But, what's wrong with this plot?
 
 We still aren't sure what the mean scale score means. Let's see a couple more additions that can make this useful. 
 
-
-```
-## Error: object 'schooldat' not found
-```
+<img src="assets/fig/meanplot4.svg" title="plot of chunk meanplot4" alt="plot of chunk meanplot4" width="750px" height="480px" />
 
 ---
 
 ## Caterpillar Plots
 
-
-```
-## Error: object 'schooldat' not found
-```
+<img src="assets/fig/catplot1.svg" title="plot of chunk catplot1" alt="plot of chunk catplot1" width="750px" height="480px" />
 
 ---
 
@@ -393,10 +364,7 @@ How could it be done?
 
 ## 600,000 Observations Too Many
 
-
-```
-## Error: object 'student_long' not found
-```
+![plot of chunk rawdata1](assets/fig/rawdata1.png) 
 
 ---
 
@@ -429,8 +397,15 @@ be successful
 
 
 ```
-## Error: object 'student_long' not found
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
 ```
+
+![plot of chunk rawdata2](assets/fig/rawdata2.png) 
 
 ---
 
@@ -438,8 +413,39 @@ be successful
 
 
 ```
-## Error: object 'student_long' not found
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
 ```
+
+![plot of chunk rawdata3](assets/fig/rawdata3.png) 
 
 ---
 
@@ -447,8 +453,13 @@ be successful
 
 
 ```
-## Error: object 'student_long' not found
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
 ```
+
+![plot of chunk rawdata4](assets/fig/rawdata4.svg) 
 
 
 --- quote
@@ -463,8 +474,10 @@ be successful
 
 
 ```
-## Error: object 'student_long' not found
+## geom_smooth: method="auto" and size of largest group is >=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
 ```
+
+<img src="assets/fig/unnamed-chunk-6.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="800px" />
 
 ---
 
@@ -652,7 +665,7 @@ We have a number of other techniques we can use beyond simple charts.
 - [Data Stories Podcast](http://datastori.es/)
 
 
---- &twocol w1:50% w2:50%
+---&twocol w1:50% w2:50%
 
 ## Review of Key Concepts
 
@@ -720,11 +733,11 @@ print(sessionInfo(),locale=FALSE)
 ##  [5] coda_0.16-1      codetools_0.2-9  colorspace_1.2-4 data.table_1.9.4
 ##  [9] digest_0.6.4     evaluate_0.5.5   foreign_0.8-61   formatR_1.0     
 ## [13] gtable_0.1.2     httr_0.5         labeling_0.3     lme4_1.1-7      
-## [17] maptools_0.8-30  Matrix_1.1-4     memisc_0.96-10   minqa_1.2.4     
-## [21] munsell_0.4.2    nloptr_1.0.4     nnet_7.3-8       packrat_0.4.1-1 
-## [25] proto_0.3-10     Rcpp_0.11.3      RCurl_1.95-4.3   reshape2_1.4    
-## [29] scales_0.2.4     sp_1.0-15        splines_3.1.0    stringr_0.6.2   
-## [33] tools_3.1.0      yaml_2.1.13
+## [17] maptools_0.8-30  Matrix_1.1-4     memisc_0.96-10   mime_0.2        
+## [21] minqa_1.2.4      munsell_0.4.2    nloptr_1.0.4     nnet_7.3-8      
+## [25] packrat_0.4.1-1  proto_0.3-10     Rcpp_0.11.3      RCurl_1.95-4.3  
+## [29] reshape2_1.4     scales_0.2.4     sp_1.0-15        splines_3.1.0   
+## [33] stringr_0.6.2    tools_3.1.0      yaml_2.1.13
 ```
 ---
 
