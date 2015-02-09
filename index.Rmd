@@ -262,7 +262,7 @@ How can we do even better?
 
 ## Annotation
 
-We still aren't sure what the mean scale score means. Let's see a couple more additions that can realy make this useful. 
+We still aren't sure what the mean scale score means. Let's see a couple more additions that can really make this useful. 
 
 ```{r meanplot4, echo=FALSE}
 ggplot(schooldat[schooldat$schid<25 & grade==3,],

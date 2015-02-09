@@ -1,6 +1,5 @@
 # Build the slides
 # 12-7-2012
-
 # Use slidify
 # need to install it
 
