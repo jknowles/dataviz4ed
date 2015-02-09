@@ -2,8 +2,8 @@ TODO:
 
 * Add a couple HTML canvas drawings to the document
 * Embed d3 example?
-* Add d3 images/examples from d3 gallery
+* Move d3 images/examples from d3 gallery
 * Discuss the way solutions work, but then fail to scale (focus on scale)
-* Ending exercise on student-level data
 * Use illustrator to draw some graphics
-* Get VizLinks
+* Add section on simulation
+
