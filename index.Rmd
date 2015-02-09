@@ -308,6 +308,49 @@ qplot(readSS,data=df)+theme_dpi()+labs(title="My Histogram")
 
 ---
 
+## Group Exercise
+
+Visualize some education data. Imagine we have the following dimensions and want to present more of them on a plot like that on the right. Sketch out your result with your group.
+
+*** left
+
+- Grade
+- Disability Status
+- Type of Disability
+- Language Proficiency
+- School
+- Math Score
+- Reading Curriculum
+- Math Curriculum
+
+*** right
+
+```{r studentexample,echo=FALSE,out.width='420px',out.height='350px'}
+qplot(attday,readSS,
+      data=student_long[student_long$grade==3 & 
+                          student_long$stuid %in% 
+                          sample(student_long$stuid,8000,replace=FALSE),],color=race,alpha=I(0.5))+
+  theme_dpi()+geom_smooth(method='lm',se=FALSE,size=1.1)+
+  labs(title="Attendance and Assessment Scores Grade 3")
+```
+
+---
+
+## Example
+
+```{r studentexample2,echo=FALSE,out.width='700px',out.height='500px'}
+qplot(attday,readSS,
+      data=student_long[student_long$grade==3 & 
+                          student_long$stuid %in% 
+                          sample(student_long$stuid,8000,replace=FALSE),],color=race,alpha=I(0.5))+
+  theme_dpi()+geom_smooth(method='lm',se=FALSE,size=1.1)+
+  labs(title="Attendance and Assessment Scores Grade 3")
+```
+
+
+---
+
+
 ## Complexity
 
 How do we display a ton of data--tens or hundreds of thousands of observations--with combinations of data types across multiple dimensions?
@@ -652,47 +695,7 @@ We have a number of other techniques we can use beyond simple charts.
 
 --- &twocol w1:20% w2:80%
 
-## Group Exercise
 
-Visualize some education data. Imagine we have the following dimensions and want to present more of them on a plot like that on the right. Sketch out your result with your group.
-
-*** left
-
-- Grade
-- Disability Status
-- Type of Disability
-- Language Proficiency
-- School
-- Math Score
-- Reading Curriculum
-- Math Curriculum
-
-*** right
-
-```{r studentexample,echo=FALSE,out.width='420px',out.height='350px'}
-qplot(attday,readSS,
-      data=student_long[student_long$grade==3 & 
-                          student_long$stuid %in% 
-                          sample(student_long$stuid,8000,replace=FALSE),],color=race,alpha=I(0.5))+
-  theme_dpi()+geom_smooth(method='lm',se=FALSE,size=1.1)+
-  labs(title="Attendance and Assessment Scores Grade 3")
-```
-
----
-
-## Example
-
-```{r studentexample2,echo=FALSE,out.width='700px',out.height='500px'}
-qplot(attday,readSS,
-      data=student_long[student_long$grade==3 & 
-                          student_long$stuid %in% 
-                          sample(student_long$stuid,8000,replace=FALSE),],color=race,alpha=I(0.5))+
-  theme_dpi()+geom_smooth(method='lm',se=FALSE,size=1.1)+
-  labs(title="Attendance and Assessment Scores Grade 3")
-```
-
-
----
 ## References
 
 - Tufte, Edward. 1992. [The Visual Display of Quantitative Information.](http://www.amazon.com/The-Visual-Display-Quantitative-Information/dp/0961392142/) Graphics Press. 
